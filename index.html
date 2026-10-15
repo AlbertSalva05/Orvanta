@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orvanta: track every order from China to your door</title>
+<meta name="description" content="Track orders shipped from China to the Philippines in one place: each product with its CNY and PHP price, tracking number and status, from warehouse to customs to J&T delivery.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://orvanta.onrender.com/">
+<meta name="theme-color" content="#f4f3ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131615" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orvanta">
+<meta property="og:title" content="Orvanta: track every order from China to your door">
+<meta property="og:description" content="Track orders shipped from China to the Philippines in one place: each product with its CNY and PHP price, tracking number and status, from warehouse to customs to J&T delivery.">
+<meta property="og:url" content="https://orvanta.onrender.com/">
+<meta property="og:image" content="https://orvanta.onrender.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Orvanta logo, a teal ring with an amber diamond, beside the line: track every order from China to your door">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Orvanta: track every order from China to your door">
+<meta name="twitter:description" content="Track orders shipped from China to the Philippines in one place: each product with its CNY and PHP price, tracking number and status, from warehouse to customs to J&T delivery.">
+<meta name="twitter:image" content="https://orvanta.onrender.com/assets/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/logo/orvanta-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="preload" href="support.js" as="script">
+<script src="support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Orvanta v1.3.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f3ef;--surface:#fbfaf8;--sunk:#ecebe6;--ink:#1b1d1c;--ink-2:#474a48;--line:#d9d7d0;--line-strong:#878a86;--brand:#1d5c57;--brand-hover:#174a46;--brand-tint:#e1ebe9;--brand-ink:#174a46;--accent:#c96a1b;--ok:#2b6534;--ok-tint:#e2eee3;--bad:#9b2f1d;--bad-tint:#f5e0da;--warn-tint:#f6ecd4;--warn:#6f4a00;--badge-border:transparent;--on-brand:#ffffff}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#131615;--surface:#1a1e1d;--sunk:#242a28;--ink:#ecebe6;--ink-2:#a9ada8;--line:#2e3432;--line-strong:#6d7370;--brand:#5fb3aa;--brand-hover:#7cc6bd;--brand-tint:#1e3431;--brand-ink:#8fd3ca;--accent:#e08a3c;--ok:#7cc48a;--ok-tint:#1d3223;--bad:#f08a76;--bad-tint:#3a211c;--warn-tint:#3a3018;--warn:#e8c27a;--badge-border:transparent;--on-brand:#0d1716}
+:root[data-theme="hc"]{--bg:#ffffff;--surface:#ffffff;--sunk:#ffffff;--ink:#000000;--ink-2:#000000;--line:#000000;--line-strong:#000000;--brand:#003833;--brand-hover:#000000;--brand-tint:#ffffff;--brand-ink:#000000;--accent:#8a3d00;--ok:#000000;--ok-tint:#ffffff;--bad:#000000;--bad-tint:#ffffff;--warn-tint:#ffffff;--warn:#000000;--badge-border:#000000}
+html{font-size:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Schibsted Grotesk',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--brand-ink);text-underline-offset:0.2em}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+::selection{background:var(--brand-tint)}
+*{box-sizing:border-box}
+@keyframes orv-rise{from{opacity:0;transform:translateY(0.5rem)}to{opacity:1;transform:none}}
+@keyframes orv-launch{0%{transform:translateY(0)}35%{transform:translateY(-0.5rem);opacity:0}36%{transform:translateY(0.5rem);opacity:0}100%{transform:translateY(0);opacity:1}}
+@keyframes orv-fade{from{opacity:0}to{opacity:1}}
+@keyframes orv-drop{0%{transform:rotate(45deg) scale(0.2);opacity:0}70%{transform:rotate(45deg) scale(1.25);opacity:1}100%{transform:rotate(45deg) scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;transition-duration:1ms!important}}
+</style>
+</helmet>
+
+<div data-screen-label="Orvanta app" style="display:flex;min-height:100vh;background:var(--bg);color:var(--ink)">
+
+  <aside id="sidebar" aria-label="Main navigation" style="width:16.5rem;flex-shrink:0;top:0;bottom:0;left:0;z-index:40;position:{{ side.pos }};transform:{{ side.tf }};visibility:{{ side.vis }};box-shadow:{{ side.shadow }};transition:transform 260ms cubic-bezier(.2,.7,.2,1),visibility 260ms;border-right:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:1.5rem;padding:1.25rem 0.875rem;overflow-y:auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;padding:0 0.25rem 0 0.5rem">
+      <a href="#/overview" onClick="{{ closeDrawer }}" style="display:flex;align-items:center;gap:0.625rem;text-decoration:none;color:var(--ink);min-height:2.75rem">
+        <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}"><img src="assets/logo/orvanta-symbol.svg" alt="" style="width:1.75rem;height:1.75rem"></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}"><img src="assets/logo/orvanta-symbol-reversed.svg" alt="" style="width:1.75rem;height:1.75rem"></sc-if>
+        <span style="font-size:1.375rem;font-weight:600;letter-spacing:-0.02em">orvanta</span>
+      </a>
+      <button type="button" onClick="{{ hideSide }}" aria-label="{{ hideLabel }}" title="{{ hideLabel }}" style="width:2.75rem;height:2.75rem;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer;transition:background 160ms" style-hover="background:var(--sunk)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem"><path d="{{ hideIcon }}"></path></svg></button>
+    </div>
+    <nav style="display:flex;flex-direction:column;gap:1.25rem">
+      <sc-for list="{{ navGroups }}" as="g" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:0.125rem">
+          <span style="padding:0 0.75rem 0.375rem;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--ink-2)">{{ g.label }}</span>
+          <sc-for list="{{ g.items }}" as="n" hint-placeholder-count="3">
+            <a href="{{ n.href }}" onClick="{{ closeDrawer }}" aria-current="{{ n.aria }}" style="position:relative;display:flex;align-items:center;gap:0.75rem;min-height:2.75rem;padding:0 0.75rem;border-radius:6px;text-decoration:none;font-weight:500;background:{{ n.bg }};color:{{ n.fg }};transition:background 160ms,color 160ms" style-hover="background:var(--sunk);color:var(--ink)">
+              <span aria-hidden="true" style="position:absolute;left:-0.875rem;top:0.5rem;bottom:0.5rem;width:3px;border-radius:0 2px 2px 0;background:{{ n.mark }};transition:background 200ms"></span>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem;flex-shrink:0"><path d="{{ n.icon }}"></path></svg>
+              <span style="flex:1">{{ n.label }}</span>
+              <sc-if value="{{ n.hasBadge }}" hint-placeholder-val="{{ false }}">
+                <span style="min-width:1.625rem;height:1.5rem;padding:0 0.4375rem;display:inline-grid;place-items:center;border-radius:999px;font-size:0.75rem;font-weight:600;font-variant-numeric:tabular-nums;background:{{ n.badgeBg }};color:{{ n.badgeFg }}"><span aria-hidden="true">{{ n.badge }}</span><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ n.badgeSr }}</span></span>
+              </sc-if>
+            </a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </nav>
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:1rem">
+      <sc-if value="{{ hasDelayed }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ sideAlert.href }}" onClick="{{ closeDrawer }}" style="display:flex;flex-direction:column;gap:0.25rem;padding:0.875rem 1rem;border-radius:8px;border:1px solid var(--bad);background:var(--bad-tint);color:var(--ink);text-decoration:none;font-size:0.875rem;transition:transform 200ms" style-hover="transform:translateY(-2px)">
+          <span style="display:flex;align-items:center;gap:0.5rem;font-weight:600;color:var(--bad)"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:var(--bad)"></span>{{ sideAlert.title }}</span>
+          <span style="text-wrap:pretty">{{ sideAlert.body }}</span>
+        </a>
+      </sc-if>
+      <div style="display:flex;flex-direction:column;gap:0.125rem;padding:0 0.75rem;font-size:0.8125rem;color:var(--ink-2)">
+        <span>Last carrier update {{ lastSync }}</span>
+        <span>v1.3.0 · Release 1</span>
+      </div>
+    </div>
+  </aside>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;overflow-x:clip;margin-left:{{ contentMl }};transition:margin-left 260ms cubic-bezier(.2,.7,.2,1)">
+    <header style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1rem;padding:0.75rem {{ headPadX }};border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:5">
+      <sc-if value="{{ sideHidden }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ openDrawer }}" aria-label="{{ openLabel }}" title="{{ openLabel }}" aria-expanded="{{ drawerAria }}" aria-controls="sidebar" style="width:2.75rem;height:2.75rem;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem;flex-shrink:0"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+        <a href="#/overview" aria-label="Orvanta overview" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;color:var(--ink);min-height:2.75rem">
+          <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}"><img src="assets/logo/orvanta-symbol.svg" alt="" style="width:1.5rem;height:1.5rem"></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}"><img src="assets/logo/orvanta-symbol-reversed.svg" alt="" style="width:1.5rem;height:1.5rem"></sc-if>
+          <span style="font-size:1.25rem;font-weight:600;letter-spacing:-0.02em">orvanta</span>
+        </a>
+      </sc-if>
+      <form role="search" onSubmit="{{ submitSearch }}" style="flex:1 1 16rem;display:flex;min-width:0;max-width:36rem">
+        <label style="flex:1;display:flex;align-items:center;min-width:0;position:relative;color:var(--ink-2)">
+          <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search tracking numbers, products or order references</span>
+          <span style="position:absolute;left:0.75rem;display:flex;pointer-events:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem;flex-shrink:0"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM20 20l-4.8-4.8"></path></svg></span>
+          <input ref="{{ searchRef }}" type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Tracking number, product or order ref" style="flex:1;min-width:0;min-height:2.75rem;padding:0 0.875rem 0 2.5rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+        </label>
+      </form>
+      <button type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeBtn.label }}" title="{{ themeBtn.label }}" style="width:2.75rem;height:2.75rem;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer;transition:background 160ms,transform 300ms cubic-bezier(.2,.7,.2,1)" style-hover="background:var(--sunk);transform:rotate(-15deg)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem"><path d="{{ themeBtn.icon }}"></path></svg></button>
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-left:auto;display:flex;align-items:center;gap:1rem">
+          <sc-if value="{{ showSync }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--ink-2);white-space:nowrap"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ syncDot }}"></span>{{ syncLabel }}</span></sc-if>
+          <a href="#/add" style="display:inline-flex;align-items:center;gap:0.5rem;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none;white-space:nowrap;transition:background 160ms" style-hover="background:var(--brand-hover)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M12 5v14M5 12h14"></path></svg>Add order</a>
+        </div>
+      </sc-if>
+    </header>
+
+    <sc-if value="{{ offline }}" hint-placeholder-val="{{ false }}">
+      <div role="status" style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1rem;padding:0.75rem 1.5rem;background:var(--warn-tint);color:var(--warn);border-bottom:1px solid var(--line-strong);font-size:0.9375rem">
+        <strong style="font-weight:600">You are offline.</strong>
+        <span>Showing tracking data last synced {{ lastSync }}. Changes are saved on this device and sync when you reconnect.</span>
+        <button type="button" onClick="{{ retry }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid currentColor;border-radius:6px;background:transparent;color:inherit;font:inherit;font-weight:600;cursor:pointer">Try to reconnect</button>
+      </div>
+    </sc-if>
+
+    <main id="main" style="flex:1;width:100%;max-width:none;padding:{{ mainPad }};display:flex;flex-direction:column;gap:2rem">
+
+      <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+        <div aria-busy="true" aria-label="Loading tracking data" style="display:flex;flex-direction:column;gap:1.5rem">
+          <div style="width:12rem;height:2.25rem;border-radius:6px;background:var(--sunk)"></div>
+          <div style="height:9rem;border-radius:8px;background:var(--sunk)"></div>
+          <sc-for list="{{ skeleton }}" as="k" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:1rem">
+              <div style="height:1.25rem;border-radius:4px;background:var(--sunk)"></div>
+              <div style="height:1.25rem;border-radius:4px;background:var(--sunk)"></div>
+              <div style="height:1.25rem;border-radius:4px;background:var(--sunk)"></div>
+            </div>
+          </sc-for>
+          <p style="margin:0;color:var(--ink-2)">Loading the latest carrier updates…</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+        <section role="alert" style="max-width:36rem;display:flex;flex-direction:column;gap:1rem;padding:1.5rem;border:1px solid var(--bad);border-radius:8px;background:var(--bad-tint);color:var(--bad)">
+          <h1 style="margin:0;font-size:1.5rem;line-height:1.25;font-weight:600">Tracking data didn't load</h1>
+          <p style="margin:0;color:var(--ink)">The tracking service didn't respond within 10 seconds. Your saved shipments and items are safe on this device.</p>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+            <button type="button" onClick="{{ retry }}" style="min-height:2.75rem;padding:0 1.125rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer">Retry now</button>
+          </div>
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Error ORV-504 · tracking-sync timeout</p>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ showPage }}" hint-placeholder-val="{{ true }}">
+
+        <sc-if value="{{ r.overview }}" hint-placeholder-val="{{ true }}">
+          <div data-screen-label="Overview" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:2rem">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem">
+              <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+                <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Track · {{ todayLabel }}</span>
+                <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Overview</h1>
+                <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Every parcel on its way from China, where it is right now, and what you have spent on what is inside.</p>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add order</a>
+                <button type="button" onClick="{{ focusSearch }}" style="min-height:2.75rem;padding:0 1.125rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Find a tracking number</button>
+              </div>
+            </div>
+
+            <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+              <section style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:2.5rem 2rem;border:1px dashed var(--line-strong);border-radius:8px;background:var(--surface);max-width:40rem">
+                <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}"><img src="assets/logo/orvanta-symbol-black.svg" alt="" style="width:3rem;height:3rem;opacity:0.35"></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}"><img src="assets/logo/orvanta-symbol-white.svg" alt="" style="width:3rem;height:3rem;opacity:0.35"></sc-if>
+                <h2 style="margin:0;font-size:1.375rem;font-weight:600">No shipments yet</h2>
+                <p style="margin:0;color:var(--ink-2);text-wrap:pretty">Add the order and the tracking number your seller or forwarder sent you. Orvanta follows it from the China warehouse to your door and keeps the CNY and PHP totals for every product in it.</p>
+                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add your first order</a>
+              </section>
+            </sc-if>
+
+            <sc-if value="{{ hasData }}" hint-placeholder-val="{{ true }}">
+              <section aria-labelledby="route-h" style="animation:orv-rise 420ms 60ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.25rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
+                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:0.75rem 1.5rem">
+                  <div style="display:flex;flex-direction:column;gap:0.5rem;min-width:0">
+                    <h2 id="route-h" style="margin:0;font-size:1.25rem;font-weight:600">Where your shipments are now</h2>
+                    <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                      <sc-for list="{{ journey.summary }}" as="b" hint-placeholder-count="3">
+                        <span style="display:inline-flex;align-items:center;gap:0.375rem;padding:0.25rem 0.625rem;border-radius:999px;border:1px solid var(--badge-border);font-size:0.875rem;font-weight:600;background:{{ b.bg }};color:{{ b.fg }}"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:{{ b.fg }}"></span>{{ b.label }}</span>
+                      </sc-for>
+                    </div>
+                  </div>
+                  <span style="font-size:0.875rem;color:var(--ink-2)">Select a checkpoint to list its parcels below</span>
+                </div>
+                <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:{{ journey.cols }};gap:{{ journey.gap }}">
+                  <sc-for list="{{ journey.phases }}" as="p" hint-placeholder-count="4">
+                    <li style="display:flex;flex-direction:column;gap:0.75rem;min-width:0;position:relative;padding-left:{{ journey.railPad }};animation:orv-rise 420ms {{ p.delay }} cubic-bezier(.2,.7,.2,1) both">
+                      <sc-if value="{{ journey.horizontal }}" hint-placeholder-val="{{ true }}">
+                        <div aria-hidden="true" style="position:relative;height:1.25rem;display:flex;align-items:center">
+                          <span style="position:absolute;left:0;right:-0.75rem;top:50%;height:3px;margin-top:-1.5px;background:var(--line)"></span>
+                          <span style="position:absolute;left:0;right:-0.75rem;top:50%;height:3px;margin-top:-1.5px;background:{{ p.lineColor }};transform-origin:left;transform:{{ p.lineTf }};transition:transform 700ms cubic-bezier(.2,.7,.2,1);transition-delay:{{ p.delay }}"></span>
+                          <span style="position:relative;width:1rem;height:1rem;margin-left:0.125rem;transform:rotate(45deg);background:{{ p.nodeFill }};border:2px solid {{ p.nodeBorder }};animation:orv-drop 520ms {{ p.nodeDelay }} cubic-bezier(.2,.7,.2,1) both"></span>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ journey.vertical }}" hint-placeholder-val="{{ false }}">
+                        <span aria-hidden="true" style="position:absolute;left:0.4375rem;top:1rem;bottom:-1.25rem;width:2px;background:{{ p.lineColor }}"></span>
+                        <span aria-hidden="true" style="position:absolute;left:0;top:0.25rem;width:1rem;height:1rem;transform:rotate(45deg) scale(0.8);background:{{ p.nodeFill }};border:2px solid {{ p.nodeBorder }}"></span>
+                      </sc-if>
+                      <div style="display:flex;flex-direction:column;gap:0.75rem;padding:1rem;border-radius:8px;border:1px solid {{ p.cardBorder }};background:var(--bg);flex:1;transition:transform 200ms,box-shadow 200ms" style-hover="transform:translateY(-2px);box-shadow:0 0.5rem 1rem rgba(20,22,21,0.08)">
+                        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem">
+                          <div style="display:flex;flex-direction:column;gap:0.125rem;min-width:0">
+                            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--ink-2)">{{ p.step }}</span>
+                            <h3 style="margin:0;font-size:1.0625rem;font-weight:600">{{ p.label }}</h3>
+                          </div>
+                          <span style="display:flex;flex-direction:column;align-items:flex-end;line-height:1"><span style="font-size:2rem;font-weight:600;font-variant-numeric:tabular-nums;color:{{ p.countColor }}">{{ p.count }}</span><span style="font-size:0.75rem;color:var(--ink-2);margin-top:0.25rem">{{ p.unit }}</span></span>
+                        </div>
+                        <div role="group" aria-label="{{ p.groupLabel }}" style="display:flex;flex-direction:column;gap:0.25rem;padding-top:0.625rem;border-top:1px solid var(--line)">
+                          <sc-for list="{{ p.stages }}" as="st" hint-placeholder-count="2">
+                            <button type="button" onClick="{{ st.pick }}" aria-pressed="{{ st.on }}" aria-label="{{ st.aria }}" disabled="{{ st.empty }}" style="display:flex;align-items:center;gap:0.625rem;min-height:2.75rem;padding:0 0.625rem;border-radius:6px;border:2px solid {{ st.ring }};background:{{ st.bg }};font:inherit;color:var(--ink);text-align:left;cursor:{{ st.cursor }};transition:background 180ms,border-color 180ms" style-hover="background:var(--sunk)">
+                              <span aria-hidden="true" style="width:0.625rem;height:0.625rem;transform:rotate(45deg);flex-shrink:0;background:{{ st.fill }};border:2px solid {{ st.border }}"></span>
+                              <span style="flex:1;font-size:0.9375rem;min-width:0">{{ st.short }}</span>
+                              <sc-if value="{{ st.bad }}" hint-placeholder-val="{{ false }}"><span style="font-size:0.75rem;font-weight:600;color:var(--bad)">Held</span></sc-if>
+                              <span style="font-weight:600;font-variant-numeric:tabular-nums;color:{{ st.countColor }}">{{ st.count }}</span>
+                            </button>
+                          </sc-for>
+                        </div>
+                      </div>
+                    </li>
+                  </sc-for>
+                  <li style="display:flex;flex-direction:column;gap:0.75rem;min-width:0;position:relative;padding-left:{{ journey.railPad }};animation:orv-rise 420ms 420ms cubic-bezier(.2,.7,.2,1) both">
+                    <sc-if value="{{ journey.horizontal }}" hint-placeholder-val="{{ true }}">
+                      <div aria-hidden="true" style="height:1.25rem;display:flex;align-items:center"><span style="width:1rem;height:1rem;margin-left:0.125rem;transform:rotate(45deg);background:var(--ok);border:2px solid var(--ok);animation:orv-drop 520ms 760ms cubic-bezier(.2,.7,.2,1) both"></span></div>
+                    </sc-if>
+                    <sc-if value="{{ journey.vertical }}" hint-placeholder-val="{{ false }}">
+                      <span aria-hidden="true" style="position:absolute;left:0;top:0.25rem;width:1rem;height:1rem;transform:rotate(45deg) scale(0.8);background:var(--ok);border:2px solid var(--ok)"></span>
+                    </sc-if>
+                    <button type="button" onClick="{{ journey.done.pick }}" aria-pressed="{{ journey.done.on }}" aria-label="{{ journey.done.aria }}" disabled="{{ journey.done.empty }}" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;padding:1rem;border-radius:8px;border:2px solid {{ journey.done.ring }};background:var(--ok-tint);color:var(--ink);font:inherit;text-align:left;cursor:pointer;transition:transform 200ms,border-color 180ms" style-hover="transform:translateY(-2px)">
+                      <span style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--ok)">Done</span>
+                      <span style="display:flex;align-items:baseline;gap:0.5rem"><span style="font-size:2rem;line-height:1;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ok)">{{ journey.done.count }}</span><span style="font-weight:600">Delivered</span></span>
+                      <span style="font-size:0.8125rem;color:var(--ink-2)">{{ journey.done.sub }}</span>
+                    </button>
+                  </li>
+                </ol>
+                <div style="display:flex;flex-direction:column;gap:0.75rem;padding-top:1.25rem;border-top:1px solid var(--line)">
+                  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.5rem">
+                    <h3 aria-live="polite" style="margin:0;font-size:1.0625rem;font-weight:600">{{ pipeTitle }}</h3>
+                    <sc-if value="{{ pipeHasSel }}" hint-placeholder-val="{{ false }}">
+                      <button type="button" onClick="{{ pipeClear }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Show arriving next</button>
+                    </sc-if>
+                  </div>
+                  <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+                    <sc-for list="{{ pipeList }}" as="p" hint-placeholder-count="3">
+                      <li style="border-bottom:1px solid var(--line);animation:orv-rise 280ms {{ p.delay }} cubic-bezier(.2,.7,.2,1) both">
+                        <a href="{{ p.href }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem 1.25rem;padding:0.875rem 1rem;color:var(--ink);text-decoration:none;background:var(--bg);transition:background 160ms" style-hover="background:var(--sunk)">
+                          <span style="flex:1 1 16rem;min-width:0;display:flex;flex-direction:column;gap:0.125rem">
+                            <span style="font-weight:600;overflow-wrap:anywhere">{{ p.what }}</span>
+                            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.875rem;color:var(--ink-2);overflow-wrap:anywhere">{{ p.tracking }} · {{ p.carrier }}</span>
+                          </span>
+                          <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ p.tone.bg }};color:{{ p.tone.fg }};font-size:0.875rem;font-weight:500;white-space:nowrap"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ p.tone.fg }}"></span>{{ p.status }}</span>
+                          <span style="font-size:0.9375rem;color:var(--ink-2);white-space:nowrap;min-width:9rem">{{ p.eta }}</span>
+                          <span aria-hidden="true" style="font-weight:600;color:var(--brand-ink)">View</span>
+                        </a>
+                      </li>
+                    </sc-for>
+                  </ul>
+                </div>
+              </section>
+
+              <section aria-label="Totals" style="animation:orv-rise 420ms 120ms cubic-bezier(.2,.7,.2,1) both;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem">
+                <article style="display:flex;flex-direction:column;gap:0.5rem;padding:1.25rem 1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Total spend</span>
+                  <span style="font-size:1.875rem;line-height:1.15;font-weight:600;letter-spacing:-0.01em;font-variant-numeric:tabular-nums;white-space:nowrap">{{ sum.spendMain }}</span>
+                  <span style="font-size:0.9375rem;color:var(--ink-2);font-variant-numeric:tabular-nums">{{ sum.spendAlt }} at your rates</span>
+                  <a href="#/items" style="margin-top:auto;display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600">See products and prices</a>
+                </article>
+                <article style="display:flex;flex-direction:column;gap:0.5rem;padding:1.25rem 1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Items</span>
+                  <span style="font-size:1.875rem;line-height:1.15;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ sum.delivered }} <span style="font-size:1rem;font-weight:500;color:var(--ink-2)">of {{ sum.bought }} delivered</span></span>
+                  <span aria-hidden="true" style="height:0.5rem;border-radius:999px;background:var(--sunk);overflow:hidden"><span style="display:block;height:100%;border-radius:999px;background:var(--ok);width:{{ sum.meter }};transition:width 900ms cubic-bezier(.2,.7,.2,1)"></span></span>
+                  <span style="font-size:0.9375rem;color:var(--ink-2)">{{ sum.itemsSub }}</span>
+                </article>
+                <article style="display:flex;flex-direction:column;gap:0.5rem;padding:1.25rem 1.5rem;border:1px solid {{ sum.shipBorder }};border-radius:8px;background:var(--surface);min-width:0">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Shipments</span>
+                  <span style="font-size:1.875rem;line-height:1.15;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ sum.active }} <span style="font-size:1rem;font-weight:500;color:var(--ink-2)">in progress</span></span>
+                  <span style="font-size:0.9375rem;color:var(--ink-2)">{{ sum.shipSub }}</span>
+                  <a href="{{ sum.shipHref }}" style="margin-top:auto;display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600;color:{{ sum.shipLinkColor }}">{{ sum.shipLink }}</a>
+                </article>
+              </section>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.5rem;align-items:start">
+                <section aria-labelledby="act-h" style="animation:orv-rise 420ms 180ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:0.5rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
+                  <h2 id="act-h" style="margin:0 0 0.5rem;font-size:1.25rem;font-weight:600">Recent tracking activity</h2>
+                  <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+                    <sc-for list="{{ recent }}" as="e" hint-placeholder-count="6">
+                      <li style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0.125rem 1rem;padding:0.75rem 0;border-top:1px solid var(--line)">
+                        <a href="{{ e.href }}" style="font-weight:600;color:var(--ink);text-decoration:none;overflow-wrap:anywhere">{{ e.label }}</a>
+                        <span style="font-size:0.875rem;color:var(--ink-2);white-space:nowrap">{{ e.when }}</span>
+                        <span style="grid-column:1 / -1;font-size:0.9375rem;color:var(--ink-2);overflow-wrap:anywhere"><span style="font-family:'IBM Plex Mono',monospace;font-size:0.875rem">{{ e.tracking }}</span> · {{ e.note }}</span>
+                      </li>
+                    </sc-for>
+                  </ol>
+                  <a href="#/shipments" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600">See all shipments</a>
+                </section>
+
+                <section aria-labelledby="att-h" style="animation:orv-rise 420ms 240ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
+                  <h2 id="att-h" style="margin:0;font-size:1.25rem;font-weight:600">Needs your attention</h2>
+                  <sc-if value="{{ hasDelayed }}" hint-placeholder-val="{{ true }}">
+                    <sc-for list="{{ delayed }}" as="d" hint-placeholder-count="1">
+                      <a href="{{ d.href }}" style="display:flex;flex-direction:column;gap:0.375rem;padding:1rem;border:1px solid var(--bad);border-radius:6px;background:var(--bad-tint);color:var(--ink);text-decoration:none">
+                        <span style="display:flex;align-items:center;gap:0.5rem;font-weight:600;color:var(--bad)"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:var(--bad)"></span>Delayed at {{ d.stage }}</span>
+                        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.9375rem;overflow-wrap:anywhere">{{ d.tracking }}</span>
+                        <span style="font-size:0.9375rem;text-wrap:pretty">{{ d.note }}</span>
+                      </a>
+                    </sc-for>
+                  </sc-if>
+                  <sc-if value="{{ noDelayed }}" hint-placeholder-val="{{ false }}">
+                    <p style="margin:0;color:var(--ink-2)">Nothing is delayed or held. Delays and customs holds show up here first.</p>
+                  </sc-if>
+                  <sc-if value="{{ hasUnshipped }}" hint-placeholder-val="{{ true }}">
+                    <p style="margin:0;padding-top:0.75rem;border-top:1px solid var(--line);color:var(--ink-2)">{{ unshippedLabel }} <a href="#/items">Review products</a></p>
+                  </sc-if>
+                </section>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.dashboard }}" hint-placeholder-val="{{ false }}">
+          <div data-screen-label="Dashboard" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.5rem">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem">
+              <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+                <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Insights · {{ dash.periodLabel }}</span>
+                <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Dashboard</h1>
+                <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Spend, progress and carrier speed, worked out from your own shipments. Select a week or a status to filter the list at the bottom.</p>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+                <div role="group" aria-label="Period" style="display:inline-flex;padding:0.25rem;gap:0.25rem;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface)">
+                  <sc-for list="{{ dash.periodOpts }}" as="o" hint-placeholder-count="3">
+                    <button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height:2.5rem;min-width:2.75rem;padding:0 0.875rem;border:0;border-radius:6px;font:inherit;font-size:0.9375rem;font-weight:600;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};transition:background 180ms,color 180ms">{{ o.label }}</button>
+                  </sc-for>
+                </div>
+                <div role="group" aria-label="Currency" style="display:inline-flex;padding:0.25rem;gap:0.25rem;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface)">
+                  <sc-for list="{{ dash.curOpts }}" as="o" hint-placeholder-count="3">
+                    <button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height:2.5rem;min-width:2.75rem;padding:0 0.875rem;border:0;border-radius:6px;font:inherit;font-size:0.9375rem;font-weight:600;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};transition:background 180ms,color 180ms">{{ o.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1rem">
+              <sc-for list="{{ dash.kpis }}" as="k" hint-placeholder-count="4">
+                <article style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.25rem;display:flex;flex-direction:column;gap:0.75rem;min-width:0;transition:transform 200ms,box-shadow 200ms;animation:orv-rise 420ms {{ k.delay }} cubic-bezier(.2,.7,.2,1) both" style-hover="transform:translateY(-3px);box-shadow:0 0.75rem 1.5rem rgba(20,22,21,0.08)">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem">
+                    <span style="display:flex;align-items:center;gap:0.625rem;min-width:0">
+                      <span style="width:2.25rem;height:2.25rem;border-radius:6px;display:grid;place-items:center;flex-shrink:0;background:{{ k.iconBg }};color:{{ k.iconFg }}"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem"><path d="{{ k.icon }}"></path></svg></span>
+                      <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">{{ k.eyebrow }}</span>
+                    </span>
+                    <span style="padding:0.125rem 0.5rem;border-radius:999px;border:1px solid var(--badge-border);font-size:0.75rem;font-weight:600;white-space:nowrap;background:{{ k.badgeBg }};color:{{ k.badgeFg }}">{{ k.badge }}</span>
+                  </div>
+                  <span style="font-size:1.875rem;line-height:1.1;font-weight:600;letter-spacing:-0.01em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere">{{ k.value }}</span>
+                  <span style="font-size:0.9375rem;color:var(--ink-2);text-wrap:pretty">{{ k.sub }}</span>
+                  <sc-if value="{{ k.hasMeter }}" hint-placeholder-val="{{ false }}">
+                    <span aria-hidden="true" style="height:0.375rem;border-radius:999px;background:var(--sunk);overflow:hidden"><span style="display:block;height:100%;border-radius:999px;background:var(--ok);width:{{ k.meter }};transition:width 900ms cubic-bezier(.2,.7,.2,1)"></span></span>
+                  </sc-if>
+                </article>
+              </sc-for>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:1.5rem;align-items:stretch">
+              <section aria-labelledby="dw-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 200ms cubic-bezier(.2,.7,.2,1) both">
+                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.5rem;align-items:baseline">
+                  <div style="display:flex;flex-direction:column;gap:0.125rem">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Spend by week shipped</span>
+                    <h2 id="dw-h" style="margin:0;font-size:1.25rem;font-weight:600">{{ dash.spendHeadline }}</h2>
+                  </div>
+                  <span style="font-size:0.875rem;color:var(--ink-2)">Select a week to filter</span>
+                </div>
+                <sc-if value="{{ barsVertical }}" hint-placeholder-val="{{ true }}">
+                <div role="group" aria-label="Weeks" style="display:flex;align-items:flex-end;gap:0.5rem;height:13rem;border-bottom:2px solid var(--ink)">
+                  <sc-for list="{{ dash.bars }}" as="b" hint-placeholder-count="6">
+                    <button type="button" onClick="{{ b.pick }}" aria-pressed="{{ b.on }}" aria-label="{{ b.aria }}" style="flex:1 1 0;min-width:2.75rem;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:0.375rem;padding:0;border:0;background:transparent;cursor:pointer;font:inherit;color:var(--ink);opacity:{{ b.opacity }};transition:opacity 200ms">
+                      <span style="font-size:0.75rem;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ b.valueLabel }}</span>
+                      <span style="display:block;width:100%;max-width:3.5rem;min-height:2px;border-radius:4px 4px 0 0;height:{{ b.height }};background:{{ b.fill }};transition:height 800ms cubic-bezier(.2,.7,.2,1),background 200ms;transition-delay:{{ b.delay }}"></span>
+                    </button>
+                  </sc-for>
+                </div>
+                <div aria-hidden="true" style="display:flex;gap:0.5rem;margin-top:-0.5rem">
+                  <sc-for list="{{ dash.bars }}" as="b" hint-placeholder-count="6">
+                    <span style="flex:1 1 0;min-width:2.75rem;text-align:center;font-size:0.75rem;color:var(--ink-2);white-space:nowrap">{{ b.label }}</span>
+                  </sc-for>
+                </div>
+                </sc-if>
+                <sc-if value="{{ barsHorizontal }}" hint-placeholder-val="{{ false }}">
+                  <div role="group" aria-label="Weeks" style="display:flex;flex-direction:column;gap:0.25rem">
+                    <sc-for list="{{ dash.bars }}" as="b" hint-placeholder-count="6">
+                      <button type="button" onClick="{{ b.pick }}" aria-pressed="{{ b.on }}" aria-label="{{ b.aria }}" style="display:grid;grid-template-columns:4rem minmax(0,1fr) auto;align-items:center;gap:0.75rem;min-height:2.75rem;padding:0 0.5rem;border:0;border-radius:6px;background:transparent;font:inherit;color:var(--ink);text-align:left;cursor:pointer;opacity:{{ b.opacity }};transition:opacity 200ms">
+                        <span style="font-size:0.8125rem;color:var(--ink-2);white-space:nowrap">{{ b.label }}</span>
+                        <span aria-hidden="true" style="height:0.75rem;border-radius:999px;background:var(--sunk);overflow:hidden"><span style="display:block;height:100%;border-radius:999px;width:{{ b.width }};background:{{ b.fill }};transition:width 800ms cubic-bezier(.2,.7,.2,1);transition-delay:{{ b.delay }}"></span></span>
+                        <span style="font-size:0.8125rem;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ b.valueLabel }}</span>
+                      </button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </section>
+
+              <section aria-labelledby="mix-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 260ms cubic-bezier(.2,.7,.2,1) both">
+                <div style="display:flex;flex-direction:column;gap:0.125rem">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Status mix</span>
+                  <h2 id="mix-h" style="margin:0;font-size:1.25rem;font-weight:600">{{ dash.mixHeadline }}</h2>
+                </div>
+                <div aria-hidden="true" style="display:flex;gap:2px;height:1.25rem;border-radius:4px;overflow:hidden;background:var(--sunk)">
+                  <sc-for list="{{ dash.mixBar }}" as="m" hint-placeholder-count="4">
+                    <span style="width:{{ m.width }};background:{{ m.color }};opacity:{{ m.opacity }};transition:width 900ms cubic-bezier(.2,.7,.2,1),opacity 200ms"></span>
+                  </sc-for>
+                </div>
+                <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:0.5rem">
+                  <sc-for list="{{ dash.mix }}" as="m" hint-placeholder-count="6">
+                    <li>
+                      <button type="button" onClick="{{ m.pick }}" aria-pressed="{{ m.on }}" disabled="{{ m.empty }}" style="width:100%;min-height:2.75rem;display:flex;align-items:center;gap:0.625rem;padding:0.5rem 0.75rem;border-radius:6px;font:inherit;text-align:left;cursor:pointer;border:1px solid {{ m.border }};background:{{ m.bg }};color:var(--ink);opacity:{{ m.opacity }};transition:background 180ms,border-color 180ms,opacity 200ms">
+                        <span aria-hidden="true" style="width:0.625rem;height:0.625rem;transform:rotate(45deg);flex-shrink:0;background:{{ m.color }}"></span>
+                        <span style="flex:1;font-size:0.9375rem">{{ m.label }}</span>
+                        <span style="font-weight:600;font-variant-numeric:tabular-nums">{{ m.count }}</span>
+                      </button>
+                    </li>
+                  </sc-for>
+                </ul>
+              </section>
+
+              <section aria-labelledby="leg-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 320ms cubic-bezier(.2,.7,.2,1) both">
+                <div style="display:flex;flex-direction:column;gap:0.125rem">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Average days per leg</span>
+                  <h2 id="leg-h" style="margin:0;font-size:1.25rem;font-weight:600">{{ dash.legHeadline }}</h2>
+                </div>
+                <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.75rem">
+                  <sc-for list="{{ dash.legs }}" as="l" hint-placeholder-count="7">
+                    <li style="display:flex;flex-direction:column;gap:0.375rem">
+                      <span style="display:flex;justify-content:space-between;gap:0.75rem;font-size:0.9375rem">
+                        <span style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">{{ l.label }}<sc-if value="{{ l.slowest }}" hint-placeholder-val="{{ false }}"><span style="padding:0 0.5rem;border-radius:999px;border:1px solid var(--badge-border);font-size:0.75rem;font-weight:600;background:var(--warn-tint);color:var(--warn)">Slowest leg</span></sc-if></span>
+                        <span style="font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ l.value }}</span>
+                      </span>
+                      <span aria-hidden="true" style="height:0.5rem;border-radius:999px;background:var(--sunk);overflow:hidden"><span style="display:block;height:100%;border-radius:999px;width:{{ l.width }};background:{{ l.color }};transition:width 900ms cubic-bezier(.2,.7,.2,1);transition-delay:{{ l.delay }}"></span></span>
+                    </li>
+                  </sc-for>
+                </ol>
+                <p style="margin:0;font-size:0.875rem;color:var(--ink-2)">{{ dash.legNote }}</p>
+              </section>
+
+              <section aria-labelledby="car-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 380ms cubic-bezier(.2,.7,.2,1) both">
+                <div style="display:flex;flex-direction:column;gap:0.125rem">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Carriers</span>
+                  <h2 id="car-h" style="margin:0;font-size:1.25rem;font-weight:600">{{ dash.carrierHeadline }}</h2>
+                </div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+                  <sc-for list="{{ dash.carriers }}" as="c" hint-placeholder-count="5">
+                    <li style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0.375rem 1rem;padding:0.75rem 0;border-top:1px solid var(--line)">
+                      <span style="font-weight:500">{{ c.name }}</span>
+                      <span style="font-weight:600;font-variant-numeric:tabular-nums;text-align:right">{{ c.spend }}</span>
+                      <span aria-hidden="true" style="height:0.375rem;border-radius:999px;background:var(--sunk);overflow:hidden;align-self:center"><span style="display:block;height:100%;border-radius:999px;background:var(--brand);width:{{ c.width }};transition:width 900ms cubic-bezier(.2,.7,.2,1)"></span></span>
+                      <span style="font-size:0.875rem;color:var(--ink-2);text-align:right;white-space:nowrap">{{ c.count }}</span>
+                    </li>
+                  </sc-for>
+                </ul>
+              </section>
+            </div>
+
+            <section aria-labelledby="inview-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 440ms cubic-bezier(.2,.7,.2,1) both">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem">
+                <div style="display:flex;flex-direction:column;gap:0.125rem">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">In view</span>
+                  <h2 id="inview-h" aria-live="polite" style="margin:0;font-size:1.25rem;font-weight:600">{{ dash.viewHeadline }}</h2>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                  <sc-for list="{{ dash.chips }}" as="c" hint-placeholder-count="0">
+                    <button type="button" onClick="{{ c.clear }}" aria-label="{{ c.aria }}" style="display:inline-flex;align-items:center;gap:0.5rem;min-height:2.75rem;padding:0 0.875rem;border-radius:999px;border:1px solid var(--brand);background:var(--brand-tint);color:var(--brand-ink);font:inherit;font-size:0.9375rem;font-weight:600;cursor:pointer;animation:orv-rise 240ms ease both">{{ c.label }}<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1rem;height:1rem;flex-shrink:0"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+                  </sc-for>
+                </div>
+              </div>
+              <sc-if value="{{ dash.viewEmpty }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;padding:1.25rem;border:1px dashed var(--line-strong);border-radius:8px">
+                  <span style="flex:1 1 16rem;color:var(--ink-2)">No shipments match this week and status together. Clear one filter to widen the view.</span>
+                  <button type="button" onClick="{{ dash.clearAll }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;font:inherit;font-weight:600;cursor:pointer;background:var(--surface);color:var(--ink)">Clear filters</button>
+                </div>
+              </sc-if>
+              <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:0.75rem">
+                <sc-for list="{{ dash.view }}" as="s" hint-placeholder-count="4">
+                  <li style="animation:orv-rise 320ms {{ s.delay }} cubic-bezier(.2,.7,.2,1) both">
+                    <a href="{{ s.href }}" style="height:100%;display:flex;flex-direction:column;gap:0.5rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-decoration:none;transition:border-color 180ms,transform 200ms" style-hover="border-color:var(--ink);transform:translateY(-2px)">
+                      <span style="display:flex;justify-content:space-between;gap:0.5rem;align-items:center;flex-wrap:wrap">
+                        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.9375rem;font-weight:500;overflow-wrap:anywhere">{{ s.tracking }}</span>
+                        <span style="font-weight:600;font-variant-numeric:tabular-nums">{{ s.spend }}</span>
+                      </span>
+                      <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ s.tone.bg }};color:{{ s.tone.fg }};font-size:0.875rem;font-weight:500"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ s.tone.fg }}"></span>{{ s.status }}</span>
+                      <span style="font-size:0.875rem;color:var(--ink-2)">{{ s.carrier }} · {{ s.route }} · Est. {{ s.eta }}</span>
+                    </a>
+                  </li>
+                </sc-for>
+              </ul>
+            </section>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.convert }}" hint-placeholder-val="{{ false }}">
+          <div data-screen-label="Converter" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.5rem">
+            <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+              <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Tools · Currency</span>
+              <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Peso and yuan converter</h1>
+              <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Convert between Philippine peso and Chinese yuan at your own rate. Check a seller's price before you order, or see what your budget buys in yuan.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.5rem;align-items:start">
+              <section aria-labelledby="cv-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 60ms cubic-bezier(.2,.7,.2,1) both">
+                <h2 id="cv-h" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Convert an amount</h2>
+                <label style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem;border-radius:8px;border:1px solid {{ cv.inBorder }};background:var(--bg)">
+                  <span style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;font-weight:500">You have <span style="padding:0.25rem 0.625rem;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;font-weight:500;background:{{ cv.fromBg }};color:{{ cv.fromFg }};border:1px solid var(--badge-border)">{{ cv.from }}</span></span>
+                  <span style="display:flex;align-items:baseline;gap:0.5rem;min-width:0">
+                    <span aria-hidden="true" style="font-size:1.75rem;font-weight:600;color:var(--ink-2)">{{ cv.fromSym }}</span>
+                    <input value="{{ cv.amount }}" onChange="{{ cv.setAmount }}" inputMode="decimal" autoComplete="off" aria-invalid="{{ cv.invalid }}" aria-describedby="cv-msg" style="flex:1;min-width:0;width:100%;border:0;background:transparent;color:var(--ink);font:inherit;font-size:2.25rem;font-weight:600;font-variant-numeric:tabular-nums;padding:0;outline-offset:4px">
+                  </span>
+                  <span id="cv-msg" style="font-size:0.875rem;color:{{ cv.msgColor }}">{{ cv.msg }}</span>
+                </label>
+                <div style="display:flex;justify-content:center;margin:-1.5rem 0;position:relative;z-index:1">
+                  <button type="button" onClick="{{ cv.swap }}" aria-label="{{ cv.swapLabel }}" title="{{ cv.swapLabel }}" style="width:3rem;height:3rem;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--brand-ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 0.25rem 0.75rem rgba(20,22,21,0.12);transition:background 180ms,color 180ms" style-hover="background:var(--brand);color:var(--on-brand)">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem;transform:{{ cv.spin }};transition:transform 420ms cubic-bezier(.2,.7,.2,1)"><path d="M7 4v16M3.5 16.5 7 20l3.5-3.5M17 20V4M13.5 7.5 17 4l3.5 3.5"></path></svg>
+                  </button>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem;border-radius:8px;background:var(--brand-tint);border:1px solid var(--badge-border)">
+                  <span style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;font-weight:500;color:var(--brand-ink)">You get <span style="padding:0.25rem 0.625rem;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;font-weight:500;background:{{ cv.toBg }};color:{{ cv.toFg }};border:1px solid var(--badge-border)">{{ cv.to }}</span></span>
+                  <output aria-live="polite" style="font-size:2.25rem;line-height:1.2;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);overflow-wrap:anywhere">{{ cv.result }}</output>
+                  <span style="font-size:0.875rem;color:var(--ink-2);font-variant-numeric:tabular-nums">{{ cv.rateLine }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:0.5rem">
+                  <span style="font-size:0.875rem;color:var(--ink-2)">Quick amounts</span>
+                  <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                    <sc-for list="{{ cv.quick }}" as="q" hint-placeholder-count="5">
+                      <button type="button" onClick="{{ q.pick }}" aria-pressed="{{ q.on }}" style="min-height:2.75rem;padding:0 0.875rem;border-radius:999px;border:1px solid {{ q.border }};background:{{ q.bg }};color:{{ q.fg }};font:inherit;font-size:0.9375rem;font-weight:600;font-variant-numeric:tabular-nums;cursor:pointer;transition:background 160ms,border-color 160ms">{{ q.label }}</button>
+                    </sc-for>
+                  </div>
+                </div>
+              </section>
+
+              <div style="display:flex;flex-direction:column;gap:1.5rem;min-width:0">
+                <section aria-labelledby="cvr-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 120ms cubic-bezier(.2,.7,.2,1) both">
+                  <div style="display:flex;flex-direction:column;gap:0.125rem">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Exchange rate</span>
+                    <h2 id="cvr-h" style="margin:0;font-size:1.25rem;font-weight:600">Your rate</h2>
+                  </div>
+                  <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">PHP per 1 CNY
+                    <input value="{{ cv.rate }}" onChange="{{ cv.setRate }}" inputMode="decimal" autoComplete="off" aria-invalid="{{ cv.rateInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ cv.rateBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;font-variant-numeric:tabular-nums">
+                    <span style="font-size:0.875rem;font-weight:400;color:{{ cv.rateMsgColor }}">{{ cv.rateMsg }}</span>
+                  </label>
+                  <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                    <button type="button" onClick="{{ cv.saveRate }}" disabled="{{ cv.saveDisabled }}" style="min-height:2.75rem;padding:0 1rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer;opacity:{{ cv.saveOpacity }}">Use for all prices</button>
+                    <button type="button" onClick="{{ cv.resetRate }}" disabled="{{ cv.resetDisabled }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer;opacity:{{ cv.resetOpacity }}">Back to saved rate</button>
+                  </div>
+                  <p style="margin:0;font-size:0.875rem;color:var(--ink-2);text-wrap:pretty">Orvanta doesn't fetch live market rates in this release. Enter the rate your bank, e-wallet or forwarder charges you so totals match what you actually pay.</p>
+                </section>
+
+                <section aria-labelledby="cvt-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 180ms cubic-bezier(.2,.7,.2,1) both">
+                  <div style="display:flex;flex-direction:column;gap:0.125rem">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Quick reference</span>
+                    <h2 id="cvt-h" style="margin:0;font-size:1.25rem;font-weight:600">{{ cv.tableTitle }}</h2>
+                  </div>
+                  <table style="width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums">
+                    <thead><tr style="text-align:left;font-size:0.875rem;color:var(--ink-2)"><th scope="col" style="padding:0 0 0.5rem;font-weight:500">{{ cv.from }}</th><th scope="col" style="padding:0 0 0.5rem;font-weight:500;text-align:right">{{ cv.to }}</th></tr></thead>
+                    <tbody>
+                      <sc-for list="{{ cv.table }}" as="t" hint-placeholder-count="6">
+                        <tr style="border-top:1px solid var(--line)"><td style="padding:0.625rem 0">{{ t.a }}</td><td style="padding:0.625rem 0;text-align:right;font-weight:600">{{ t.b }}</td></tr>
+                      </sc-for>
+                    </tbody>
+                  </table>
+                </section>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.shipments }}" hint-placeholder-val="{{ false }}">
+          <div data-screen-label="All shipments" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.5rem">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem">
+              <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+                <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Track · {{ shipCount }} shipments</span>
+                <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Shipments</h1>
+                <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Search by tracking number, product or order reference. Select a row to open its timeline.</p>
+              </div>
+              <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add order</a>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:flex-end">
+              <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500;flex:1 1 14rem;min-width:0">Search
+                <input type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Tracking number, product or order ref" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;width:100%">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500">Status
+                <select value="{{ statusFilter }}" onChange="{{ setStatusFilter }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <option value="all">All statuses</option>
+                  <option value="active">In progress</option>
+                  <option value="delayed">Delayed</option>
+                  <option value="delivered">Delivered</option>
+                </select>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500">Sort by
+                <select value="{{ sort }}" onChange="{{ setSort }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <option value="updated">Last update, newest</option>
+                  <option value="eta">Estimated delivery, soonest</option>
+                  <option value="stage">Progress, furthest along</option>
+                </select>
+              </label>
+            </div>
+            <p aria-live="polite" style="margin:0;font-size:0.9375rem;color:var(--ink-2)">{{ listSummary }}</p>
+
+            <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+              <section style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:2rem;border:1px dashed var(--line-strong);border-radius:8px;background:var(--surface)">
+                <h2 style="margin:0;font-size:1.25rem;font-weight:600">No shipments yet</h2>
+                <p style="margin:0;color:var(--ink-2)">Shipments you add appear here with their latest checkpoint.</p>
+                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add order</a>
+              </section>
+            </sc-if>
+            <sc-if value="{{ filteredEmpty }}" hint-placeholder-val="{{ false }}">
+              <section style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:2rem;border:1px dashed var(--line-strong);border-radius:8px;background:var(--surface)">
+                <h2 style="margin:0;font-size:1.25rem;font-weight:600">No shipments match these filters</h2>
+                <p style="margin:0;color:var(--ink-2);overflow-wrap:anywhere">Check the tracking number for a missing letter, or clear the filters to see all {{ shipCount }} shipments.</p>
+                <button type="button" onClick="{{ clearFilters }}" style="min-height:2.75rem;padding:0 1.125rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Clear filters</button>
+              </section>
+            </sc-if>
+
+            <sc-if value="{{ showShipTable }}" hint-placeholder-val="{{ true }}">
+              <div style="border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow-x:auto">
+                <table style="width:100%;border-collapse:collapse;font-size:0.9375rem">
+                  <thead>
+                    <tr style="background:var(--sunk);text-align:left">
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Tracking number</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Carrier</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Route</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Status</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Last update</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Est. delivery</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <sc-for list="{{ pageShipments }}" as="s" hint-placeholder-count="5">
+                      <tr style="border-top:1px solid var(--line)">
+                        <td style="padding:0.75rem 1rem"><a href="{{ s.href }}" style="font-family:'IBM Plex Mono',monospace;font-weight:500;display:inline-flex;align-items:center;min-height:2.75rem">{{ s.tracking }}</a></td>
+                        <td style="padding:0.75rem 1rem">{{ s.carrier }}</td>
+                        <td style="padding:0.75rem 1rem">{{ s.route }}</td>
+                        <td style="padding:0.75rem 1rem"><span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ s.tone.bg }};color:{{ s.tone.fg }};font-size:0.875rem;font-weight:500;white-space:nowrap"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ s.tone.fg }}"></span>{{ s.status }}</span></td>
+                        <td style="padding:0.75rem 1rem;color:var(--ink-2);white-space:nowrap">{{ s.updated }}</td>
+                        <td style="padding:0.75rem 1rem;color:var(--ink-2);white-space:nowrap">{{ s.eta }}</td>
+                      </tr>
+                    </sc-for>
+                  </tbody>
+                </table>
+              </div>
+            </sc-if>
+            <sc-if value="{{ showShipCards }}" hint-placeholder-val="{{ false }}">
+              <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.75rem">
+                <sc-for list="{{ pageShipments }}" as="s" hint-placeholder-count="5">
+                  <li>
+                    <a href="{{ s.href }}" style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);text-decoration:none">
+                      <span style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.5rem;align-items:center">
+                        <span style="font-family:'IBM Plex Mono',monospace;font-weight:500;overflow-wrap:anywhere">{{ s.tracking }}</span>
+                        <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ s.tone.bg }};color:{{ s.tone.fg }};font-size:0.875rem;font-weight:500"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ s.tone.fg }}"></span>{{ s.status }}</span>
+                      </span>
+                      <span style="font-size:0.9375rem;color:var(--ink-2)">{{ s.carrier }} · {{ s.route }}</span>
+                      <span style="font-size:0.875rem;color:var(--ink-2)">Updated {{ s.updated }} · Est. {{ s.eta }}</span>
+                    </a>
+                  </li>
+                </sc-for>
+              </ul>
+            </sc-if>
+
+            <sc-if value="{{ showPager }}" hint-placeholder-val="{{ true }}">
+              <nav aria-label="Pagination" style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center">
+                <button type="button" onClick="{{ prevPage }}" disabled="{{ atFirst }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Previous</button>
+                <sc-for list="{{ pages }}" as="p" hint-placeholder-count="2">
+                  <button type="button" onClick="{{ p.go }}" aria-current="{{ p.aria }}" aria-label="{{ p.aria_label }}" style="min-width:2.75rem;min-height:2.75rem;border:1px solid var(--line-strong);border-radius:6px;font:inherit;font-weight:600;cursor:pointer;background:{{ p.bg }};color:{{ p.fg }}">{{ p.n }}</button>
+                </sc-for>
+                <button type="button" onClick="{{ nextPage }}" disabled="{{ atLast }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Next</button>
+              </nav>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.shipment }}" hint-placeholder-val="{{ false }}">
+          <div data-screen-label="Shipment details" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.5rem">
+            <nav aria-label="Breadcrumb" style="font-size:0.9375rem">
+              <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0.5rem;color:var(--ink-2)">
+                <li><a href="#/shipments">Shipments</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" style="font-family:'IBM Plex Mono',monospace;overflow-wrap:anywhere">{{ d.tracking }}</li>
+              </ol>
+            </nav>
+            <header style="display:flex;flex-direction:column;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1rem">
+                <h1 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1.75rem;line-height:1.2;font-weight:500;overflow-wrap:anywhere">{{ d.tracking }}</h1>
+                <button type="button" onClick="{{ copyTracking }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:0.9375rem;cursor:pointer">Copy number</button>
+                <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.375rem 0.75rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ d.tone.bg }};color:{{ d.tone.fg }};font-weight:600"><span aria-hidden="true" style="width:0.5625rem;height:0.5625rem;transform:rotate(45deg);background:{{ d.tone.fg }}"></span>{{ d.status }}</span>
+              </div>
+              <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:1rem 2rem">
+                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Carrier</dt><dd style="margin:0;font-weight:500">{{ d.carrier }}</dd></div>
+                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Origin</dt><dd style="margin:0;font-weight:500">{{ d.origin }}</dd></div>
+                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Destination</dt><dd style="margin:0;font-weight:500">{{ d.destination }}</dd></div>
+                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Estimated delivery</dt><dd style="margin:0;font-weight:500">{{ d.eta }}</dd></div>
+                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Order reference</dt><dd style="margin:0;font-weight:500;overflow-wrap:anywhere">{{ d.orderRef }}</dd></div>
+              </dl>
+            </header>
+
+            <sc-if value="{{ d.delayed }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="display:flex;flex-direction:column;gap:0.25rem;padding:1rem 1.25rem;border:1px solid var(--bad);border-radius:6px;background:var(--bad-tint)">
+                <strong style="color:var(--bad);font-weight:600">Delayed at {{ d.stageShort }}</strong>
+                <span style="text-wrap:pretty">{{ d.delayNote }} Upload or send the document to your forwarder; the timeline updates when customs releases the parcel.</span>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:1.5rem;align-items:start">
+              <section aria-labelledby="tl-h" style="display:flex;flex-direction:column;gap:1rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
+                <h2 id="tl-h" style="margin:0;font-size:1.25rem;font-weight:600">Tracking timeline</h2>
+                <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+                  <sc-for list="{{ d.timeline }}" as="t" hint-placeholder-count="8">
+                    <li style="display:grid;grid-template-columns:1.5rem minmax(0,1fr);gap:0 0.75rem">
+                      <span aria-hidden="true" style="display:flex;flex-direction:column;align-items:center">
+                        <span style="width:{{ t.size }};height:{{ t.size }};margin-top:0.375rem;transform:rotate(45deg);flex-shrink:0;background:{{ t.fill }};border:2px solid {{ t.border }}"></span>
+                        <span style="flex:1;width:2px;min-height:1rem;background:{{ t.line }}"></span>
+                      </span>
+                      <div style="display:flex;flex-direction:column;gap:0.125rem;padding-bottom:1.25rem;min-width:0">
+                        <span style="font-weight:{{ t.weight }};color:{{ t.color }}">{{ t.label }} <span style="font-size:0.8125rem;font-weight:600;color:var(--brand-ink)">{{ t.tag }}</span></span>
+                        <span style="font-size:0.9375rem;color:var(--ink-2);overflow-wrap:anywhere">{{ t.meta }}</span>
+                        <span style="font-size:0.9375rem;color:var(--ink);overflow-wrap:anywhere">{{ t.note }}</span>
+                      </div>
+                    </li>
+                  </sc-for>
+                </ol>
+              </section>
+
+              <aside aria-label="Shipment summary" style="display:flex;flex-direction:column;gap:1.5rem;min-width:0">
+                <section aria-labelledby="cost-h" style="display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
+                  <h2 id="cost-h" style="margin:0;font-size:1.25rem;font-weight:600">Cost summary</h2>
+                  <dl style="margin:0;display:flex;flex-direction:column;gap:0.5rem">
+                    <sc-for list="{{ d.costs }}" as="c" hint-placeholder-count="3">
+                      <div style="display:flex;justify-content:space-between;gap:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--line)"><dt style="color:var(--ink-2)">{{ c.label }}</dt><dd style="margin:0;font-weight:600;font-variant-numeric:tabular-nums;text-align:right">{{ c.value }}</dd></div>
+                    </sc-for>
+                  </dl>
+                  <p style="margin:0;font-size:0.875rem;color:var(--ink-2)">PHP uses each product's saved rate. Shipping and duties are not included yet.</p>
+                </section>
+                <section aria-labelledby="ts-h" style="display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
+                  <h2 id="ts-h" style="margin:0;font-size:1.25rem;font-weight:600">Timestamps</h2>
+                  <dl style="margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9375rem">
+                    <div style="display:flex;justify-content:space-between;gap:1rem"><dt style="color:var(--ink-2)">First scan</dt><dd style="margin:0;text-align:right">{{ d.firstScan }}</dd></div>
+                    <div style="display:flex;justify-content:space-between;gap:1rem"><dt style="color:var(--ink-2)">Last update</dt><dd style="margin:0;text-align:right">{{ d.updated }}</dd></div>
+                    <div style="display:flex;justify-content:space-between;gap:1rem"><dt style="color:var(--ink-2)">Time zone</dt><dd style="margin:0;text-align:right">{{ tzLabel }}</dd></div>
+                  </dl>
+                </section>
+              </aside>
+            </div>
+
+            <section aria-labelledby="prod-h" style="display:flex;flex-direction:column;gap:1rem">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem">
+                <h2 id="prod-h" style="margin:0;font-size:1.25rem;font-weight:600">Products in this shipment</h2>
+              </div>
+              <sc-if value="{{ d.noItems }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:0;padding:1.25rem;border:1px dashed var(--line-strong);border-radius:8px;color:var(--ink-2)">No products linked to this order yet. Use Edit on a product, or add the order again with its items.</p>
+              </sc-if>
+              <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden">
+                <sc-for list="{{ d.items }}" as="it" hint-placeholder-count="2">
+                  <li style="display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem 1.5rem;padding:0.75rem 1rem;border-bottom:1px solid var(--line)">
+                    <span style="flex:1 1 14rem;min-width:0;font-weight:500;overflow-wrap:anywhere">{{ it.name }}</span>
+                    <span style="color:var(--ink-2);font-variant-numeric:tabular-nums">{{ it.qty }} × {{ it.unit }}</span>
+                    <span style="font-weight:600;font-variant-numeric:tabular-nums">{{ it.php }}</span>
+                    <button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Edit</button>
+                  </li>
+                </sc-for>
+              </ul>
+            </section>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.items }}" hint-placeholder-val="{{ false }}">
+          <div data-screen-label="Products" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.5rem">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem">
+              <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+                <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Track · {{ itemTotals.count }}</span>
+                <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Products</h1>
+                <p style="margin:0;color:var(--ink-2)">One row per item you bought. Rate: 1 CNY = {{ rateLabel }} PHP, <a href="#/settings">change in Settings</a>.</p>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:flex-end">
+              <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500;flex:1 1 14rem;min-width:0">Search products
+                <input type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Product name or tracking number" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;width:100%">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500">Shipping status
+                <select value="{{ itemStatus }}" onChange="{{ setItemStatus }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <option value="all">All</option>
+                  <option value="active">In progress</option>
+                  <option value="delayed">Delayed</option>
+                  <option value="delivered">Delivered</option>
+                  <option value="unshipped">Not shipped yet</option>
+                </select>
+              </label>
+            </div>
+
+            <sc-if value="{{ itemsEmpty }}" hint-placeholder-val="{{ false }}">
+              <section style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:2rem;border:1px dashed var(--line-strong);border-radius:8px;background:var(--surface)">
+                <h2 style="margin:0;font-size:1.25rem;font-weight:600">{{ itemsEmptyTitle }}</h2>
+                <p style="margin:0;color:var(--ink-2)">{{ itemsEmptyBody }}</p>
+                <button type="button" onClick="{{ itemsEmptyAction }}" style="min-height:2.75rem;padding:0 1.125rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">{{ itemsEmptyCta }}</button>
+              </section>
+            </sc-if>
+
+            <sc-if value="{{ showItemTable }}" hint-placeholder-val="{{ true }}">
+              <div style="border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow-x:auto">
+                <table style="width:100%;border-collapse:collapse;font-size:0.9375rem">
+                  <thead>
+                    <tr style="background:var(--sunk);text-align:left">
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Product</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600;text-align:right">Qty</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600;text-align:right">Unit (CNY)</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600;text-align:right">Subtotal (CNY)</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600;text-align:right">PHP</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Tracking</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Status</th>
+                      <th scope="col" style="padding:0.75rem 1rem"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Actions</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <sc-for list="{{ itemRows }}" as="it" hint-placeholder-count="8">
+                      <tr style="border-top:1px solid var(--line)">
+                        <td style="padding:0.75rem 1rem;font-weight:500;max-width:18rem;overflow-wrap:anywhere">{{ it.name }}</td>
+                        <td style="padding:0.75rem 1rem;text-align:right;font-variant-numeric:tabular-nums">{{ it.qty }}</td>
+                        <td style="padding:0.75rem 1rem;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap">{{ it.unit }}</td>
+                        <td style="padding:0.75rem 1rem;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap">{{ it.sub }}</td>
+                        <td style="padding:0.75rem 1rem;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap">{{ it.php }}</td>
+                        <td style="padding:0.75rem 1rem"><sc-if value="{{ it.hasShip }}" hint-placeholder-val="{{ true }}"><a href="{{ it.href }}" style="font-family:'IBM Plex Mono',monospace;font-size:0.875rem">{{ it.tracking }}</a></sc-if><sc-if value="{{ it.noShip }}" hint-placeholder-val="{{ false }}"><span style="color:var(--ink-2)">None yet</span></sc-if></td>
+                        <td style="padding:0.75rem 1rem"><span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ it.tone.bg }};color:{{ it.tone.fg }};font-size:0.875rem;font-weight:500;white-space:nowrap"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ it.tone.fg }}"></span>{{ it.status }}</span></td>
+                        <td style="padding:0.5rem 1rem;text-align:right"><button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Edit</button></td>
+                      </tr>
+                    </sc-for>
+                  </tbody>
+                  <tfoot>
+                    <tr style="border-top:2px solid var(--ink);background:var(--sunk)">
+                      <th scope="row" style="padding:0.75rem 1rem;text-align:left;font-weight:600">Total, {{ itemTotals.count }}</th>
+                      <td style="padding:0.75rem 1rem;text-align:right;font-weight:600;font-variant-numeric:tabular-nums">{{ itemTotals.qty }}</td>
+                      <td></td>
+                      <td style="padding:0.75rem 1rem;text-align:right;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ itemTotals.cny }}</td>
+                      <td style="padding:0.75rem 1rem;text-align:right;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ itemTotals.php }}</td>
+                      <td colspan="3"></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </sc-if>
+            <sc-if value="{{ showItemCards }}" hint-placeholder-val="{{ false }}">
+              <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.75rem">
+                <sc-for list="{{ itemRows }}" as="it" hint-placeholder-count="6">
+                  <li style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
+                    <span style="font-weight:600;overflow-wrap:anywhere">{{ it.name }}</span>
+                    <span style="display:flex;flex-wrap:wrap;gap:0.25rem 1rem;font-size:0.9375rem;color:var(--ink-2);font-variant-numeric:tabular-nums"><span>{{ it.qty }} × {{ it.unit }}</span><span>{{ it.sub }}</span><span style="color:var(--ink);font-weight:600">{{ it.php }}</span></span>
+                    <span style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;justify-content:space-between">
+                      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ it.tone.bg }};color:{{ it.tone.fg }};font-size:0.875rem;font-weight:500"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ it.tone.fg }}"></span>{{ it.status }}</span>
+                      <button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Edit</button>
+                    </span>
+                  </li>
+                </sc-for>
+              </ul>
+              <p style="margin:0;padding:1rem;border-top:2px solid var(--ink);font-weight:600;display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem"><span>Total, {{ itemTotals.count }}</span><span>{{ itemTotals.cny }}</span><span>{{ itemTotals.php }}</span></p>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.add }}" hint-placeholder-val="{{ false }}">
+          <div data-screen-label="Add shipment" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.5rem;max-width:48rem">
+            <nav aria-label="Breadcrumb" style="font-size:0.9375rem">
+              <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0.5rem;color:var(--ink-2)">
+                <li><a href="#/shipments">Shipments</a></li><li aria-hidden="true">/</li><li aria-current="page">Add order</li>
+              </ol>
+            </nav>
+            <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+                <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Manage · New order</span>
+                <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Add order</h1>
+                <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Enter the tracking number your seller or forwarder sent for this order, then list what you bought.</p>
+            </div>
+            <sc-if value="{{ addHasErrors }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="padding:1rem 1.25rem;border:1px solid var(--bad);border-radius:6px;background:var(--bad-tint);color:var(--bad);font-weight:600">{{ addErrorSummary }}</div>
+            </sc-if>
+            <form onSubmit="{{ submitAdd }}" noValidate="{{ true }}" style="display:flex;flex-direction:column;gap:2rem">
+              <fieldset style="margin:0;padding:0;border:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.25rem">
+                <legend style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;padding:0">Shipment</legend>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;grid-column:1 / -1">Tracking number
+                  <input name="tracking" value="{{ add.tracking }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.trackingInvalid }}" aria-describedby="trk-help" autoComplete="off" spellCheck="false" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ addErr.trackingBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:1rem">
+                  <span id="trk-help" style="font-size:0.875rem;font-weight:400;color:{{ addErr.trackingColor }}">{{ addErr.trackingMsg }}</span>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Carrier
+                  <select name="carrier" value="{{ add.carrier }}" onChange="{{ setAddField }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                    <sc-for list="{{ carriers }}" as="c" hint-placeholder-count="6"><option value="{{ c }}">{{ c }}</option></sc-for>
+                  </select>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Current status
+                  <select name="stage" value="{{ add.stage }}" onChange="{{ setAddField }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                    <sc-for list="{{ stageOptions }}" as="o" hint-placeholder-count="8"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+                  </select>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Origin
+                  <input name="origin" value="{{ add.origin }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.originInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ addErr.originBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <span style="font-size:0.875rem;font-weight:400;color:{{ addErr.originColor }}">{{ addErr.originMsg }}</span>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Destination
+                  <input name="destination" value="{{ add.destination }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.destinationInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ addErr.destinationBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <span style="font-size:0.875rem;font-weight:400;color:{{ addErr.destinationColor }}">{{ addErr.destinationMsg }}</span>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Order reference <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional</span>
+                  <input name="orderRef" value="{{ add.orderRef }}" onChange="{{ setAddField }}" placeholder="e.g. TB-4402917735" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Estimated delivery <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional, if the carrier gave one</span>
+                  <input type="date" name="eta" value="{{ add.eta }}" onChange="{{ setAddField }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                </label>
+              </fieldset>
+
+              <fieldset style="margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:1rem">
+                <legend style="font-size:1.25rem;font-weight:600;margin-bottom:0.25rem;padding:0">Products in this order</legend>
+                <p style="margin:0;color:var(--ink-2)">Add each item with its CNY price. PHP is worked out at 1 CNY = {{ rateLabel }} PHP.</p>
+                <sc-for list="{{ addLines }}" as="ln" hint-placeholder-count="1">
+                  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:0.75rem;align-items:end;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
+                    <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;grid-column:1 / -1;min-width:0">Product
+                      <input data-index="{{ ln.i }}" data-field="name" value="{{ ln.name }}" onChange="{{ setLine }}" aria-invalid="{{ ln.nameInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ ln.nameBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+                    </label>
+                    <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Qty
+                      <input type="number" min="1" step="1" inputMode="numeric" data-index="{{ ln.i }}" data-field="qty" value="{{ ln.qty }}" onChange="{{ setLine }}" aria-invalid="{{ ln.qtyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ ln.qtyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+                    </label>
+                    <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Unit price (CNY)
+                      <input type="number" min="0" step="0.01" inputMode="decimal" data-index="{{ ln.i }}" data-field="cny" value="{{ ln.cny }}" onChange="{{ setLine }}" aria-invalid="{{ ln.cnyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ ln.cnyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+                    </label>
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;grid-column:1 / -1">
+                      <span style="font-size:0.9375rem;color:{{ ln.msgColor }}">{{ ln.msg }}</span>
+                      <button type="button" onClick="{{ ln.remove }}" aria-label="{{ ln.removeLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Remove</button>
+                    </div>
+                  </div>
+                </sc-for>
+                <button type="button" onClick="{{ addLine }}" style="align-self:flex-start;min-height:2.75rem;padding:0 1rem;border:1px dashed var(--line-strong);border-radius:6px;background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Add another product</button>
+              </fieldset>
+
+              <div style="display:flex;flex-wrap:wrap;gap:0.75rem;padding-top:1.5rem;border-top:1px solid var(--line)">
+                <button type="submit" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer">Save order</button>
+                <a href="#/shipments" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1rem;font-weight:600">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.settings }}" hint-placeholder-val="{{ false }}">
+          <div data-screen-label="Settings" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:2rem;max-width:44rem">
+            <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+                <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Manage · Preferences</span>
+                <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Settings</h1>
+                <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Display, region, currency and notification choices. Changes save on this device straight away.</p>
+            </div>
+
+            <section aria-labelledby="set-display" style="display:flex;flex-direction:column;gap:1rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
+              <h2 id="set-display" style="margin:0;font-size:1.25rem;font-weight:600">Display</h2>
+              <fieldset style="margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:0.5rem">
+                <legend style="font-weight:500;margin-bottom:0.5rem;padding:0">Theme</legend>
+                <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                  <sc-for list="{{ themeOpts }}" as="o" hint-placeholder-count="2">
+                    <button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height:2.75rem;padding:0 1rem;border:2px solid {{ o.border }};border-radius:6px;background:{{ o.bg }};color:{{ o.fg }};font:inherit;font-weight:600;cursor:pointer">{{ o.label }}</button>
+                  </sc-for>
+                </div>
+              </fieldset>
+              <fieldset style="margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:0.5rem">
+                <legend style="font-weight:500;margin-bottom:0.5rem;padding:0">Text size</legend>
+                <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                  <sc-for list="{{ sizeOpts }}" as="o" hint-placeholder-count="3">
+                    <button type="button" onClick="{{ o.pick }}" aria-pressed="{{ o.on }}" style="min-height:2.75rem;padding:0 1rem;border:2px solid {{ o.border }};border-radius:6px;background:{{ o.bg }};color:{{ o.fg }};font:inherit;font-weight:600;cursor:pointer">{{ o.label }}</button>
+                  </sc-for>
+                </div>
+              </fieldset>
+            </section>
+
+            <section aria-labelledby="set-profile" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
+              <h2 id="set-profile" style="margin:0;font-size:1.25rem;font-weight:600;grid-column:1 / -1">Profile and region</h2>
+              <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Name
+                <input name="name" value="{{ settings.name }}" onChange="{{ setSetting }}" autoComplete="name" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Email for delivery updates
+                <input type="email" name="email" value="{{ settings.email }}" onChange="{{ setSetting }}" autoComplete="email" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Language and format
+                <select name="locale" value="{{ settings.locale }}" onChange="{{ setSetting }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <option value="en-PH">English (Philippines)</option>
+                  <option value="fil-PH">Filipino (Philippines)</option>
+                  <option value="zh-CN">Chinese (Simplified)</option>
+                  <option value="en-US">English (United States)</option>
+                </select>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Time zone
+                <select name="tz" value="{{ settings.tz }}" onChange="{{ setSetting }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <option value="Asia/Manila">Manila (UTC+8)</option>
+                  <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
+                  <option value="UTC">UTC</option>
+                </select>
+              </label>
+            </section>
+
+            <section aria-labelledby="set-cur" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
+              <h2 id="set-cur" style="margin:0;font-size:1.25rem;font-weight:600;grid-column:1 / -1">Currency</h2>
+              <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Show totals first in
+                <select name="primary" value="{{ settings.primary }}" onChange="{{ setSetting }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <option value="PHP">Philippine peso (PHP)</option>
+                  <option value="CNY">Chinese yuan (CNY)</option>
+                </select>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Default rate, PHP per 1 CNY
+                <input type="number" name="rate" step="0.0001" min="0" inputMode="decimal" value="{{ settings.rate }}" onChange="{{ setSetting }}" aria-invalid="{{ rateInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ rateBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                <span style="font-size:0.875rem;font-weight:400;color:{{ rateMsgColor }}">{{ rateMsg }}</span>
+              </label>
+            </section>
+
+            <section aria-labelledby="set-notify" style="display:flex;flex-direction:column;gap:0.25rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
+              <h2 id="set-notify" style="margin:0 0 0.75rem;font-size:1.25rem;font-weight:600">Notifications</h2>
+              <sc-for list="{{ notifyOpts }}" as="o" hint-placeholder-count="4">
+                <label style="display:flex;align-items:flex-start;gap:0.75rem;min-height:2.75rem;padding:0.5rem 0;cursor:pointer">
+                  <input type="checkbox" checked="{{ o.on }}" onChange="{{ o.toggle }}" style="width:1.25rem;height:1.25rem;margin:0.125rem 0 0;accent-color:var(--brand);flex-shrink:0">
+                  <span style="display:flex;flex-direction:column"><span style="font-weight:500">{{ o.label }}</span><span style="font-size:0.9375rem;color:var(--ink-2)">{{ o.hint }}</span></span>
+                </label>
+              </sc-for>
+            </section>
+
+            <section aria-labelledby="set-privacy" style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start">
+              <h2 id="set-privacy" style="margin:0;font-size:1.25rem;font-weight:600">Privacy and security</h2>
+              <p style="margin:0;color:var(--ink-2);text-wrap:pretty">In this release your shipments, prices and settings are stored only in this browser. Sign-in, session management and carrier credentials arrive with the account service in a later release.</p>
+              <button type="button" onClick="{{ askReset }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer">Delete data on this device</button>
+            </section>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ r.notfound }}" hint-placeholder-val="{{ false }}">
+          <section data-screen-label="404" style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;max-width:36rem;padding-top:2rem">
+            <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}"><img src="assets/logo/orvanta-symbol-black.svg" alt="" style="width:3.5rem;height:3.5rem;opacity:0.35"></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}"><img src="assets/logo/orvanta-symbol-white.svg" alt="" style="width:3.5rem;height:3.5rem;opacity:0.35"></sc-if>
+            <p style="margin:0;font-family:'IBM Plex Mono',monospace;color:var(--ink-2)">404</p>
+            <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600">{{ nfTitle }}</h1>
+            <p style="margin:0;color:var(--ink-2);text-wrap:pretty">{{ nfBody }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+              <a href="#/shipments" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Go to shipments</a>
+              <a href="#/overview" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1rem;font-weight:600">Back to overview</a>
+            </div>
+          </section>
+        </sc-if>
+
+      </sc-if>
+    </main>
+    <footer style="border-top:1px solid var(--line);background:var(--surface);padding:1.25rem 5.5rem 1.25rem 1.5rem;display:flex;flex-wrap:wrap;gap:0.75rem 2rem;align-items:center;justify-content:space-between;font-size:0.875rem;color:var(--ink-2)">
+      <div style="display:flex;align-items:center;gap:0.625rem">
+        <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}"><img src="assets/logo/orvanta-symbol.svg" alt="" style="width:1.25rem;height:1.25rem"></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}"><img src="assets/logo/orvanta-symbol-reversed.svg" alt="" style="width:1.25rem;height:1.25rem"></sc-if>
+        <span>Orvanta v1.3.0 · China to Philippines shipment tracking</span>
+      </div>
+      <span>Times in {{ tzLabel }} · 1 CNY = {{ rateLabel }} PHP, your rate</span>
+      <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;align-items:center;gap:0 1.25rem">
+        <a href="#/dashboard" style="display:inline-flex;align-items:center;min-height:2.75rem">Dashboard</a>
+        <a href="#/shipments" style="display:inline-flex;align-items:center;min-height:2.75rem">Shipments</a>
+        <a href="#/settings" style="display:inline-flex;align-items:center;min-height:2.75rem">Settings</a>
+      </nav>
+    </footer>
+  </div>
+</div>
+
+<sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeDrawer }}" aria-hidden="true" style="position:fixed;inset:0;z-index:35;background:rgba(20,22,21,0.5);animation:orv-fade 200ms ease both"></div>
+</sc-if>
+
+<sc-if value="{{ dialogOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ backdropClose }}" style="position:fixed;inset:0;z-index:20;background:rgba(20,22,21,0.55);display:flex;align-items:center;justify-content:center;padding:1rem">
+    <div role="dialog" aria-modal="true" aria-labelledby="dlg-h" style="width:100%;max-width:34rem;max-height:calc(100vh - 2rem);overflow:auto;background:var(--surface);border:1px solid var(--line-strong);border-radius:8px;box-shadow:0 1.5rem 3rem rgba(20,22,21,0.25);padding:1.5rem;display:flex;flex-direction:column;gap:1.25rem">
+
+      <sc-if value="{{ dlg.item }}" hint-placeholder-val="{{ false }}">
+        <form onSubmit="{{ saveItem }}" noValidate="{{ true }}" style="display:flex;flex-direction:column;gap:1rem">
+          <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">{{ itemDlgTitle }}</h2>
+          <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Product description
+            <textarea name="name" rows="2" autoFocus="{{ true }}" value="{{ draft.name }}" onChange="{{ setDraft }}" aria-invalid="{{ dErr.nameInvalid }}" style="padding:0.625rem 0.875rem;border:1px solid {{ dErr.nameBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;resize:vertical"></textarea>
+            <span style="font-size:0.875rem;font-weight:400;color:var(--bad)">{{ dErr.name }}</span>
+          </label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:1rem">
+            <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Quantity
+              <input type="number" name="qty" min="1" step="1" inputMode="numeric" value="{{ draft.qty }}" onChange="{{ setDraft }}" aria-invalid="{{ dErr.qtyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ dErr.qtyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+              <span style="font-size:0.875rem;font-weight:400;color:var(--bad)">{{ dErr.qty }}</span>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Unit price (CNY)
+              <input type="number" name="cny" min="0" step="0.01" inputMode="decimal" value="{{ draft.cny }}" onChange="{{ setDraft }}" aria-invalid="{{ dErr.cnyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ dErr.cnyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+              <span style="font-size:0.875rem;font-weight:400;color:var(--bad)">{{ dErr.cny }}</span>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Rate, PHP per CNY
+              <input type="number" name="rate" min="0" step="0.0001" inputMode="decimal" value="{{ draft.rate }}" onChange="{{ setDraft }}" placeholder="{{ rateLabel }}" aria-invalid="{{ dErr.rateInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ dErr.rateBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+              <span style="font-size:0.875rem;font-weight:400;color:var(--ink-2)">{{ dErr.rate }}</span>
+            </label>
+          </div>
+          <p aria-live="polite" style="margin:0;padding:0.75rem 1rem;border-radius:6px;background:var(--sunk);display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.5rem"><span>{{ draftCalc.cny }}</span><strong style="font-weight:600">{{ draftCalc.php }}</strong></p>
+          <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Shipment
+            <select name="shipmentId" value="{{ draft.shipmentId }}" onChange="{{ setDraft }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+              <sc-for list="{{ shipOptions }}" as="o" hint-placeholder-count="4"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Notes <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional, e.g. colour, size or seller</span>
+            <textarea name="notes" rows="2" value="{{ draft.notes }}" onChange="{{ setDraft }}" style="padding:0.625rem 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;resize:vertical"></textarea>
+          </label>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:space-between;align-items:center">
+            <sc-if value="{{ draftIsEdit }}" hint-placeholder-val="{{ false }}">
+              <button type="button" onClick="{{ deleteItem }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer">Delete product</button>
+            </sc-if>
+            <div style="display:flex;gap:0.75rem;margin-left:auto">
+              <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Cancel</button>
+              <button type="submit" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer">Save product</button>
+            </div>
+          </div>
+        </form>
+      </sc-if>
+
+      <sc-if value="{{ dlg.reset }}" hint-placeholder-val="{{ false }}">
+        <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">Delete everything on this device?</h2>
+        <p style="margin:0;text-wrap:pretty">This removes all shipments, products and settings stored in this browser, in both workspaces, and restores the sample data. It can't be undone.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:flex-end">
+          <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Keep my data</button>
+          <button type="button" onClick="{{ doReset }}" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--bad);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer">Delete and restore sample</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<button type="button" onClick="{{ toTop }}" aria-label="{{ top.aria }}" tabIndex="{{ top.tab }}" aria-hidden="{{ top.hidden }}" style="position:fixed;right:1.5rem;bottom:calc(1.5rem + env(safe-area-inset-bottom));z-index:25;width:3.5rem;height:3.5rem;padding:0;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--brand-ink);cursor:pointer;display:grid;place-items:center;box-shadow:0 0.5rem 1.25rem rgba(20,22,21,0.14);opacity:{{ top.opacity }};transform:{{ top.tf }};pointer-events:{{ top.pe }};transition:opacity 260ms ease,transform 320ms cubic-bezier(.2,.7,.2,1),background 180ms,color 180ms,box-shadow 180ms" style-hover="background:var(--brand);color:var(--on-brand);box-shadow:0 0.75rem 1.75rem rgba(20,22,21,0.22)">
+  <svg aria-hidden="true" viewBox="0 0 56 56" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+    <circle cx="28" cy="28" r="23" fill="none" stroke="var(--line)" stroke-width="3"></circle>
+    <circle cx="28" cy="28" r="23" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="144.51" stroke-dashoffset="{{ top.offset }}" transform="rotate(-90 28 28)" style="transition:stroke-dashoffset 120ms linear"></circle>
+    <rect x="{{ top.dx }}" y="{{ top.dy }}" width="7" height="7" fill="var(--accent)" transform="{{ top.drot }}"></rect>
+  </svg>
+  <span key="{{ top.launchKey }}" style="position:relative;display:flex;animation:{{ top.anim }}"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></span>
+</button>
+
+<sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+  <div role="status" style="position:fixed;left:50%;transform:translateX(-50%);bottom:1.5rem;z-index:30;max-width:calc(100vw - 2rem);padding:0.875rem 1.25rem;border-radius:6px;background:var(--ink);color:var(--bg);font-weight:500;box-shadow:0 0.5rem 1.5rem rgba(20,22,21,0.25)">{{ toast }}</div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;dataState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;live&quot;,&quot;loading&quot;,&quot;empty&quot;,&quot;error&quot;,&quot;offline&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;'live'|'loading'|'empty'|'error'|'offline'&quot;,&quot;section&quot;:&quot;System states&quot;}}">
+const STAGES=[
+  {label:'Warehouse processing',short:'Warehouse'},
+  {label:'Export customs declaration',short:'CN customs'},
+  {label:'International transit',short:'In transit'},
+  {label:'Arrived at Manila port',short:'PH port'},
+  {label:'Philippine customs clearance',short:'PH customs'},
+  {label:'Handed to J&T Express',short:'J&T handover'},
+  {label:'Out for delivery',short:'Out for delivery'},
+  {label:'Delivered',short:'Delivered'}];
+const PLACE=['Consolidation warehouse','Export customs office','At sea, South China Sea','Manila International Container Terminal','Bureau of Customs, Port of Manila','J&T Express hub, Pasig'];
+const CARRIERS=['YTO Express','SF Express','ZTO Express','Cainiao','J&T Express','Other'];
+const KEY='orvanta.v1';
+const TONES={neutral:{bg:'var(--sunk)',fg:'var(--ink-2)'},brand:{bg:'var(--brand-tint)',fg:'var(--brand-ink)'},ok:{bg:'var(--ok-tint)',fg:'var(--ok)'},bad:{bg:'var(--bad-tint)',fg:'var(--bad)'}};
+const chain=(dates,notes)=>dates.map((at,i)=>({stage:i,at:at.length<11?at+'T10:00:00+08:00':at+':00+08:00',note:(notes&&notes[i])||'',source:'Carrier sync'}));
+function seed(){
+  const shipments=[
+    {id:'s1',tracking:'YT2426815530712',carrier:'YTO Express',origin:'Guangzhou, CN',destination:'Quezon City, PH',orderRef:'TB-4402917735',stage:2,delayed:false,delayNote:'',eta:'2026-10-24',
+      events:chain(['2026-10-04T10:20','2026-10-07T15:05','2026-10-10T22:40'],['Received and weighed, 4.2 kg','Export declaration filed','Departed Nansha Port by sea'])},
+    {id:'s2',tracking:'SF1428837610293',carrier:'SF Express',origin:'Shenzhen, CN',destination:'Pasig, PH',orderRef:'1688-77310642',stage:4,delayed:true,delayNote:'Held for document check. Customs asked for the commercial invoice.',eta:'',
+      events:chain(['2026-09-22T11:00','2026-09-25T09:30','2026-09-27T18:10','2026-10-06T08:15','2026-10-08T13:30'],['Received and weighed, 2.1 kg','Export declaration filed','Departed Shekou Port by sea','Container unloaded','Held: commercial invoice requested'])},
+    {id:'s3',tracking:'JT6100293847562',carrier:'J&T Express',origin:'Yiwu, CN',destination:'Makati, PH',orderRef:'TB-4398120064',stage:7,delayed:false,delayNote:'',eta:'2026-10-09',
+      events:chain(['2026-09-15T14:00','2026-09-17T10:00','2026-09-19T20:30','2026-09-29T07:40','2026-10-02T16:00','2026-10-06T09:10','2026-10-09T08:05','2026-10-09T14:22'],['','','','','Released by customs','J&T waybill assigned','','Received at front desk'])},
+    {id:'s4',tracking:'ZTO738201946655',carrier:'ZTO Express',origin:'Guangzhou, CN',destination:'Cebu City, PH',orderRef:'',stage:0,delayed:false,delayNote:'',eta:'2026-11-02',
+      events:chain(['2026-10-14T16:48'],['Arrived at warehouse, waiting for consolidation'])},
+    {id:'s5',tracking:'YT2426815530988',carrier:'YTO Express',origin:'Guangzhou, CN',destination:'Quezon City, PH',orderRef:'TB-4401733920',stage:5,delayed:false,delayNote:'',eta:'2026-10-17',
+      events:chain(['2026-09-26T12:00','2026-09-29T09:00','2026-10-01T21:15','2026-10-09T06:30','2026-10-12T15:45','2026-10-14T10:25'],['','','','','Released by customs','J&T waybill 820117463392 assigned'])},
+    {id:'s6',tracking:'CNPH20260911044',carrier:'Cainiao',origin:'Hangzhou, CN',destination:'Taguig, PH',orderRef:'AE-8150034417',stage:7,delayed:false,delayNote:'',eta:'2026-09-30',
+      events:chain(['2026-09-11T09:00','2026-09-13T10:30','2026-09-15T19:00','2026-09-23T07:10','2026-09-25T14:00','2026-09-28T11:20','2026-09-30T08:30','2026-09-30T16:40'],['','','','','Released by customs','','','Received by recipient'])},
+    {id:'s7',tracking:'JT6100293850019',carrier:'J&T Express',origin:'Shenzhen, CN',destination:'Quezon City, PH',orderRef:'',stage:6,delayed:false,delayNote:'',eta:'2026-10-15',
+      events:chain(['2026-09-28T13:00','2026-09-30T10:00','2026-10-02T20:00','2026-10-08T07:00','2026-10-10T15:30','2026-10-13T09:40','2026-10-15T07:50'],['','','','','Released by customs','','Rider assigned'])}];
+  const I=(id,name,qty,cny,shipmentId,notes)=>({id,name,qty,cny,rate:null,shipmentId,notes:notes||''});
+  const items=[
+    I('i1','Stainless steel rice cooker inner pot, 5 L',2,68,'s1'),I('i2','Linen blackout curtains, 140 x 260 cm',2,89.5,'s1','Colour: oat'),I('i3','Bamboo drawer organisers, set of 6',1,39.9,'s1'),
+    I('i4','Mechanical keyboard, 87 keys, brown switches',1,329,'s2'),I('i5','Braided USB-C cables, 2 m',4,12.8,'s2'),
+    I('i6','Cotton bedsheet set, queen',1,158,'s3'),I('i7','Ceramic pour-over coffee dripper',1,45,'s3'),
+    I('i8','Folding aluminium step ladder, 3 steps',1,199,'s4'),I('i9','Silicone kitchen utensil set, 12 pieces',1,56.5,'s4'),
+    I('i10','Children\u2019s rain boots, size 28',2,35,'s5'),I('i11','LED desk lamp with clamp',1,118,'s5'),
+    I('i12','Wireless earbuds charging case',1,49.9,'s6'),
+    I('i13','Insulated lunch bags',3,22,'s7'),I('i14','Wall-mounted shoe rack, white',1,145,'s7'),
+    I('i15','Aluminium phone stand',1,19.9,null,'Seller ships next week')];
+  return {personal:{shipments,items},resale:{shipments:[],items:[]}};
+}
+const DEFAULT_SETTINGS={name:'',email:'',locale:'en-PH',tz:'Asia/Manila',primary:'PHP',rate:'7.95',theme:'light',sidebar:true,textSize:'m',notify:{milestones:true,customs:true,delays:true,email:false}};
+const blankAdd=()=>({tracking:'',carrier:'YTO Express',stage:'0',origin:'Guangzhou, CN',destination:'',orderRef:'',eta:'',lines:[{name:'',qty:'1',cny:''}]});
+function parseHash(){
+  const h=(typeof location!=='undefined'?location.hash:'').replace(/^#\/?/,'');
+  const [a,b]=h.split('/');
+  if(!a) return {route:'overview',param:null};
+  if(['overview','dashboard','shipments','items','add','convert','settings'].includes(a)) return {route:a,param:null};
+  if(a==='shipment'&&b) return {route:'shipment',param:decodeURIComponent(b)};
+  return {route:'notfound',param:h};
+}
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}}
+
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    const saved=load();
+    this.state={ws:'personal',data:(saved&&saved.data)||seed(),settings:Object.assign({},DEFAULT_SETTINGS,(saved&&saved.settings)||{}),
+      ...parseHash(),q:'',statusFilter:'all',sort:'updated',page:1,itemStatus:'all',
+      add:blankAdd(),addErrors:null,dialog:null,draft:null,draftErrors:null,toast:'',override:null,drawer:false,anim:true,t:1,dashPeriod:'90',pipeSel:null,cv:{amount:'1000',dir:'PHP',rate:null,spin:0},scrollP:0,scrollY:0,launch:0,dashCur:null,dashWeek:null,dashStatus:null,
+      w:typeof window!=='undefined'?window.innerWidth:1280};
+    this.searchRef=React.createRef();
+  }
+  componentDidMount(){
+    this.onHash=()=>{this.setState({...parseHash(),page:1,drawer:false});window.scrollTo(0,0);this.startAnim()};
+    this.onResize=()=>this.setState(s=>({w:window.innerWidth,drawer:window.innerWidth>=1024?false:s.drawer}));
+    this.onKey=e=>{if(e.key==='Escape'){if(this.state.dialog)this.closeDialog();else if(this.state.drawer)this.setState({drawer:false})}};
+    this.onScroll=()=>{if(this.sr)return;this.sr=requestAnimationFrame(()=>{this.sr=0;const max=document.documentElement.scrollHeight-window.innerHeight;this.setState({scrollY:window.scrollY,scrollP:max>0?Math.min(1,window.scrollY/max):0})})};
+    window.addEventListener('scroll',this.onScroll,{passive:true});
+    window.addEventListener('hashchange',this.onHash);window.addEventListener('resize',this.onResize);document.addEventListener('keydown',this.onKey);
+    this.applyDisplay();
+    this.startAnim();
+  }
+  componentWillUnmount(){window.removeEventListener('scroll',this.onScroll);cancelAnimationFrame(this.raf);window.removeEventListener('hashchange',this.onHash);window.removeEventListener('resize',this.onResize);document.removeEventListener('keydown',this.onKey)}
+  componentDidUpdate(){
+    const s=this.state,p=this._prev||{};
+    if(p.data!==s.data||p.settings!==s.settings){try{localStorage.setItem(KEY,JSON.stringify({ws:s.ws,data:s.data,settings:s.settings}))}catch(e){}}
+    if(p.settings!==s.settings)this.applyDisplay();
+    const dsChanged=this._prevDs!==undefined&&this._prevDs!==this.props.dataState;
+    this._prev={data:s.data,settings:s.settings};this._prevDs=this.props.dataState;
+    if(dsChanged&&s.override)this.setState({override:null});
+  }
+  startAnim(){
+    cancelAnimationFrame(this.raf);
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){this.setState({anim:true,t:1});return}
+    this.setState({anim:false,t:0});
+    let t0=null;
+    const step=now=>{if(t0===null)t0=now;const p=Math.min(1,(now-t0)/800);this.setState({anim:true,t:p});if(p<1)this.raf=requestAnimationFrame(step)};
+    this.raf=requestAnimationFrame(()=>{this.raf=requestAnimationFrame(step)});
+  }
+  applyDisplay(){
+    const st=this.state.settings,r=document.documentElement;
+    r.style.fontSize={s:'93.75%',m:'100%',l:'118.75%'}[st.textSize]||'100%';
+    if(st.theme==='hc'||st.theme==='dark')r.dataset.theme=st.theme;else delete r.dataset.theme;
+  }
+  toast(msg){clearTimeout(this.tt);this.setState({toast:msg});this.tt=setTimeout(()=>this.setState({toast:''}),3200)}
+  rate(){const r=parseFloat(this.state.settings.rate);return r>0?r:7.95}
+  fmt(){
+    const {locale,tz}=this.state.settings;
+    const dt=new Intl.DateTimeFormat(locale,{timeZone:tz,month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+    const d=new Intl.DateTimeFormat(locale,{timeZone:tz,month:'short',day:'numeric',year:'numeric'});
+    const php=new Intl.NumberFormat(locale,{style:'currency',currency:'PHP'});
+    const cny=new Intl.NumberFormat(locale,{style:'currency',currency:'CNY'});
+    return {dt:x=>dt.format(new Date(x)),d:x=>x?d.format(new Date(x+'T12:00:00+08:00')):'Not given yet',php:x=>php.format(x),cny:x=>cny.format(x)};
+  }
+  wsData(){const eff=this.props.dataState==='empty'?{shipments:[],items:[]}:this.state.data[this.state.ws];return eff||{shipments:[],items:[]}}
+  setWsData(fn){this.setState(s=>({data:{...s.data,[s.ws]:fn(s.data[s.ws])}}))}
+  statusOf(sh){
+    if(!sh) return {label:'Not shipped yet',tone:TONES.neutral,key:'unshipped'};
+    if(sh.delayed) return {label:'Delayed, '+STAGES[sh.stage].short,tone:TONES.bad,key:'delayed'};
+    if(sh.stage===7) return {label:'Delivered',tone:TONES.ok,key:'delivered'};
+    return {label:STAGES[sh.stage].label,tone:sh.stage<2?TONES.neutral:TONES.brand,key:'active'};
+  }
+  lastAt(sh){return sh.events.length?sh.events[sh.events.length-1].at:''}
+  itemRate(it){return it.rate>0?it.rate:this.rate()}
+  closeDialog=()=>this.setState({dialog:null,draft:null,draftErrors:null})
+  openItem(it,shipmentId){
+    this.setState({dialog:'item',draftErrors:null,draft:it?{id:it.id,name:it.name,qty:String(it.qty),cny:String(it.cny),rate:it.rate?String(it.rate):'',shipmentId:it.shipmentId||'',notes:it.notes||''}
+      :{id:null,name:'',qty:'1',cny:'',rate:'',shipmentId:shipmentId||'',notes:''}});
+  }
+  validateDraft(d){
+    const e={};
+    if(!d.name.trim())e.name='Describe the product so you can recognise it later.';else if(d.name.length>160)e.name='Keep it under 160 characters.';
+    if(!/^\d+$/.test(d.qty)||+d.qty<1)e.qty='Use a whole number, 1 or more.';
+    if(!(parseFloat(d.cny)>0))e.cny='Enter the price you paid, above 0.';
+    if(d.rate!==''&&!(parseFloat(d.rate)>0))e.rate='Leave empty for the default rate, or enter a number above 0.';
+    return e;
+  }
+  validateAdd(a,existing){
+    const e={lines:{}};const t=a.tracking.replace(/\s+/g,'');
+    if(!t)e.tracking='Enter the tracking number from your seller or forwarder.';
+    else if(!/^[A-Za-z0-9-]{8,30}$/.test(t))e.tracking='Use 8 to 30 letters, numbers or dashes. Spaces are removed for you.';
+    else if(existing.some(s=>s.tracking.toUpperCase()===t.toUpperCase()))e.tracking='This tracking number is already in this workspace.';
+    if(!a.origin.trim())e.origin='Enter where the parcel ships from.';
+    if(!a.destination.trim())e.destination='Enter the delivery city.';
+    a.lines.forEach((l,i)=>{const le={};const any=l.name||l.cny;if(any||a.lines.length===1&&false){if(!l.name.trim())le.name=1;if(!/^\d+$/.test(l.qty)||+l.qty<1)le.qty=1;if(!(parseFloat(l.cny)>0))le.cny=1}if(Object.keys(le).length)e.lines[i]=le});
+    if(!Object.keys(e.lines).length)delete e.lines;
+    return e;
+  }
+
+  renderVals(){
+    const s=this.state,f=this.fmt(),rate=this.rate();
+    const ds=s.override||this.props.dataState||'live';
+    const isWide=s.w>=1024;
+    const wsd=this.wsData();
+    const ships=wsd.shipments,items=wsd.items;
+    const byId={};ships.forEach(x=>byId[x.id]=x);
+    const qq=s.q.trim().toLowerCase().replace(/\s+/g,'');
+    const go=h=>()=>{location.hash=h};
+
+        const activeKey=s.route==='shipment'?'shipments':s.route;
+    const ease=1-Math.pow(1-s.t,3);
+    const IC={overview:'M4 4h7v7H4zM13 4h7v4h-7zM13 11h7v9h-7zM4 14h7v6H4z',dashboard:'M4 20h16M7 16v-5M12 16V6M17 16v-8',shipments:'M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9',items:'M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01',add:'M12 5v14M5 12h14',settings:'M4 7h9M17 7h3M4 17h3M11 17h9M15 5v4M9 15v4',money:'M3 7h18v10H3zM12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM6.5 10v4M17.5 10v4',check:'M5 12.5l4.5 4.5L19 7.5',alert:'M12 4 2.5 20h19zM12 10v4M12 17h.01',convert:'M7 4v16M3.5 16.5 7 20l3.5-3.5M17 20V4M13.5 7.5 17 4l3.5 3.5'};
+    const navItem=(k,label,badge,badgeSr)=>{const on=k===activeKey;return {href:'#/'+k,label,icon:IC[k],aria:on?'page':undefined,bg:on?'var(--brand-tint)':'transparent',fg:on?'var(--brand-ink)':'var(--ink-2)',mark:on?'var(--accent)':'transparent',hasBadge:!!badge,badge:String(badge||''),badgeSr:badgeSr||'',badgeBg:on?'var(--brand)':'var(--sunk)',badgeFg:on?'var(--on-brand)':'var(--ink-2)'}};
+    const activeShips=ships.filter(x=>x.stage<7).length;
+    const navGroups=[{label:'Track',items:[navItem('overview','Overview'),navItem('dashboard','Dashboard'),navItem('shipments','Shipments',activeShips,activeShips+' in progress'),navItem('items','Products',items.length,items.length+' products')]},{label:'Manage',items:[navItem('add','Add order'),navItem('convert','Converter'),navItem('settings','Settings')]}];
+
+    const shipView=sh=>{const st=this.statusOf(sh);return {id:sh.id,href:'#/shipment/'+encodeURIComponent(sh.id),tracking:sh.tracking,carrier:sh.carrier,route:sh.origin.split(',')[0]+' to '+sh.destination.split(',')[0],status:st.label,tone:st.tone,updated:sh.events.length?f.dt(this.lastAt(sh)):'No scans yet',eta:sh.stage===7?'Delivered':f.d(sh.eta)}};
+
+    const matchQ=sh=>!qq||sh.tracking.toLowerCase().includes(qq)||(sh.orderRef||'').toLowerCase().replace(/\s+/g,'').includes(qq)||items.some(it=>it.shipmentId===sh.id&&it.name.toLowerCase().replace(/\s+/g,'').includes(qq));
+    let list=ships.filter(sh=>matchQ(sh)&&(s.statusFilter==='all'||this.statusOf(sh).key===s.statusFilter));
+    const sorters={updated:(a,b)=>this.lastAt(b).localeCompare(this.lastAt(a)),eta:(a,b)=>(a.stage===7)-(b.stage===7)||(a.eta||'9999').localeCompare(b.eta||'9999'),stage:(a,b)=>b.stage-a.stage};
+    list=[...list].sort(sorters[s.sort]);
+    const per=5,pageCount=Math.max(1,Math.ceil(list.length/per)),page=Math.min(s.page,pageCount);
+    const pageShipments=list.slice((page-1)*per,page*per).map(shipView);
+    const pages=Array.from({length:pageCount},(_,i)=>{const n=i+1,on=n===page;return {n,aria:on?'page':undefined,aria_label:'Page '+n,bg:on?'var(--ink)':'var(--surface)',fg:on?'var(--bg)':'var(--ink)',go:()=>this.setState({page:n})}});
+
+    const route=STAGES.map((st,i)=>{const count=ships.filter(x=>x.stage===i).length;const delayed=ships.some(x=>x.stage===i&&x.delayed);return {delay:(120+i*70)+'ms',short:st.short,count,countColor:count?(delayed?'var(--bad)':'var(--ink)'):'var(--ink-2)',fill:count?(delayed?'var(--bad)':'var(--accent)'):'var(--surface)',border:count?(delayed?'var(--bad)':'var(--accent)'):'var(--line-strong)'}});
+    const totals=items.reduce((a,it)=>{const c=it.qty*it.cny;a.cny+=c;a.php+=c*this.itemRate(it);a.qty+=it.qty;return a},{cny:0,php:0,qty:0});
+    const deliveredItems=items.filter(it=>byId[it.shipmentId]&&byId[it.shipmentId].stage===7).reduce((a,it)=>a+it.qty,0);
+    const delayedShips=ships.filter(x=>x.delayed);
+    const spend=[{label:'Spend in PHP',value:f.php(totals.php*ease),color:'var(--ink)'},{label:'Spend in CNY',value:f.cny(totals.cny*ease),color:'var(--ink)'}];
+    if(s.settings.primary==='CNY')spend.reverse();
+    const cnt=v=>String(Math.round(v*ease));
+    const metrics=[...spend,{label:'Items bought',value:cnt(totals.qty),color:'var(--ink)'},{label:'Active shipments',value:cnt(activeShips),color:'var(--ink)'},{label:'Items delivered',value:cnt(deliveredItems),color:'var(--ink)'},{label:'Delayed shipments',value:cnt(delayedShips.length),color:delayedShips.length?'var(--bad)':'var(--ink)'}];
+    const recent=ships.flatMap(sh=>sh.events.map(e=>({sh,e}))).sort((a,b)=>b.e.at.localeCompare(a.e.at)).slice(0,6).map(({sh,e})=>({href:'#/shipment/'+sh.id,label:STAGES[e.stage].label,tracking:sh.tracking,note:e.note||sh.destination,when:f.dt(e.at)}));
+    const unshipped=items.filter(it=>!it.shipmentId);
+
+    let d={tracking:'',tone:TONES.neutral,timeline:[],costs:[],items:[]};let detailMissing=false;
+    if(s.route==='shipment'){
+      const sh=byId[s.param];
+      if(!sh)detailMissing=true;
+      else{
+        const st=this.statusOf(sh);const its=items.filter(it=>it.shipmentId===sh.id);
+        const sc=its.reduce((a,it)=>{const c=it.qty*it.cny;a.cny+=c;a.php+=c*this.itemRate(it);return a},{cny:0,php:0});
+        const costs=[{label:'Products ('+its.length+')',value:its.reduce((a,b)=>a+b.qty,0)+' items'},{label:'Total in CNY',value:f.cny(sc.cny)},{label:'Total in PHP',value:f.php(sc.php)}];
+        if(s.settings.primary==='CNY'){}else{const t=costs[1];costs[1]=costs[2];costs[2]=t}
+        const timeline=STAGES.map((stg,i)=>{
+          const ev=sh.events.find(e=>e.stage===i);const done=i<sh.stage||(i===sh.stage&&sh.stage===7);const cur=i===sh.stage&&sh.stage!==7;
+          const place=i===0?sh.origin.split(',')[0]+' '+PLACE[0].toLowerCase():i<6?PLACE[i]:i===6?'J&T Express, '+sh.destination.split(',')[0]:sh.destination;
+          const curBad=cur&&sh.delayed;
+          return {label:stg.label,tag:cur?(curBad?'Held here':'Current'):'',meta:ev?f.dt(ev.at)+' · '+place+' · '+ev.source:'Pending',note:ev?ev.note:'',
+            size:cur?'0.875rem':'0.625rem',fill:cur?(curBad?'var(--bad)':'var(--accent)'):done?'var(--ink)':'var(--surface)',border:cur?(curBad?'var(--bad)':'var(--accent)'):done?'var(--ink)':'var(--line-strong)',
+            line:i===7?'transparent':(i<sh.stage?'var(--ink)':'var(--line)'),weight:cur?'700':'500',color:ev?'var(--ink)':'var(--ink-2)'};
+        });
+        d={tracking:sh.tracking,carrier:sh.carrier,origin:sh.origin,destination:sh.destination,orderRef:sh.orderRef||'None',eta:sh.stage===7?'Delivered':f.d(sh.eta),status:st.label,tone:st.tone,
+          delayed:!!sh.delayed,delayNote:sh.delayNote,stageShort:STAGES[sh.stage].short,timeline,costs,firstScan:sh.events.length?f.dt(sh.events[0].at):'None',updated:sh.events.length?f.dt(this.lastAt(sh)):'None',
+          noItems:!its.length,items:its.map(it=>({name:it.name,qty:it.qty,unit:f.cny(it.cny),php:f.php(it.qty*it.cny*this.itemRate(it)),edit:()=>this.openItem(it),editLabel:'Edit '+it.name}))};
+      }
+    }
+
+    const itemList=items.filter(it=>{
+      const sh=byId[it.shipmentId];
+      if(qq&&!(it.name.toLowerCase().replace(/\s+/g,'').includes(qq)||(sh&&sh.tracking.toLowerCase().includes(qq))))return false;
+      return s.itemStatus==='all'||this.statusOf(sh).key===s.itemStatus;
+    });
+    const itemRows=itemList.map(it=>{const sh=byId[it.shipmentId];const st=this.statusOf(sh);const sub=it.qty*it.cny;
+      return {name:it.name,qty:it.qty,unit:f.cny(it.cny),sub:f.cny(sub),php:f.php(sub*this.itemRate(it)),hasShip:!!sh,noShip:!sh,tracking:sh?sh.tracking:'',href:sh?'#/shipment/'+sh.id:'',status:st.label,tone:st.tone,edit:()=>this.openItem(it),editLabel:'Edit '+it.name}});
+    const it2=itemList.reduce((a,it)=>{const c=it.qty*it.cny;a.cny+=c;a.php+=c*this.itemRate(it);a.qty+=it.qty;return a},{cny:0,php:0,qty:0});
+    const noItemsAtAll=!items.length;
+
+    const ae=s.addErrors||{};const errF=(k,help)=>({[k+'Invalid']:ae[k]?'true':undefined,[k+'Border']:ae[k]?'var(--bad)':'var(--line-strong)',[k+'Color']:ae[k]?'var(--bad)':'var(--ink-2)',[k+'Msg']:ae[k]||help});
+    const addErr={...errF('tracking','Spaces are removed. We check it is not already in this workspace.'),...errF('origin',''),...errF('destination','')};
+    const addLines=s.add.lines.map((l,i)=>{const le=(ae.lines||{})[i]||{};const sub=(+l.qty||0)*(parseFloat(l.cny)||0);
+      return {i,name:l.name,qty:l.qty,cny:l.cny,nameInvalid:le.name?'true':undefined,qtyInvalid:le.qty?'true':undefined,cnyInvalid:le.cny?'true':undefined,
+        nameBorder:le.name?'var(--bad)':'var(--line-strong)',qtyBorder:le.qty?'var(--bad)':'var(--line-strong)',cnyBorder:le.cny?'var(--bad)':'var(--line-strong)',
+        msg:Object.keys(le).length?'Add a name, a whole-number quantity and a price above 0.':(sub?f.cny(sub)+' = '+f.php(sub*rate):'Leave empty to add products later.'),msgColor:Object.keys(le).length?'var(--bad)':'var(--ink-2)',
+        remove:()=>this.setState(st=>({add:{...st.add,lines:st.add.lines.length>1?st.add.lines.filter((_,j)=>j!==i):[{name:'',qty:'1',cny:''}]}})),removeLabel:'Remove product '+(i+1)}});
+    const errCount=['tracking','origin','destination'].filter(k=>ae[k]).length+Object.keys(ae.lines||{}).length;
+
+    const dr=s.draft||{name:'',qty:'',cny:'',rate:'',shipmentId:'',notes:''};const de=s.draftErrors||{};
+    const dErr={};['name','qty','cny','rate'].forEach(k=>{dErr[k]=de[k]||'';dErr[k+'Invalid']=de[k]?'true':undefined;dErr[k+'Border']=de[k]?'var(--bad)':'var(--line-strong)'});
+    if(!de.rate)dErr.rate='Empty uses the default';
+    const dSub=(+dr.qty||0)*(parseFloat(dr.cny)||0);const dRate=parseFloat(dr.rate)>0?parseFloat(dr.rate):rate;
+
+    const rateOk=parseFloat(s.settings.rate)>0;
+    const sset=(k,v)=>this.setState(st=>({settings:{...st.settings,[k]:v}}));
+    const opt=(cur,val,label,k)=>{const on=cur===val;return {label,on:on?'true':'false',bg:on?'var(--ink)':'var(--surface)',fg:on?'var(--bg)':'var(--ink)',border:on?'var(--ink)':'var(--line-strong)',pick:()=>sset(k,val)}};
+    const n=s.settings.notify;
+    const notifyDef=[['milestones','Delivery milestones','Port arrival, J&T handover, out for delivery and delivered'],['customs','Customs events','Declarations filed, holds and releases on both sides'],['delays','Delays and exceptions','Anything that stops a parcel for more than 24 hours'],['email','Also send by email','Uses the email in your profile']];
+
+    const PH=[['In China',0,2],['Crossing',2,4],['PH customs',4,5],['Last mile',5,8]];
+    const pipe=STAGES.map((st,i)=>{const here=ships.filter(x=>x.stage===i);const c=here.length;const bad=here.some(x=>x.delayed);const on=s.pipeSel===i;
+      return {short:st.short,count:String(Math.round(c*ease)),unit:c===1?'shipment':'shipments',bad,empty:!c,on:on?'true':'false',delay:(120+i*70)+'ms',
+        aria:st.label+': '+c+(c===1?' shipment':' shipments')+(bad?', delayed':'')+(on?'. Selected':''),
+        bg:on?'var(--brand-tint)':'transparent',ring:on?'var(--brand)':'transparent',cursor:c?'pointer':'default',
+        countColor:c?(bad?'var(--bad)':'var(--ink)'):'var(--line-strong)',fill:c?(bad?'var(--bad)':'var(--accent)'):'var(--surface)',border:c?(bad?'var(--bad)':'var(--accent)'):'var(--line-strong)',
+        pick:()=>this.setState(x=>({pipeSel:x.pipeSel===i?null:i}))}});
+    const phases=PH.map(([label,a,b])=>({label,span:'span '+(b-a)}));
+    const phasesNarrow=PH.map(([label,a,b])=>({label,stages:pipe.slice(a,b)}));
+    const whatOf=sh=>{const its=items.filter(it=>it.shipmentId===sh.id);return its.length?its[0].name+(its.length>1?' + '+(its.length-1)+' more':''):'No products linked yet'};
+    const pSel=s.pipeSel;
+    const pRows=(pSel===null?ships.filter(x=>x.stage<7).sort((a,b)=>(a.eta||'9999').localeCompare(b.eta||'9999')):ships.filter(x=>x.stage===pSel)).slice(0,5);
+    const pipeList=pRows.map((sh,i)=>{const v=shipView(sh);return {...v,what:whatOf(sh),eta:sh.stage===7?'Delivered':(sh.eta?'Est. '+f.d(sh.eta):'No estimate yet'),delay:(i*50)+'ms'}});
+    const pipeTitle=pSel===null?'Arriving next':(pRows.length+(pRows.length===1?' shipment':' shipments')+' at '+STAGES[pSel].label.toLowerCase());
+    const prim=s.settings.primary==='CNY';
+    const notShippedQty=unshipped.reduce((a,it)=>a+it.qty,0);
+    const sum={spendMain:prim?f.cny(totals.cny*ease):f.php(totals.php*ease),spendAlt:prim?f.php(totals.php):f.cny(totals.cny),
+      delivered:String(Math.round(deliveredItems*ease)),bought:String(totals.qty),meter:(s.anim&&totals.qty?deliveredItems/totals.qty*100:0)+'%',
+      itemsSub:(totals.qty-deliveredItems-notShippedQty)+' on the way'+(notShippedQty?', '+notShippedQty+' not shipped yet':''),
+      active:String(Math.round(activeShips*ease)),
+      shipSub:(delayedShips.length?delayedShips.length+' delayed · ':'')+ships.filter(x=>x.stage===7).length+' delivered',
+      shipBorder:delayedShips.length?'var(--bad)':'var(--line)',
+      shipHref:delayedShips.length?'#/shipment/'+delayedShips[0].id:'#/shipments',
+      shipLink:delayedShips.length?'Fix the delayed shipment':'See all shipments',shipLinkColor:delayedShips.length?'var(--bad)':'var(--brand-ink)'};
+    const DAY=864e5,now=Date.now();
+    const per2=s.dashPeriod;const dcur=s.dashCur||s.settings.primary;
+    const pShips=ships.filter(sh=>per2==='all'||!sh.events.length||(now-new Date(sh.events[0].at).getTime())<=(+per2)*DAY);
+    const conv=it=>{const c=it.qty*it.cny;return dcur==='CNY'?c:c*this.itemRate(it)};
+    const shipSpend=sh=>items.filter(it=>it.shipmentId===sh.id).reduce((a,it)=>a+conv(it),0);
+    const money=dcur==='CNY'?f.cny:f.php;
+    const money0=new Intl.NumberFormat(s.settings.locale,{style:'currency',currency:dcur,maximumFractionDigits:0});
+    const weekOf=sh=>{const dd=new Date(new Date(sh.events[0].at).getTime()+8*36e5);const dow=(dd.getUTCDay()+6)%7;return Date.UTC(dd.getUTCFullYear(),dd.getUTCMonth(),dd.getUTCDate()-dow)};
+    const GROUPS=[['preparing','Preparing in China','#7a7d78'],['transit','In transit','#1d5c57'],['customs','At PH customs','#c96a1b'],['lastmile','With J&T','#3f7d77'],['delivered','Delivered','#2b6534'],['delayed','Delayed','#9b2f1d']];
+    const groupOf=sh=>sh.delayed?'delayed':sh.stage===7?'delivered':sh.stage>=5?'lastmile':sh.stage===4?'customs':sh.stage>=2?'transit':'preparing';
+    const wkFmt=new Intl.DateTimeFormat(s.settings.locale,{timeZone:'UTC',month:'short',day:'numeric'});
+    const wkShips=pShips.filter(sh=>sh.events.length);
+    const wkMap={};wkShips.forEach(sh=>{const k=weekOf(sh);wkMap[k]=(wkMap[k]||0)+shipSpend(sh)});
+    const wkKeys=Object.keys(wkMap).map(Number);const weeks=[];
+    if(wkKeys.length){for(let k=Math.min(...wkKeys);k<=Math.max(...wkKeys);k+=7*DAY)weeks.push(k)}
+    const wkMax=Math.max(1,...weeks.map(k=>wkMap[k]||0));
+    const bars=weeks.map((k,i)=>{const v=wkMap[k]||0;const on=s.dashWeek===k;const some=s.dashWeek!==null;
+      return {label:wkFmt.format(new Date(k)),valueLabel:v?money0.format(v):'0',on:on?'true':'false',aria:'Week of '+wkFmt.format(new Date(k))+': '+money(v)+(on?'. Selected, select again to clear':'. Select to filter'),
+        height:'calc((100% - 1.5rem) * '+(s.anim?(v/wkMax).toFixed(3):0)+')',width:(s.anim?v/wkMax*100:0)+'%',fill:on?'var(--accent)':'var(--brand)',opacity:some&&!on?'0.4':'1',delay:(i*70)+'ms',
+        pick:()=>this.setState(st=>({dashWeek:st.dashWeek===k?null:k}))}});
+    const counts={};pShips.forEach(sh=>{const g=groupOf(sh);counts[g]=(counts[g]||0)+1});
+    const mix=GROUPS.map(([key,label,color])=>{const c=counts[key]||0;const on=s.dashStatus===key;const some=s.dashStatus!==null;
+      return {key,label,color,count:c,width:(s.anim&&pShips.length?(c/pShips.length*100):0)+'%',on:on?'true':'false',empty:!c,opacity:!c?'0.5':(some&&!on?'0.45':'1'),
+        bg:on?'var(--brand-tint)':'var(--surface)',border:on?'var(--brand)':'var(--line)',pick:()=>this.setState(st=>({dashStatus:st.dashStatus===key?null:key}))}});
+    const LEGS=['Warehouse to CN customs','CN customs to departure','Sea or air crossing','Port to PH customs','PH customs to J&T','J&T to out for delivery','Out for delivery to door'];
+    const legs=LEGS.map((label,i)=>{const ds2=pShips.map(sh=>{const a=sh.events.find(e=>e.stage===i),b=sh.events.find(e=>e.stage===i+1);return a&&b?(new Date(b.at)-new Date(a.at))/DAY:null}).filter(x=>x!==null);
+      return {label,n:ds2.length,avg:ds2.length?ds2.reduce((x,y)=>x+y,0)/ds2.length:null}}).filter(l=>l.n);
+    const legMax=Math.max(0.1,...legs.map(l=>l.avg));const slow=legs.reduce((a,l)=>!a||l.avg>a.avg?l:a,null);
+    const legRows=legs.map((l,i)=>({label:l.label,value:l.avg<1?Math.round(l.avg*24)+' h':l.avg.toFixed(1)+' days',width:(s.anim?l.avg/legMax*100:0)+'%',slowest:l===slow,color:l===slow?'var(--accent)':'var(--brand)',delay:(i*60)+'ms'}));
+    const carMap={};pShips.forEach(sh=>{const c=carMap[sh.carrier]||(carMap[sh.carrier]={name:sh.carrier,n:0,v:0});c.n++;c.v+=shipSpend(sh)});
+    const cars=Object.values(carMap).sort((a,b)=>b.v-a.v);const carMax=Math.max(1,...cars.map(c=>c.v));
+    const view=pShips.filter(sh=>(s.dashWeek===null||(sh.events.length&&weekOf(sh)===s.dashWeek))&&(s.dashStatus===null||groupOf(sh)===s.dashStatus)).sort((a,b)=>this.lastAt(b).localeCompare(this.lastAt(a)));
+    const pItems=items.filter(it=>pShips.some(sh=>sh.id===it.shipmentId));
+    const pQty=pItems.reduce((a,it)=>a+it.qty,0);const pDel=pItems.filter(it=>byId[it.shipmentId].stage===7).reduce((a,it)=>a+it.qty,0);
+    const pSpend=pShips.reduce((a,sh)=>a+shipSpend(sh),0);
+    const pActive=pShips.filter(sh=>sh.stage<7);const pDelayed=pShips.filter(sh=>sh.delayed);
+    const todayIso=new Date(now+8*36e5).toISOString().slice(0,10);
+    const nextEta=pActive.map(sh=>sh.eta).filter(e=>e&&e>=todayIso).sort()[0];
+    const delPct=pQty?Math.round(pDel/pQty*100):0;
+    const tone=k=>({ok:['var(--ok-tint)','var(--ok)'],bad:['var(--bad-tint)','var(--bad)'],brand:['var(--brand-tint)','var(--brand-ink)'],neutral:['var(--sunk)','var(--ink-2)']}[k]);
+    const kpi=(o,t,ic)=>({...o,icon:IC[ic],iconBg:tone(t)[0],iconFg:tone(t)[1],badgeBg:tone(o.badgeTone||'neutral')[0],badgeFg:tone(o.badgeTone||'neutral')[1]});
+    const kpis=[
+      kpi({eyebrow:'Total spend',badge:dcur,value:money(pSpend*ease),sub:pItems.length+' products in '+pShips.length+' shipments',delay:'60ms'},'brand','money'),
+      kpi({eyebrow:'Delivered',badge:Math.round(delPct*ease)+'%',badgeTone:'ok',value:Math.round(pDel*ease)+' of '+pQty+' items',sub:'Items that reached your door',hasMeter:true,meter:(s.anim?delPct:0)+'%',delay:'120ms'},'ok','check'),
+      kpi({eyebrow:'In progress',badge:cars.length+(cars.length===1?' carrier':' carriers'),value:String(Math.round(pActive.length*ease)),sub:nextEta?'Next arrival est. '+f.d(nextEta):'No delivery estimates yet',delay:'180ms'},'neutral','shipments'),
+      kpi({eyebrow:'Needs attention',badge:pDelayed.length?'Action needed':'All clear',badgeTone:pDelayed.length?'bad':'ok',value:String(Math.round(pDelayed.length*ease)),sub:pDelayed.length?pDelayed.map(x=>'Held at '+STAGES[x.stage].short).join(', '):'No holds or delays in this period',delay:'240ms'},pDelayed.length?'bad':'ok','alert')];
+    const popt=(cur,val,label,k)=>{const on=cur===val;return {label,on:on?'true':'false',bg:on?'var(--ink)':'transparent',fg:on?'var(--bg)':'var(--ink)',pick:()=>this.setState({[k]:val,dashWeek:k==='dashPeriod'?null:s.dashWeek})}};
+    const chips=[];
+    if(s.dashWeek!==null)chips.push({label:'Week of '+wkFmt.format(new Date(s.dashWeek)),aria:'Clear week filter',clear:()=>this.setState({dashWeek:null})});
+    if(s.dashStatus!==null)chips.push({label:GROUPS.find(g=>g[0]===s.dashStatus)[1],aria:'Clear status filter',clear:()=>this.setState({dashStatus:null})});
+    const dashV={
+      periodLabel:{'30':'Last 30 days','90':'Last 90 days','all':'All time'}[per2],
+      periodOpts:[popt(per2,'30','30 days','dashPeriod'),popt(per2,'90','90 days','dashPeriod'),popt(per2,'all','All','dashPeriod')],
+      curOpts:[popt(dcur,'PHP','PHP','dashCur'),popt(dcur,'CNY','CNY','dashCur')],
+      kpis,bars,spendHeadline:money(pSpend)+' across '+weeks.length+(weeks.length===1?' week':' weeks'),
+      mix,mixBar:mix.filter(m=>m.count),mixHeadline:pShips.length+(pShips.length===1?' shipment':' shipments')+' in this period',
+      legs:legRows,legHeadline:slow?slow.label+' takes longest':'Not enough scans yet',legNote:'Worked out from carrier scan times on your shipments. More shipments make it more reliable.',
+      carriers:cars.map(c=>({name:c.name,spend:money(c.v),count:c.n+(c.n===1?' shipment':' shipments'),width:(s.anim?c.v/carMax*100:0)+'%'})),
+      carrierHeadline:cars.length?cars[0].name+' carries the most value':'No carriers yet',
+      chips,viewHeadline:view.length+(view.length===1?' shipment':' shipments')+(chips.length?' match':' in this period'),viewEmpty:!view.length,
+      clearAll:()=>this.setState({dashWeek:null,dashStatus:null}),
+      view:view.map((sh,i)=>({...shipView(sh),spend:money(shipSpend(sh)),delay:(i*50)+'ms'}))};
+    const theme=s.settings.theme==='standard'?'light':s.settings.theme;const sideOn=s.settings.sidebar!==false;
+    const remPx=16*({s:0.9375,m:1,l:1.1875}[s.settings.textSize]||1);const cRem=(s.w-(isWide&&sideOn?16.5*remPx:0))/remPx;
+    const jH=cRem>=66;
+    const JPH=[['Step 1','In China',0,2],['Step 2','Crossing',2,4],['Step 3','PH customs',4,5],['Step 4','Last mile',5,7]];
+    const jPhases=JPH.map(([step,label,a,b],pi)=>{const here=ships.filter(x=>x.stage>=a&&x.stage<b);const c=here.length;const bad=here.some(x=>x.delayed);
+      return {step,label,count:String(Math.round(c*ease)),unit:c===1?'shipment':'shipments',countColor:c?(bad?'var(--bad)':'var(--ink)'):'var(--line-strong)',stages:pipe.slice(a,b),groupLabel:label+' checkpoints',
+        cardBorder:bad?'var(--bad)':'var(--line)',lineColor:c?'var(--brand)':'var(--line)',lineTf:s.anim?'scaleX(1)':'scaleX(0)',
+        nodeFill:c?(bad?'var(--bad)':'var(--accent)'):'var(--surface)',nodeBorder:c?(bad?'var(--bad)':'var(--accent)'):'var(--line-strong)',delay:(100+pi*80)+'ms',nodeDelay:(300+pi*120)+'ms'}});
+    const delivN=ships.filter(x=>x.stage===7).length,onWay=ships.filter(x=>x.stage<7).length,dOn=s.pipeSel===7;
+    const journey={phases:jPhases,horizontal:jH,vertical:!jH,cols:jH?'repeat(4,minmax(0,1fr)) minmax(9rem,0.75fr)':'minmax(0,1fr)',gap:jH?'0.75rem':'1.25rem',railPad:jH?'0':'1.75rem',
+      done:{count:String(Math.round(delivN*ease)),sub:deliveredItems+(deliveredItems===1?' item':' items')+' reached the door',on:dOn?'true':'false',empty:!delivN,ring:dOn?'var(--ok)':'transparent',
+        aria:'Delivered: '+delivN+' shipments'+(dOn?'. Selected':''),pick:()=>this.setState(x=>({pipeSel:x.pipeSel===7?null:7}))},
+      summary:[{label:onWay+' on the way',bg:'var(--brand-tint)',fg:'var(--brand-ink)'},...(delayedShips.length?[{label:delayedShips.length+' needs attention',bg:'var(--bad-tint)',fg:'var(--bad)'}]:[]),{label:delivN+' delivered',bg:'var(--ok-tint)',fg:'var(--ok)'}]};
+    const cvs=s.cv;const savedRate=s.settings.rate;const cvRateStr=cvs.rate===null?String(savedRate):cvs.rate;const cvRate=parseFloat(cvRateStr);const rateOk2=cvRate>0;
+    const amt=parseFloat(String(cvs.amount).replace(/,/g,''));const amtOk=cvs.amount===''||(amt>=0&&isFinite(amt));
+    const fromPHP=cvs.dir==='PHP';const useR=rateOk2?cvRate:rate;
+    const conv2=v=>fromPHP?v/useR:v*useR;
+    const fmtTo=fromPHP?f.cny:f.php,fmtFrom=fromPHP?f.php:f.cny;
+    const n4=new Intl.NumberFormat(s.settings.locale,{maximumFractionDigits:4});
+    const quickVals=fromPHP?[500,1000,5000,10000,50000]:[50,100,500,1000,5000];
+    const cv={from:fromPHP?'PHP':'CNY',to:fromPHP?'CNY':'PHP',fromSym:fromPHP?'₱':'¥',
+      fromBg:'var(--sunk)',fromFg:'var(--ink)',toBg:'var(--surface)',toFg:'var(--brand-ink)',
+      amount:cvs.amount,invalid:amtOk?undefined:'true',inBorder:amtOk?'var(--line)':'var(--bad)',
+      msg:amtOk?(fromPHP?'Philippine peso':'Chinese yuan'):'Enter a number, like 1500 or 1500.50',msgColor:amtOk?'var(--ink-2)':'var(--bad)',
+      setAmount:e=>{const v=e.target.value.replace(/[^0-9.,]/g,'');this.setState(st=>({cv:{...st.cv,amount:v}}))},
+      result:amtOk&&cvs.amount!==''?fmtTo(conv2(amt)):fmtTo(0),
+      rateLine:'1 CNY = '+n4.format(useR)+' PHP · 1 PHP = '+n4.format(1/useR)+' CNY',
+      swap:()=>this.setState(st=>{const a=parseFloat(String(st.cv.amount).replace(/,/g,''));const next=a>=0&&isFinite(a)?(Math.round(conv2(a)*100)/100).toString():st.cv.amount;return {cv:{...st.cv,dir:st.cv.dir==='PHP'?'CNY':'PHP',amount:next,spin:st.cv.spin+1}}}),
+      swapLabel:fromPHP?'Switch to yuan to peso':'Switch to peso to yuan',spin:'rotate('+(cvs.spin*180)+'deg)',
+      quick:quickVals.map(v=>{const on=amt===v;return {label:fmtFrom(v).replace(/\.00$/,''),on:on?'true':'false',bg:on?'var(--ink)':'var(--surface)',fg:on?'var(--bg)':'var(--ink)',border:on?'var(--ink)':'var(--line-strong)',pick:()=>this.setState(st=>({cv:{...st.cv,amount:String(v)}}))}}),
+      rate:cvRateStr,setRate:e=>{const v=e.target.value.replace(/[^0-9.]/g,'');this.setState(st=>({cv:{...st.cv,rate:v}}))},
+      rateInvalid:rateOk2?undefined:'true',rateBorder:rateOk2?'var(--line-strong)':'var(--bad)',rateMsgColor:rateOk2?'var(--ink-2)':'var(--bad)',
+      rateMsg:!rateOk2?'Enter a rate above 0. Using your saved rate until then.':(cvRateStr===String(savedRate)?'This is your saved rate, used across Orvanta.':'Trying a different rate. Only this page uses it until you save.'),
+      saveDisabled:!rateOk2||cvRateStr===String(savedRate),saveOpacity:(!rateOk2||cvRateStr===String(savedRate))?'0.45':'1',
+      saveRate:()=>{this.setState(st=>({settings:{...st.settings,rate:cvRateStr},cv:{...st.cv,rate:null}}));this.toast('Rate saved: 1 CNY = '+cvRateStr+' PHP')},
+      resetDisabled:cvs.rate===null||cvRateStr===String(savedRate),resetOpacity:(cvs.rate===null||cvRateStr===String(savedRate))?'0.45':'1',
+      resetRate:()=>this.setState(st=>({cv:{...st.cv,rate:null}})),
+      tableTitle:fromPHP?'Peso to yuan':'Yuan to peso',
+      table:(fromPHP?[100,250,500,1000,2500,5000,10000]:[10,25,50,100,250,500,1000]).map(v=>({a:fmtFrom(v),b:fmtTo(conv2(v))}))};
+    const tzLabel={'Asia/Manila':'Manila (UTC+8)','Asia/Shanghai':'Shanghai (UTC+8)','UTC':'UTC'}[s.settings.tz];
+    const showPage=ds!=='loading'&&ds!=='error';
+    const routeKey=detailMissing?'notfound':s.route;
+
+    return {
+      isWide,notWide:!isWide,navGroups,cv,journey,pipeWide:cRem>=60,pipeNarrow:cRem<60,showSync:cRem>=66,barsVertical:cRem>=34,barsHorizontal:cRem<34,mainPad:s.w<640?'1.5rem 1rem 3rem':'2rem 2rem 4rem',headPadX:s.w<640?'1rem':'1.5rem',pipe,phases,phasesNarrow,pipeList,pipeTitle,pipeHasSel:pSel!==null,pipeClear:()=>this.setState({pipeSel:null}),sum,dash:dashV,
+      side:isWide?{pos:'fixed',tf:sideOn?'none':'translateX(-100%)',vis:sideOn?'visible':'hidden',shadow:'none'}:{pos:'fixed',tf:s.drawer?'none':'translateX(-100%)',vis:s.drawer?'visible':'hidden',shadow:s.drawer?'0 1rem 3rem rgba(20,22,21,0.25)':'none'},
+      drawerOpen:!isWide&&s.drawer,drawerAria:s.drawer?'true':'false',
+      openDrawer:()=>{if(isWide)sset('sidebar',true);else this.setState({drawer:true})},
+      hideSide:()=>{if(isWide)sset('sidebar',false);else this.setState({drawer:false})},
+      sideHidden:!isWide||!sideOn,contentMl:isWide&&sideOn?'16.5rem':'0',
+      openLabel:isWide?'Show sidebar':'Open menu',hideLabel:isWide?'Hide sidebar':'Close menu',hideIcon:isWide?'M4 4h16v16H4zM9 4v16M15.5 9.5 13 12l2.5 2.5':'M6 6l12 12M18 6 6 18',
+      isDark:theme==='dark',notDark:theme!=='dark',logoSrc:theme==='dark'?'assets/logo/orvanta-symbol-reversed.svg':'assets/logo/orvanta-symbol.svg',logoMono:theme==='dark'?'assets/logo/orvanta-symbol-white.svg':'assets/logo/orvanta-symbol-black.svg',
+      themeBtn:theme==='dark'?{label:'Switch to light mode',icon:'M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4'}:{label:'Switch to dark mode',icon:'M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z'},
+      toggleTheme:()=>sset('theme',theme==='dark'?'light':'dark'),closeDrawer:()=>{if(this.state.drawer)this.setState({drawer:false})},
+      sideAlert:delayedShips.length?{href:'#/shipment/'+delayedShips[0].id,title:delayedShips.length===1?'1 shipment delayed':delayedShips.length+' shipments delayed',body:'Held at '+STAGES[delayedShips[0].stage].short+'. '+delayedShips[0].tracking}:{href:'#/shipments',title:'',body:''},
+      syncLabel:ds==='offline'?'Offline, showing saved data':'Synced '+(recent.length?recent[0].when:''),syncDot:ds==='offline'?'var(--warn)':'var(--ok)',
+      toTop:()=>{this.setState(x=>({launch:x.launch+1}));window.scrollTo({top:0,behavior:'smooth'});const m=document.getElementById('main');if(m){m.setAttribute('tabindex','-1');m.focus({preventScroll:true})}},
+      top:(()=>{const p=s.scrollP,show=s.scrollY>320;const a=(-90+360*p)*Math.PI/180;const cx=28+23*Math.cos(a),cy=28+23*Math.sin(a);
+        return {opacity:show?'1':'0',tf:show?'none':'translateY(1rem) scale(0.85)',pe:show?'auto':'none',tab:show?0:-1,hidden:show?undefined:'true',
+          aria:'Back to top, '+Math.round(p*100)+'% down the page',offset:(144.51*(1-p)).toFixed(2),
+          dx:(cx-3.5).toFixed(2),dy:(cy-3.5).toFixed(2),drot:'rotate(45 '+cx.toFixed(2)+' '+cy.toFixed(2)+')',
+          launchKey:'l'+s.launch,anim:s.launch?'orv-launch 520ms cubic-bezier(.2,.7,.2,1)':'none'}})(),
+      q:s.q,setQ:e=>this.setState({q:e.target.value,page:1}),searchRef:this.searchRef,
+      submitSearch:e=>{e.preventDefault();if(s.route!=='shipments'&&s.route!=='items')location.hash='#/shipments'},
+      focusSearch:()=>{this.searchRef.current&&this.searchRef.current.focus()},
+      offline:ds==='offline',lastSync:recent.length?recent[0].when:'earlier',isLoading:ds==='loading',isError:ds==='error',showPage,skeleton:[1,2,3,4],
+      retry:()=>{this.setState({override:'loading'});setTimeout(()=>{this.setState({override:'live'});this.toast('Tracking data is up to date')},900)},
+      r:{convert:routeKey==='convert',dashboard:routeKey==='dashboard',overview:routeKey==='overview',shipments:routeKey==='shipments',shipment:routeKey==='shipment',items:routeKey==='items',add:routeKey==='add',settings:routeKey==='settings',notfound:routeKey==='notfound'},
+      todayLabel:new Intl.DateTimeFormat(s.settings.locale,{timeZone:s.settings.tz,weekday:'long',month:'long',day:'numeric'}).format(new Date()),
+      isEmpty:!ships.length,hasData:!!ships.length,route,metrics,recent,
+      delayed:delayedShips.map(x=>({href:'#/shipment/'+x.id,tracking:x.tracking,stage:STAGES[x.stage].short,note:x.delayNote})),hasDelayed:!!delayedShips.length,noDelayed:!delayedShips.length,
+      hasUnshipped:!!unshipped.length,unshippedLabel:unshipped.length===1?'1 product is not linked to a shipment yet.':unshipped.length+' products are not linked to a shipment yet.',
+      newItem:()=>this.openItem(null),
+      statusFilter:s.statusFilter,setStatusFilter:e=>this.setState({statusFilter:e.target.value,page:1}),sort:s.sort,setSort:e=>this.setState({sort:e.target.value}),
+      listSummary:ships.length?(list.length?'Showing '+((page-1)*per+1)+' to '+Math.min(page*per,list.length)+' of '+list.length+(list.length!==ships.length?' matching':'')+' shipments':'0 of '+ships.length+' shipments match'):'',
+      filteredEmpty:!!ships.length&&!list.length,shipCount:ships.length,clearFilters:()=>this.setState({q:'',statusFilter:'all',page:1}),
+      showShipTable:cRem>=56&&!!list.length,showShipCards:cRem<56&&!!list.length,pageShipments,pages,showPager:pageCount>1,atFirst:page<=1,atLast:page>=pageCount,
+      prevPage:()=>this.setState({page:Math.max(1,page-1)}),nextPage:()=>this.setState({page:Math.min(pageCount,page+1)}),
+      d,tzLabel,
+      copyTracking:()=>{const t=d.tracking;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>this.toast('Copied '+t),()=>this.toast('Copy failed. Select the number and copy it manually.'))},
+      newItemHere:()=>this.openItem(null,s.param),
+      rateLabel:String(rate),itemStatus:s.itemStatus,setItemStatus:e=>this.setState({itemStatus:e.target.value}),itemRows,
+      itemTotals:{count:it2.qty===1?'1 item':it2.qty+' items',qty:it2.qty,cny:f.cny(it2.cny),php:f.php(it2.php)},
+      itemsEmpty:!itemList.length,showItemTable:cRem>=70&&!!itemList.length,showItemCards:cRem<70&&!!itemList.length,
+      itemsEmptyTitle:noItemsAtAll?'No products yet':'No products match these filters',
+      itemsEmptyBody:noItemsAtAll?'Products come from your orders. Add an order with its items and Orvanta works out the PHP cost of each one.':'Try a shorter search or show all statuses.',
+      itemsEmptyCta:noItemsAtAll?'Add order':'Clear filters',itemsEmptyAction:noItemsAtAll?()=>{location.hash='#/add'}:()=>this.setState({q:'',itemStatus:'all'}),
+      add:s.add,carriers:CARRIERS,stageOptions:STAGES.map((x,i)=>({value:String(i),label:x.label})),addErr,addLines,
+      addHasErrors:errCount>0,addErrorSummary:errCount===1?'1 field needs fixing before you can save.':errCount+' fields need fixing before you can save.',
+      setAddField:e=>{const {name,value}=e.target;this.setState(st=>({add:{...st.add,[name]:value}}))},
+      setLine:e=>{const i=+e.target.dataset.index,k=e.target.dataset.field,v=e.target.value;this.setState(st=>({add:{...st.add,lines:st.add.lines.map((l,j)=>j===i?{...l,[k]:v}:l)}}))},
+      addLine:()=>this.setState(st=>({add:{...st.add,lines:[...st.add.lines,{name:'',qty:'1',cny:''}]}})),
+      submitAdd:e=>{e.preventDefault();const a=s.add;const err=this.validateAdd(a,ships);
+        if(Object.keys(err).length){this.setState({addErrors:err});window.scrollTo(0,0);return}
+        const id='s'+Date.now().toString(36);const stage=+a.stage;const now=new Date().toISOString();
+        const sh={id,tracking:a.tracking.replace(/\s+/g,'').toUpperCase(),carrier:a.carrier,origin:a.origin.trim(),destination:a.destination.trim(),orderRef:a.orderRef.trim(),stage,delayed:false,delayNote:'',eta:a.eta,
+          events:Array.from({length:stage+1},(_,i)=>({stage:i,at:now,note:i===stage?'Added manually':'',source:'Manual entry'}))};
+        const newItems=a.lines.filter(l=>l.name.trim()).map((l,i)=>({id:id+'i'+i,name:l.name.trim(),qty:+l.qty,cny:parseFloat(l.cny),rate:null,shipmentId:id,notes:''}));
+        this.setWsData(w=>({shipments:[sh,...w.shipments],items:[...w.items,...newItems]}));
+        this.setState({add:blankAdd(),addErrors:null});location.hash='#/shipment/'+id;this.toast('Order '+sh.tracking+' saved');},
+      settings:s.settings,
+      setSetting:e=>sset(e.target.name,e.target.value),
+      rateInvalid:rateOk?undefined:'true',rateBorder:rateOk?'var(--line-strong)':'var(--bad)',rateMsgColor:rateOk?'var(--ink-2)':'var(--bad)',
+      rateMsg:rateOk?'Enter the rate from your bank or e-wallet. Products with their own rate keep it.':'Enter a number above 0. Totals use 7.95 until you fix this.',
+      themeOpts:[opt(theme,'light','Light','theme'),opt(theme,'dark','Dark','theme'),opt(theme,'hc','High contrast','theme')],
+      sizeOpts:[opt(s.settings.textSize,'s','Small','textSize'),opt(s.settings.textSize,'m','Default','textSize'),opt(s.settings.textSize,'l','Large','textSize')],
+      notifyOpts:notifyDef.map(([k,label,hint])=>({label,hint,on:!!n[k],toggle:()=>this.setState(st=>({settings:{...st.settings,notify:{...st.settings.notify,[k]:!st.settings.notify[k]}}}))})),
+      askReset:()=>this.setState({dialog:'reset'}),
+      doReset:()=>{try{localStorage.removeItem(KEY)}catch(e){}this.setState({data:seed(),settings:{...DEFAULT_SETTINGS},ws:'personal',dialog:null});this.toast('Device data deleted. Sample data restored.')},
+      nfTitle:detailMissing?'We can\u2019t find that shipment':'This page doesn\u2019t exist',
+      nfBody:detailMissing?'It may have been deleted, or it belongs to the other workspace. Switch workspace or search for the tracking number.':'The link may be out of date. Your shipments and products are all still here.',
+      dialogOpen:!!s.dialog,dlg:{item:s.dialog==='item',reset:s.dialog==='reset'},closeDialog:this.closeDialog,
+      backdropClose:e=>{if(e.target===e.currentTarget)this.closeDialog()},
+      draft:dr,dErr,draftIsEdit:!!dr.id,itemDlgTitle:dr.id?'Edit product':'Add product',
+      draftCalc:{cny:dSub?(dr.qty+' × '+f.cny(parseFloat(dr.cny)||0)+' = '+f.cny(dSub)):'Enter quantity and price',php:dSub?f.php(dSub*dRate):''},
+      shipOptions:[{value:'',label:'Not shipped yet'},...ships.map(x=>({value:x.id,label:x.tracking+' · '+x.destination.split(',')[0]}))],
+      setDraft:e=>{const {name,value}=e.target;this.setState(st=>({draft:{...st.draft,[name]:value}}))},
+      saveItem:e=>{e.preventDefault();const err=this.validateDraft(dr);if(Object.keys(err).length){this.setState({draftErrors:err});return}
+        const it={id:dr.id||'i'+Date.now().toString(36),name:dr.name.trim(),qty:+dr.qty,cny:parseFloat(dr.cny),rate:parseFloat(dr.rate)>0?parseFloat(dr.rate):null,shipmentId:dr.shipmentId||null,notes:dr.notes};
+        this.setWsData(w=>({...w,items:dr.id?w.items.map(x=>x.id===dr.id?it:x):[...w.items,it]}));this.closeDialog();this.toast(dr.id?'Product updated':'Product added');},
+      deleteItem:()=>{this.setWsData(w=>({...w,items:w.items.filter(x=>x.id!==dr.id)}));this.closeDialog();this.toast('Product deleted')},
+      hasToast:!!s.toast,toast:s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

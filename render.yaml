@@ -1,0 +1,50 @@
+services:
+  - type: web
+    name: orvanta
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), geolocation=(), payment=()
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      - path: /
+        name: Cache-Control
+        value: no-cache
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache
+      - path: /support.js
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /favicon.ico
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /site.webmanifest
+        name: Content-Type
+        value: application/manifest+json
+      - path: /site.webmanifest
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /sitemap.xml
+        name: Content-Type
+        value: application/xml; charset=utf-8
+      - path: /robots.txt
+        name: Content-Type
+        value: text/plain; charset=utf-8
