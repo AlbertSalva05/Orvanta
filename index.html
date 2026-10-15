@@ -35,7 +35,7 @@
 <body>
 <x-dc>
 <helmet>
-<title>Orvanta v1.3.0</title>
+<title>Orvanta v1.4.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -93,7 +93,7 @@ a:hover{color:var(--ink)}
       </sc-if>
       <div style="display:flex;flex-direction:column;gap:0.125rem;padding:0 0.75rem;font-size:0.8125rem;color:var(--ink-2)">
         <span>Last carrier update {{ lastSync }}</span>
-        <span>v1.3.0 · Release 1</span>
+        <span>v1.4.0 · Release 1</span>
       </div>
     </div>
   </aside>
@@ -111,7 +111,7 @@ a:hover{color:var(--ink)}
         <label style="flex:1;display:flex;align-items:center;min-width:0;position:relative;color:var(--ink-2)">
           <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search tracking numbers, products or order references</span>
           <span style="position:absolute;left:0.75rem;display:flex;pointer-events:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem;flex-shrink:0"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM20 20l-4.8-4.8"></path></svg></span>
-          <input ref="{{ searchRef }}" type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Tracking number, product or order ref" style="flex:1;min-width:0;min-height:2.75rem;padding:0 0.875rem 0 2.5rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+          <input ref="{{ searchRef }}" type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Tracking number or product" style="flex:1;min-width:0;min-height:2.75rem;padding:0 0.875rem 0 2.5rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
         </label>
       </form>
       <button type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeBtn.label }}" title="{{ themeBtn.label }}" style="width:2.75rem;height:2.75rem;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer;transition:background 160ms,transform 300ms cubic-bezier(.2,.7,.2,1)" style-hover="background:var(--sunk);transform:rotate(-15deg)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem"><path d="{{ themeBtn.icon }}"></path></svg></button>
@@ -170,7 +170,7 @@ a:hover{color:var(--ink)}
                 <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Every parcel on its way from China, where it is right now, and what you have spent on what is inside.</p>
               </div>
               <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
-                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add order</a>
+                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M12 5v14M5 12h14"></path></svg>Add order</a>
                 <button type="button" onClick="{{ focusSearch }}" style="min-height:2.75rem;padding:0 1.125rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Find a tracking number</button>
               </div>
             </div>
@@ -180,75 +180,15 @@ a:hover{color:var(--ink)}
                 <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}"><img src="assets/logo/orvanta-symbol-black.svg" alt="" style="width:3rem;height:3rem;opacity:0.35"></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}"><img src="assets/logo/orvanta-symbol-white.svg" alt="" style="width:3rem;height:3rem;opacity:0.35"></sc-if>
                 <h2 style="margin:0;font-size:1.375rem;font-weight:600">No shipments yet</h2>
                 <p style="margin:0;color:var(--ink-2);text-wrap:pretty">Add the order and the tracking number your seller or forwarder sent you. Orvanta follows it from the China warehouse to your door and keeps the CNY and PHP totals for every product in it.</p>
-                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add your first order</a>
+                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M12 5v14M5 12h14"></path></svg>Add your first order</a>
               </section>
             </sc-if>
 
             <sc-if value="{{ hasData }}" hint-placeholder-val="{{ true }}">
-              <section aria-labelledby="route-h" style="animation:orv-rise 420ms 60ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.25rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
-                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:0.75rem 1.5rem">
-                  <div style="display:flex;flex-direction:column;gap:0.5rem;min-width:0">
-                    <h2 id="route-h" style="margin:0;font-size:1.25rem;font-weight:600">Where your shipments are now</h2>
-                    <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
-                      <sc-for list="{{ journey.summary }}" as="b" hint-placeholder-count="3">
-                        <span style="display:inline-flex;align-items:center;gap:0.375rem;padding:0.25rem 0.625rem;border-radius:999px;border:1px solid var(--badge-border);font-size:0.875rem;font-weight:600;background:{{ b.bg }};color:{{ b.fg }}"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:{{ b.fg }}"></span>{{ b.label }}</span>
-                      </sc-for>
-                    </div>
-                  </div>
-                  <span style="font-size:0.875rem;color:var(--ink-2)">Select a checkpoint to list its parcels below</span>
-                </div>
-                <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:{{ journey.cols }};gap:{{ journey.gap }}">
-                  <sc-for list="{{ journey.phases }}" as="p" hint-placeholder-count="4">
-                    <li style="display:flex;flex-direction:column;gap:0.75rem;min-width:0;position:relative;padding-left:{{ journey.railPad }};animation:orv-rise 420ms {{ p.delay }} cubic-bezier(.2,.7,.2,1) both">
-                      <sc-if value="{{ journey.horizontal }}" hint-placeholder-val="{{ true }}">
-                        <div aria-hidden="true" style="position:relative;height:1.25rem;display:flex;align-items:center">
-                          <span style="position:absolute;left:0;right:-0.75rem;top:50%;height:3px;margin-top:-1.5px;background:var(--line)"></span>
-                          <span style="position:absolute;left:0;right:-0.75rem;top:50%;height:3px;margin-top:-1.5px;background:{{ p.lineColor }};transform-origin:left;transform:{{ p.lineTf }};transition:transform 700ms cubic-bezier(.2,.7,.2,1);transition-delay:{{ p.delay }}"></span>
-                          <span style="position:relative;width:1rem;height:1rem;margin-left:0.125rem;transform:rotate(45deg);background:{{ p.nodeFill }};border:2px solid {{ p.nodeBorder }};animation:orv-drop 520ms {{ p.nodeDelay }} cubic-bezier(.2,.7,.2,1) both"></span>
-                        </div>
-                      </sc-if>
-                      <sc-if value="{{ journey.vertical }}" hint-placeholder-val="{{ false }}">
-                        <span aria-hidden="true" style="position:absolute;left:0.4375rem;top:1rem;bottom:-1.25rem;width:2px;background:{{ p.lineColor }}"></span>
-                        <span aria-hidden="true" style="position:absolute;left:0;top:0.25rem;width:1rem;height:1rem;transform:rotate(45deg) scale(0.8);background:{{ p.nodeFill }};border:2px solid {{ p.nodeBorder }}"></span>
-                      </sc-if>
-                      <div style="display:flex;flex-direction:column;gap:0.75rem;padding:1rem;border-radius:8px;border:1px solid {{ p.cardBorder }};background:var(--bg);flex:1;transition:transform 200ms,box-shadow 200ms" style-hover="transform:translateY(-2px);box-shadow:0 0.5rem 1rem rgba(20,22,21,0.08)">
-                        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem">
-                          <div style="display:flex;flex-direction:column;gap:0.125rem;min-width:0">
-                            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--ink-2)">{{ p.step }}</span>
-                            <h3 style="margin:0;font-size:1.0625rem;font-weight:600">{{ p.label }}</h3>
-                          </div>
-                          <span style="display:flex;flex-direction:column;align-items:flex-end;line-height:1"><span style="font-size:2rem;font-weight:600;font-variant-numeric:tabular-nums;color:{{ p.countColor }}">{{ p.count }}</span><span style="font-size:0.75rem;color:var(--ink-2);margin-top:0.25rem">{{ p.unit }}</span></span>
-                        </div>
-                        <div role="group" aria-label="{{ p.groupLabel }}" style="display:flex;flex-direction:column;gap:0.25rem;padding-top:0.625rem;border-top:1px solid var(--line)">
-                          <sc-for list="{{ p.stages }}" as="st" hint-placeholder-count="2">
-                            <button type="button" onClick="{{ st.pick }}" aria-pressed="{{ st.on }}" aria-label="{{ st.aria }}" disabled="{{ st.empty }}" style="display:flex;align-items:center;gap:0.625rem;min-height:2.75rem;padding:0 0.625rem;border-radius:6px;border:2px solid {{ st.ring }};background:{{ st.bg }};font:inherit;color:var(--ink);text-align:left;cursor:{{ st.cursor }};transition:background 180ms,border-color 180ms" style-hover="background:var(--sunk)">
-                              <span aria-hidden="true" style="width:0.625rem;height:0.625rem;transform:rotate(45deg);flex-shrink:0;background:{{ st.fill }};border:2px solid {{ st.border }}"></span>
-                              <span style="flex:1;font-size:0.9375rem;min-width:0">{{ st.short }}</span>
-                              <sc-if value="{{ st.bad }}" hint-placeholder-val="{{ false }}"><span style="font-size:0.75rem;font-weight:600;color:var(--bad)">Held</span></sc-if>
-                              <span style="font-weight:600;font-variant-numeric:tabular-nums;color:{{ st.countColor }}">{{ st.count }}</span>
-                            </button>
-                          </sc-for>
-                        </div>
-                      </div>
-                    </li>
-                  </sc-for>
-                  <li style="display:flex;flex-direction:column;gap:0.75rem;min-width:0;position:relative;padding-left:{{ journey.railPad }};animation:orv-rise 420ms 420ms cubic-bezier(.2,.7,.2,1) both">
-                    <sc-if value="{{ journey.horizontal }}" hint-placeholder-val="{{ true }}">
-                      <div aria-hidden="true" style="height:1.25rem;display:flex;align-items:center"><span style="width:1rem;height:1rem;margin-left:0.125rem;transform:rotate(45deg);background:var(--ok);border:2px solid var(--ok);animation:orv-drop 520ms 760ms cubic-bezier(.2,.7,.2,1) both"></span></div>
-                    </sc-if>
-                    <sc-if value="{{ journey.vertical }}" hint-placeholder-val="{{ false }}">
-                      <span aria-hidden="true" style="position:absolute;left:0;top:0.25rem;width:1rem;height:1rem;transform:rotate(45deg) scale(0.8);background:var(--ok);border:2px solid var(--ok)"></span>
-                    </sc-if>
-                    <button type="button" onClick="{{ journey.done.pick }}" aria-pressed="{{ journey.done.on }}" aria-label="{{ journey.done.aria }}" disabled="{{ journey.done.empty }}" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;padding:1rem;border-radius:8px;border:2px solid {{ journey.done.ring }};background:var(--ok-tint);color:var(--ink);font:inherit;text-align:left;cursor:pointer;transition:transform 200ms,border-color 180ms" style-hover="transform:translateY(-2px)">
-                      <span style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--ok)">Done</span>
-                      <span style="display:flex;align-items:baseline;gap:0.5rem"><span style="font-size:2rem;line-height:1;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ok)">{{ journey.done.count }}</span><span style="font-weight:600">Delivered</span></span>
-                      <span style="font-size:0.8125rem;color:var(--ink-2)">{{ journey.done.sub }}</span>
-                    </button>
-                  </li>
-                </ol>
-                <div style="display:flex;flex-direction:column;gap:0.75rem;padding-top:1.25rem;border-top:1px solid var(--line)">
+              <section aria-labelledby="route-h" style="animation:orv-rise 420ms 60ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
+                <div style="display:flex;flex-direction:column;gap:0.75rem">
                   <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.5rem">
-                    <h3 aria-live="polite" style="margin:0;font-size:1.0625rem;font-weight:600">{{ pipeTitle }}</h3>
+                    <h2 id="route-h" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M6 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM6 17v-6a4 4 0 0 1 4-4h6M18 7v6a4 4 0 0 1-4 4H8"></path></svg></span>{{ pipeTitle }}</h2>
                     <sc-if value="{{ pipeHasSel }}" hint-placeholder-val="{{ false }}">
                       <button type="button" onClick="{{ pipeClear }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Show arriving next</button>
                     </sc-if>
@@ -257,6 +197,7 @@ a:hover{color:var(--ink)}
                     <sc-for list="{{ pipeList }}" as="p" hint-placeholder-count="3">
                       <li style="border-bottom:1px solid var(--line);animation:orv-rise 280ms {{ p.delay }} cubic-bezier(.2,.7,.2,1) both">
                         <a href="{{ p.href }}" style="display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem 1.25rem;padding:0.875rem 1rem;color:var(--ink);text-decoration:none;background:var(--bg);transition:background 160ms" style-hover="background:var(--sunk)">
+                          <span aria-hidden="true" style="width:2.5rem;height:2.5rem;border-radius:8px;display:grid;place-items:center;flex-shrink:0;background:{{ p.tone.bg }};color:{{ p.tone.fg }};border:1px solid var(--badge-border)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem"><path d="{{ p.icon }}"></path></svg></span>
                           <span style="flex:1 1 16rem;min-width:0;display:flex;flex-direction:column;gap:0.125rem">
                             <span style="font-weight:600;overflow-wrap:anywhere">{{ p.what }}</span>
                             <span style="font-family:'IBM Plex Mono',monospace;font-size:0.875rem;color:var(--ink-2);overflow-wrap:anywhere">{{ p.tracking }} · {{ p.carrier }}</span>
@@ -273,19 +214,19 @@ a:hover{color:var(--ink)}
 
               <section aria-label="Totals" style="animation:orv-rise 420ms 120ms cubic-bezier(.2,.7,.2,1) both;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem">
                 <article style="display:flex;flex-direction:column;gap:0.5rem;padding:1.25rem 1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
-                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Total spend</span>
+                  <span style="display:flex;align-items:center;gap:0.625rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3 7h18v10H3zM12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM6.5 10v4M17.5 10v4"></path></svg></span>Total spend</span>
                   <span style="font-size:1.875rem;line-height:1.15;font-weight:600;letter-spacing:-0.01em;font-variant-numeric:tabular-nums;white-space:nowrap">{{ sum.spendMain }}</span>
                   <span style="font-size:0.9375rem;color:var(--ink-2);font-variant-numeric:tabular-nums">{{ sum.spendAlt }} at your rates</span>
                   <a href="#/items" style="margin-top:auto;display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600">See products and prices</a>
                 </article>
                 <article style="display:flex;flex-direction:column;gap:0.5rem;padding:1.25rem 1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
-                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Items</span>
+                  <span style="display:flex;align-items:center;gap:0.625rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9"></path></svg></span>Items</span>
                   <span style="font-size:1.875rem;line-height:1.15;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ sum.delivered }} <span style="font-size:1rem;font-weight:500;color:var(--ink-2)">of {{ sum.bought }} delivered</span></span>
                   <span aria-hidden="true" style="height:0.5rem;border-radius:999px;background:var(--sunk);overflow:hidden"><span style="display:block;height:100%;border-radius:999px;background:var(--ok);width:{{ sum.meter }};transition:width 900ms cubic-bezier(.2,.7,.2,1)"></span></span>
                   <span style="font-size:0.9375rem;color:var(--ink-2)">{{ sum.itemsSub }}</span>
                 </article>
                 <article style="display:flex;flex-direction:column;gap:0.5rem;padding:1.25rem 1.5rem;border:1px solid {{ sum.shipBorder }};border-radius:8px;background:var(--surface);min-width:0">
-                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Shipments</span>
+                  <span style="display:flex;align-items:center;gap:0.625rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M6 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM6 17v-6a4 4 0 0 1 4-4h6M18 7v6a4 4 0 0 1-4 4H8"></path></svg></span>Shipments</span>
                   <span style="font-size:1.875rem;line-height:1.15;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap">{{ sum.active }} <span style="font-size:1rem;font-weight:500;color:var(--ink-2)">in progress</span></span>
                   <span style="font-size:0.9375rem;color:var(--ink-2)">{{ sum.shipSub }}</span>
                   <a href="{{ sum.shipHref }}" style="margin-top:auto;display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600;color:{{ sum.shipLinkColor }}">{{ sum.shipLink }}</a>
@@ -294,11 +235,11 @@ a:hover{color:var(--ink)}
 
               <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.5rem;align-items:start">
                 <section aria-labelledby="act-h" style="animation:orv-rise 420ms 180ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:0.5rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
-                  <h2 id="act-h" style="margin:0 0 0.5rem;font-size:1.25rem;font-weight:600">Recent tracking activity</h2>
+                  <h2 id="act-h" style="margin:0 0 0.5rem;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg></span>Recent tracking activity</h2>
                   <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
                     <sc-for list="{{ recent }}" as="e" hint-placeholder-count="6">
                       <li style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0.125rem 1rem;padding:0.75rem 0;border-top:1px solid var(--line)">
-                        <a href="{{ e.href }}" style="font-weight:600;color:var(--ink);text-decoration:none;overflow-wrap:anywhere">{{ e.label }}</a>
+                        <a href="{{ e.href }}" style="display:inline-flex;align-items:center;gap:0.5rem;font-weight:600;color:var(--ink);text-decoration:none;overflow-wrap:anywhere"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0;color:var(--brand-ink)"><path d="{{ e.icon }}"></path></svg>{{ e.label }}</a>
                         <span style="font-size:0.875rem;color:var(--ink-2);white-space:nowrap">{{ e.when }}</span>
                         <span style="grid-column:1 / -1;font-size:0.9375rem;color:var(--ink-2);overflow-wrap:anywhere"><span style="font-family:'IBM Plex Mono',monospace;font-size:0.875rem">{{ e.tracking }}</span> · {{ e.note }}</span>
                       </li>
@@ -308,7 +249,7 @@ a:hover{color:var(--ink)}
                 </section>
 
                 <section aria-labelledby="att-h" style="animation:orv-rise 420ms 240ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
-                  <h2 id="att-h" style="margin:0;font-size:1.25rem;font-weight:600">Needs your attention</h2>
+                  <h2 id="att-h" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--bad-tint);color:var(--bad)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M12 4 2.5 20h19zM12 10v4M12 17h.01"></path></svg></span>Needs your attention</h2>
                   <sc-if value="{{ hasDelayed }}" hint-placeholder-val="{{ true }}">
                     <sc-for list="{{ delayed }}" as="d" hint-placeholder-count="1">
                       <a href="{{ d.href }}" style="display:flex;flex-direction:column;gap:0.375rem;padding:1rem;border:1px solid var(--bad);border-radius:6px;background:var(--bad-tint);color:var(--ink);text-decoration:none">
@@ -450,22 +391,7 @@ a:hover{color:var(--ink)}
                 <p style="margin:0;font-size:0.875rem;color:var(--ink-2)">{{ dash.legNote }}</p>
               </section>
 
-              <section aria-labelledby="car-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 380ms cubic-bezier(.2,.7,.2,1) both">
-                <div style="display:flex;flex-direction:column;gap:0.125rem">
-                  <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Carriers</span>
-                  <h2 id="car-h" style="margin:0;font-size:1.25rem;font-weight:600">{{ dash.carrierHeadline }}</h2>
-                </div>
-                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
-                  <sc-for list="{{ dash.carriers }}" as="c" hint-placeholder-count="5">
-                    <li style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0.375rem 1rem;padding:0.75rem 0;border-top:1px solid var(--line)">
-                      <span style="font-weight:500">{{ c.name }}</span>
-                      <span style="font-weight:600;font-variant-numeric:tabular-nums;text-align:right">{{ c.spend }}</span>
-                      <span aria-hidden="true" style="height:0.375rem;border-radius:999px;background:var(--sunk);overflow:hidden;align-self:center"><span style="display:block;height:100%;border-radius:999px;background:var(--brand);width:{{ c.width }};transition:width 900ms cubic-bezier(.2,.7,.2,1)"></span></span>
-                      <span style="font-size:0.875rem;color:var(--ink-2);text-align:right;white-space:nowrap">{{ c.count }}</span>
-                    </li>
-                  </sc-for>
-                </ul>
-              </section>
+
             </div>
 
             <section aria-labelledby="inview-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 440ms cubic-bezier(.2,.7,.2,1) both">
@@ -483,7 +409,7 @@ a:hover{color:var(--ink)}
               <sc-if value="{{ dash.viewEmpty }}" hint-placeholder-val="{{ false }}">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;padding:1.25rem;border:1px dashed var(--line-strong);border-radius:8px">
                   <span style="flex:1 1 16rem;color:var(--ink-2)">No shipments match this week and status together. Clear one filter to widen the view.</span>
-                  <button type="button" onClick="{{ dash.clearAll }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;font:inherit;font-weight:600;cursor:pointer;background:var(--surface);color:var(--ink)">Clear filters</button>
+                  <button type="button" onClick="{{ dash.clearAll }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;font:inherit;font-weight:600;cursor:pointer;background:var(--surface);color:var(--ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M6 6l12 12M18 6 6 18"></path></svg>Clear filters</button>
                 </div>
               </sc-if>
               <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:0.75rem">
@@ -495,86 +421,12 @@ a:hover{color:var(--ink)}
                         <span style="font-weight:600;font-variant-numeric:tabular-nums">{{ s.spend }}</span>
                       </span>
                       <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ s.tone.bg }};color:{{ s.tone.fg }};font-size:0.875rem;font-weight:500"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ s.tone.fg }}"></span>{{ s.status }}</span>
-                      <span style="font-size:0.875rem;color:var(--ink-2)">{{ s.carrier }} · {{ s.route }} · Est. {{ s.eta }}</span>
+                      <span style="font-size:0.875rem;color:var(--ink-2)">Ordered {{ s.ordered }} · {{ s.timing }}</span>
                     </a>
                   </li>
                 </sc-for>
               </ul>
             </section>
-          </div>
-        </sc-if>
-
-        <sc-if value="{{ r.convert }}" hint-placeholder-val="{{ false }}">
-          <div data-screen-label="Converter" style="animation:orv-rise 380ms cubic-bezier(.2,.7,.2,1) both;display:flex;flex-direction:column;gap:1.5rem">
-            <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
-              <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Tools · Currency</span>
-              <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Peso and yuan converter</h1>
-              <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Convert between Philippine peso and Chinese yuan at your own rate. Check a seller's price before you order, or see what your budget buys in yuan.</p>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.5rem;align-items:start">
-              <section aria-labelledby="cv-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 60ms cubic-bezier(.2,.7,.2,1) both">
-                <h2 id="cv-h" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Convert an amount</h2>
-                <label style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem;border-radius:8px;border:1px solid {{ cv.inBorder }};background:var(--bg)">
-                  <span style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;font-weight:500">You have <span style="padding:0.25rem 0.625rem;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;font-weight:500;background:{{ cv.fromBg }};color:{{ cv.fromFg }};border:1px solid var(--badge-border)">{{ cv.from }}</span></span>
-                  <span style="display:flex;align-items:baseline;gap:0.5rem;min-width:0">
-                    <span aria-hidden="true" style="font-size:1.75rem;font-weight:600;color:var(--ink-2)">{{ cv.fromSym }}</span>
-                    <input value="{{ cv.amount }}" onChange="{{ cv.setAmount }}" inputMode="decimal" autoComplete="off" aria-invalid="{{ cv.invalid }}" aria-describedby="cv-msg" style="flex:1;min-width:0;width:100%;border:0;background:transparent;color:var(--ink);font:inherit;font-size:2.25rem;font-weight:600;font-variant-numeric:tabular-nums;padding:0;outline-offset:4px">
-                  </span>
-                  <span id="cv-msg" style="font-size:0.875rem;color:{{ cv.msgColor }}">{{ cv.msg }}</span>
-                </label>
-                <div style="display:flex;justify-content:center;margin:-1.5rem 0;position:relative;z-index:1">
-                  <button type="button" onClick="{{ cv.swap }}" aria-label="{{ cv.swapLabel }}" title="{{ cv.swapLabel }}" style="width:3rem;height:3rem;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--brand-ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 0.25rem 0.75rem rgba(20,22,21,0.12);transition:background 180ms,color 180ms" style-hover="background:var(--brand);color:var(--on-brand)">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem;transform:{{ cv.spin }};transition:transform 420ms cubic-bezier(.2,.7,.2,1)"><path d="M7 4v16M3.5 16.5 7 20l3.5-3.5M17 20V4M13.5 7.5 17 4l3.5 3.5"></path></svg>
-                  </button>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem;border-radius:8px;background:var(--brand-tint);border:1px solid var(--badge-border)">
-                  <span style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;font-weight:500;color:var(--brand-ink)">You get <span style="padding:0.25rem 0.625rem;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;font-weight:500;background:{{ cv.toBg }};color:{{ cv.toFg }};border:1px solid var(--badge-border)">{{ cv.to }}</span></span>
-                  <output aria-live="polite" style="font-size:2.25rem;line-height:1.2;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);overflow-wrap:anywhere">{{ cv.result }}</output>
-                  <span style="font-size:0.875rem;color:var(--ink-2);font-variant-numeric:tabular-nums">{{ cv.rateLine }}</span>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:0.5rem">
-                  <span style="font-size:0.875rem;color:var(--ink-2)">Quick amounts</span>
-                  <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
-                    <sc-for list="{{ cv.quick }}" as="q" hint-placeholder-count="5">
-                      <button type="button" onClick="{{ q.pick }}" aria-pressed="{{ q.on }}" style="min-height:2.75rem;padding:0 0.875rem;border-radius:999px;border:1px solid {{ q.border }};background:{{ q.bg }};color:{{ q.fg }};font:inherit;font-size:0.9375rem;font-weight:600;font-variant-numeric:tabular-nums;cursor:pointer;transition:background 160ms,border-color 160ms">{{ q.label }}</button>
-                    </sc-for>
-                  </div>
-                </div>
-              </section>
-
-              <div style="display:flex;flex-direction:column;gap:1.5rem;min-width:0">
-                <section aria-labelledby="cvr-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 120ms cubic-bezier(.2,.7,.2,1) both">
-                  <div style="display:flex;flex-direction:column;gap:0.125rem">
-                    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Exchange rate</span>
-                    <h2 id="cvr-h" style="margin:0;font-size:1.25rem;font-weight:600">Your rate</h2>
-                  </div>
-                  <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">PHP per 1 CNY
-                    <input value="{{ cv.rate }}" onChange="{{ cv.setRate }}" inputMode="decimal" autoComplete="off" aria-invalid="{{ cv.rateInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ cv.rateBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;font-variant-numeric:tabular-nums">
-                    <span style="font-size:0.875rem;font-weight:400;color:{{ cv.rateMsgColor }}">{{ cv.rateMsg }}</span>
-                  </label>
-                  <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
-                    <button type="button" onClick="{{ cv.saveRate }}" disabled="{{ cv.saveDisabled }}" style="min-height:2.75rem;padding:0 1rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer;opacity:{{ cv.saveOpacity }}">Use for all prices</button>
-                    <button type="button" onClick="{{ cv.resetRate }}" disabled="{{ cv.resetDisabled }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer;opacity:{{ cv.resetOpacity }}">Back to saved rate</button>
-                  </div>
-                  <p style="margin:0;font-size:0.875rem;color:var(--ink-2);text-wrap:pretty">Orvanta doesn't fetch live market rates in this release. Enter the rate your bank, e-wallet or forwarder charges you so totals match what you actually pay.</p>
-                </section>
-
-                <section aria-labelledby="cvt-h" style="border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0;animation:orv-rise 420ms 180ms cubic-bezier(.2,.7,.2,1) both">
-                  <div style="display:flex;flex-direction:column;gap:0.125rem">
-                    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--ink-2)">Quick reference</span>
-                    <h2 id="cvt-h" style="margin:0;font-size:1.25rem;font-weight:600">{{ cv.tableTitle }}</h2>
-                  </div>
-                  <table style="width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums">
-                    <thead><tr style="text-align:left;font-size:0.875rem;color:var(--ink-2)"><th scope="col" style="padding:0 0 0.5rem;font-weight:500">{{ cv.from }}</th><th scope="col" style="padding:0 0 0.5rem;font-weight:500;text-align:right">{{ cv.to }}</th></tr></thead>
-                    <tbody>
-                      <sc-for list="{{ cv.table }}" as="t" hint-placeholder-count="6">
-                        <tr style="border-top:1px solid var(--line)"><td style="padding:0.625rem 0">{{ t.a }}</td><td style="padding:0.625rem 0;text-align:right;font-weight:600">{{ t.b }}</td></tr>
-                      </sc-for>
-                    </tbody>
-                  </table>
-                </section>
-              </div>
-            </div>
           </div>
         </sc-if>
 
@@ -586,11 +438,11 @@ a:hover{color:var(--ink)}
                 <h1 style="margin:0;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-0.015em">Shipments</h1>
                 <p style="margin:0;color:var(--ink-2);max-width:42rem;text-wrap:pretty">Search by tracking number, product or order reference. Select a row to open its timeline.</p>
               </div>
-              <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add order</a>
+              <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M12 5v14M5 12h14"></path></svg>Add order</a>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:flex-end">
               <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500;flex:1 1 14rem;min-width:0">Search
-                <input type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Tracking number, product or order ref" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;width:100%">
+                <input type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Tracking number or product" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;width:100%">
               </label>
               <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500">Status
                 <select value="{{ statusFilter }}" onChange="{{ setStatusFilter }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
@@ -603,25 +455,33 @@ a:hover{color:var(--ink)}
               <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.875rem;font-weight:500">Sort by
                 <select value="{{ sort }}" onChange="{{ setSort }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
                   <option value="updated">Last update, newest</option>
-                  <option value="eta">Estimated delivery, soonest</option>
+                  <option value="eta">Order date, oldest first</option>
                   <option value="stage">Progress, furthest along</option>
                 </select>
               </label>
             </div>
-            <p aria-live="polite" style="margin:0;font-size:0.9375rem;color:var(--ink-2)">{{ listSummary }}</p>
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem">
+              <p aria-live="polite" style="margin:0;font-size:0.9375rem;color:var(--ink-2)">{{ listSummary }}</p>
+              <sc-if value="{{ hasData }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                  <button type="button" onClick="{{ askClearShips }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete all shipments</button>
+                  <button type="button" onClick="{{ askClear }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer;background:var(--bad);color:var(--on-brand);border-color:var(--bad)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete all orders</button>
+                </div>
+              </sc-if>
+            </div>
 
             <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
               <section style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:2rem;border:1px dashed var(--line-strong);border-radius:8px;background:var(--surface)">
                 <h2 style="margin:0;font-size:1.25rem;font-weight:600">No shipments yet</h2>
                 <p style="margin:0;color:var(--ink-2)">Shipments you add appear here with their latest checkpoint.</p>
-                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none">Add order</a>
+                <a href="#/add" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.125rem;border-radius:6px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M12 5v14M5 12h14"></path></svg>Add order</a>
               </section>
             </sc-if>
             <sc-if value="{{ filteredEmpty }}" hint-placeholder-val="{{ false }}">
               <section style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:2rem;border:1px dashed var(--line-strong);border-radius:8px;background:var(--surface)">
                 <h2 style="margin:0;font-size:1.25rem;font-weight:600">No shipments match these filters</h2>
                 <p style="margin:0;color:var(--ink-2);overflow-wrap:anywhere">Check the tracking number for a missing letter, or clear the filters to see all {{ shipCount }} shipments.</p>
-                <button type="button" onClick="{{ clearFilters }}" style="min-height:2.75rem;padding:0 1.125rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Clear filters</button>
+                <button type="button" onClick="{{ clearFilters }}" style="min-height:2.75rem;padding:0 1.125rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M6 6l12 12M18 6 6 18"></path></svg>Clear filters</button>
               </section>
             </sc-if>
 
@@ -631,22 +491,22 @@ a:hover{color:var(--ink)}
                   <thead>
                     <tr style="background:var(--sunk);text-align:left">
                       <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Tracking number</th>
-                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Carrier</th>
-                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Route</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Ordered</th>
                       <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Status</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">In this status</th>
+                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Business days</th>
                       <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Last update</th>
-                      <th scope="col" style="padding:0.75rem 1rem;font-weight:600">Est. delivery</th>
                     </tr>
                   </thead>
                   <tbody>
                     <sc-for list="{{ pageShipments }}" as="s" hint-placeholder-count="5">
                       <tr style="border-top:1px solid var(--line)">
-                        <td style="padding:0.75rem 1rem"><a href="{{ s.href }}" style="font-family:'IBM Plex Mono',monospace;font-weight:500;display:inline-flex;align-items:center;min-height:2.75rem">{{ s.tracking }}</a></td>
-                        <td style="padding:0.75rem 1rem">{{ s.carrier }}</td>
-                        <td style="padding:0.75rem 1rem">{{ s.route }}</td>
+                        <td style="padding:0.75rem 1rem"><a href="{{ s.href }}" style="font-family:'IBM Plex Mono',monospace;font-weight:500;display:inline-flex;align-items:center;gap:0.625rem;min-height:2.75rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:{{ s.tone.bg }};color:{{ s.tone.fg }};border:1px solid var(--badge-border)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem"><path d="{{ s.icon }}"></path></svg></span>{{ s.tracking }}</a></td>
+                        <td style="padding:0.75rem 1rem;white-space:nowrap">{{ s.ordered }}</td>
                         <td style="padding:0.75rem 1rem"><span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ s.tone.bg }};color:{{ s.tone.fg }};font-size:0.875rem;font-weight:500;white-space:nowrap"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ s.tone.fg }}"></span>{{ s.status }}</span></td>
+                        <td style="padding:0.75rem 1rem;white-space:nowrap;font-variant-numeric:tabular-nums">{{ s.inStatus }}</td>
+                        <td style="padding:0.75rem 1rem;white-space:nowrap;font-variant-numeric:tabular-nums">{{ s.bdays }}</td>
                         <td style="padding:0.75rem 1rem;color:var(--ink-2);white-space:nowrap">{{ s.updated }}</td>
-                        <td style="padding:0.75rem 1rem;color:var(--ink-2);white-space:nowrap">{{ s.eta }}</td>
                       </tr>
                     </sc-for>
                   </tbody>
@@ -662,8 +522,8 @@ a:hover{color:var(--ink)}
                         <span style="font-family:'IBM Plex Mono',monospace;font-weight:500;overflow-wrap:anywhere">{{ s.tracking }}</span>
                         <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ s.tone.bg }};color:{{ s.tone.fg }};font-size:0.875rem;font-weight:500"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ s.tone.fg }}"></span>{{ s.status }}</span>
                       </span>
-                      <span style="font-size:0.9375rem;color:var(--ink-2)">{{ s.carrier }} · {{ s.route }}</span>
-                      <span style="font-size:0.875rem;color:var(--ink-2)">Updated {{ s.updated }} · Est. {{ s.eta }}</span>
+                      <span style="font-size:0.9375rem;color:var(--ink)">{{ s.timing }}</span>
+                      <span style="font-size:0.875rem;color:var(--ink-2)">Ordered {{ s.ordered }} · Updated {{ s.updated }}</span>
                     </a>
                   </li>
                 </sc-for>
@@ -694,28 +554,74 @@ a:hover{color:var(--ink)}
             <header style="display:flex;flex-direction:column;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)">
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem 1rem">
                 <h1 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1.75rem;line-height:1.2;font-weight:500;overflow-wrap:anywhere">{{ d.tracking }}</h1>
-                <button type="button" onClick="{{ copyTracking }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:0.9375rem;cursor:pointer">Copy number</button>
+                <button type="button" onClick="{{ copyTracking }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:0.9375rem;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M9 9h11v11H9zM5 15H4V4h11v1"></path></svg>Copy number</button>
                 <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.375rem 0.75rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ d.tone.bg }};color:{{ d.tone.fg }};font-weight:600"><span aria-hidden="true" style="width:0.5625rem;height:0.5625rem;transform:rotate(45deg);background:{{ d.tone.fg }}"></span>{{ d.status }}</span>
+                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-left:auto">
+                  <button type="button" onClick="{{ openOrderEdit }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3zM14 8l3 3"></path></svg>Edit order</button>
+                  <button type="button" onClick="{{ askDeleteOrder }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete order</button>
+                </div>
               </div>
-              <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:1rem 2rem">
-                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Carrier</dt><dd style="margin:0;font-weight:500">{{ d.carrier }}</dd></div>
-                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Origin</dt><dd style="margin:0;font-weight:500">{{ d.origin }}</dd></div>
-                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Destination</dt><dd style="margin:0;font-weight:500">{{ d.destination }}</dd></div>
-                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Estimated delivery</dt><dd style="margin:0;font-weight:500">{{ d.eta }}</dd></div>
-                <div><dt style="font-size:0.875rem;color:var(--ink-2)">Order reference</dt><dd style="margin:0;font-weight:500;overflow-wrap:anywhere">{{ d.orderRef }}</dd></div>
+              <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:1rem">
+                <div style="display:flex;flex-direction:column;gap:0.25rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)"><dt style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--ink-2)"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"></path></svg></span>Order date</dt><dd style="margin:0;font-size:1.25rem;font-weight:600">{{ d.orderDate }}</dd></div>
+                <div style="display:flex;flex-direction:column;gap:0.25rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)"><dt style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--ink-2)"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path></svg></span>In current status</dt><dd style="margin:0;font-size:1.25rem;font-weight:600;font-variant-numeric:tabular-nums">{{ d.inStatus }}</dd><dd style="margin:0;font-size:0.8125rem;color:var(--ink-2)">{{ d.inStatusNote }}</dd></div>
+                <div style="display:flex;flex-direction:column;gap:0.25rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)"><dt style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--ink-2)"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M9 15l2 2 4-4"></path></svg></span>Business days running</dt><dd style="margin:0;font-size:1.25rem;font-weight:600;font-variant-numeric:tabular-nums">{{ d.bdays }}</dd><dd style="margin:0;font-size:0.8125rem;color:var(--ink-2)">{{ d.bdNote }}</dd></div>
+                <div style="display:flex;flex-direction:column;gap:0.25rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)"><dt style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--ink-2)"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9"></path></svg></span>Products</dt><dd style="margin:0;font-size:1.25rem;font-weight:600;font-variant-numeric:tabular-nums">{{ d.itemCount }}</dd></div>
               </dl>
             </header>
 
             <sc-if value="{{ d.delayed }}" hint-placeholder-val="{{ false }}">
               <div role="alert" style="display:flex;flex-direction:column;gap:0.25rem;padding:1rem 1.25rem;border:1px solid var(--bad);border-radius:6px;background:var(--bad-tint)">
                 <strong style="color:var(--bad);font-weight:600">Delayed at {{ d.stageShort }}</strong>
-                <span style="text-wrap:pretty">{{ d.delayNote }} Upload or send the document to your forwarder; the timeline updates when customs releases the parcel.</span>
+                <span style="text-wrap:pretty">{{ d.delayNote }} Clear the delay in Update status once it moves again.</span>
               </div>
             </sc-if>
 
+            <section aria-labelledby="up-h" style="display:flex;flex-direction:column;gap:1.25rem;padding:1.5rem;border:2px solid var(--brand);border-radius:8px;background:var(--surface)">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem">
+                <div style="display:flex;flex-direction:column;gap:0.25rem;min-width:0;flex:1 1 20rem">
+                  <span style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--brand-ink)"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);background:var(--accent)"></span>Manual update</span>
+                  <h2 id="up-h" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3zM14 8l3 3"></path></svg></span>Update status</h2>
+                  <p style="margin:0;font-size:0.9375rem;color:var(--ink-2);text-wrap:pretty">Orvanta isn't connected to a courier yet, so you record each step here. Every change is added to the timeline and resets the days-in-status count.</p>
+                </div>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0;flex:0 1 16rem">Quick status change
+                  <select value="{{ quickStage }}" onChange="{{ quickSet }}" aria-describedby="qs-help" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:2px solid var(--brand);border-radius:6px;background:var(--brand-tint);color:var(--brand-ink);font:inherit;font-size:1rem;font-weight:600;min-width:0;cursor:pointer">
+                    <sc-for list="{{ stageOptions }}" as="o" hint-placeholder-count="8"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+                  </select>
+                  <span id="qs-help" style="font-size:0.8125rem;font-weight:400;color:var(--ink-2)">Saves straight away with the current time</span>
+                </label>
+              </div>
+              <form onSubmit="{{ saveStatus }}" noValidate="{{ true }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1rem;align-items:start;padding-top:1.25rem;border-top:1px solid var(--line)">
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0">Status
+                  <select name="stage" value="{{ up.stage }}" onChange="{{ setUp }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+                    <sc-for list="{{ stageOptions }}" as="o" hint-placeholder-count="8"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+                  </select>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0">Date and time
+                  <input type="datetime-local" name="at" value="{{ up.at }}" max="{{ up.max }}" onChange="{{ setUp }}" aria-invalid="{{ up.atInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;border-color:{{ up.atBorder }}">
+                  <span style="font-size:0.875rem;font-weight:400;color:{{ up.atColor }}">{{ up.atMsg }}</span>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0;grid-column:1 / -1">Note <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional, e.g. "Seller sent waybill" or "Paid duties"</span>
+                  <input name="note" value="{{ up.note }}" onChange="{{ setUp }}" maxLength="160" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+                </label>
+                <label style="grid-column:1 / -1;display:flex;align-items:center;gap:0.75rem;min-height:2.75rem;cursor:pointer">
+                  <input type="checkbox" name="delayed" checked="{{ up.delayed }}" onChange="{{ setUp }}" style="width:1.25rem;height:1.25rem;margin:0;accent-color:var(--bad);flex-shrink:0">
+                  <span style="display:flex;flex-direction:column"><span style="font-weight:500">Mark as delayed or on hold</span><span style="font-size:0.875rem;color:var(--ink-2)">Shows in Needs your attention until you clear it</span></span>
+                </label>
+                <sc-if value="{{ up.delayed }}" hint-placeholder-val="{{ false }}">
+                  <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0;grid-column:1 / -1">Reason for the delay
+                    <input name="delayNote" value="{{ up.delayNote }}" onChange="{{ setUp }}" placeholder="e.g. Customs asked for the commercial invoice" maxLength="160" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+                  </label>
+                </sc-if>
+                <div style="grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center">
+                  <button type="submit" style="min-height:2.75rem;padding:0 1.125rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Save update</button>
+                  <span aria-live="polite" style="font-size:0.9375rem;color:var(--ink-2)">{{ up.summary }}</span>
+                </div>
+              </form>
+            </section>
+
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:1.5rem;align-items:start">
               <section aria-labelledby="tl-h" style="display:flex;flex-direction:column;gap:1rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-width:0">
-                <h2 id="tl-h" style="margin:0;font-size:1.25rem;font-weight:600">Tracking timeline</h2>
+                <h2 id="tl-h" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path></svg></span>Tracking timeline</h2>
                 <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
                   <sc-for list="{{ d.timeline }}" as="t" hint-placeholder-count="8">
                     <li style="display:grid;grid-template-columns:1.5rem minmax(0,1fr);gap:0 0.75rem">
@@ -724,7 +630,7 @@ a:hover{color:var(--ink)}
                         <span style="flex:1;width:2px;min-height:1rem;background:{{ t.line }}"></span>
                       </span>
                       <div style="display:flex;flex-direction:column;gap:0.125rem;padding-bottom:1.25rem;min-width:0">
-                        <span style="font-weight:{{ t.weight }};color:{{ t.color }}">{{ t.label }} <span style="font-size:0.8125rem;font-weight:600;color:var(--brand-ink)">{{ t.tag }}</span></span>
+                        <span style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-weight:{{ t.weight }};color:{{ t.color }}"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0;color:{{ t.iconColor }}"><path d="{{ t.icon }}"></path></svg>{{ t.label }} <span style="font-size:0.8125rem;font-weight:600;color:var(--brand-ink)">{{ t.tag }}</span></span>
                         <span style="font-size:0.9375rem;color:var(--ink-2);overflow-wrap:anywhere">{{ t.meta }}</span>
                         <span style="font-size:0.9375rem;color:var(--ink);overflow-wrap:anywhere">{{ t.note }}</span>
                       </div>
@@ -735,7 +641,7 @@ a:hover{color:var(--ink)}
 
               <aside aria-label="Shipment summary" style="display:flex;flex-direction:column;gap:1.5rem;min-width:0">
                 <section aria-labelledby="cost-h" style="display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
-                  <h2 id="cost-h" style="margin:0;font-size:1.25rem;font-weight:600">Cost summary</h2>
+                  <h2 id="cost-h" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3 7h18v10H3zM12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM6.5 10v4M17.5 10v4"></path></svg></span>Cost summary</h2>
                   <dl style="margin:0;display:flex;flex-direction:column;gap:0.5rem">
                     <sc-for list="{{ d.costs }}" as="c" hint-placeholder-count="3">
                       <div style="display:flex;justify-content:space-between;gap:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--line)"><dt style="color:var(--ink-2)">{{ c.label }}</dt><dd style="margin:0;font-weight:600;font-variant-numeric:tabular-nums;text-align:right">{{ c.value }}</dd></div>
@@ -744,9 +650,9 @@ a:hover{color:var(--ink)}
                   <p style="margin:0;font-size:0.875rem;color:var(--ink-2)">PHP uses each product's saved rate. Shipping and duties are not included yet.</p>
                 </section>
                 <section aria-labelledby="ts-h" style="display:flex;flex-direction:column;gap:0.75rem;padding:1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
-                  <h2 id="ts-h" style="margin:0;font-size:1.25rem;font-weight:600">Timestamps</h2>
+                  <h2 id="ts-h" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"></path></svg></span>Timestamps</h2>
                   <dl style="margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9375rem">
-                    <div style="display:flex;justify-content:space-between;gap:1rem"><dt style="color:var(--ink-2)">First scan</dt><dd style="margin:0;text-align:right">{{ d.firstScan }}</dd></div>
+                    <div style="display:flex;justify-content:space-between;gap:1rem"><dt style="color:var(--ink-2)">Ordered</dt><dd style="margin:0;text-align:right">{{ d.orderDate }}</dd></div>
                     <div style="display:flex;justify-content:space-between;gap:1rem"><dt style="color:var(--ink-2)">Last update</dt><dd style="margin:0;text-align:right">{{ d.updated }}</dd></div>
                     <div style="display:flex;justify-content:space-between;gap:1rem"><dt style="color:var(--ink-2)">Time zone</dt><dd style="margin:0;text-align:right">{{ tzLabel }}</dd></div>
                   </dl>
@@ -756,7 +662,7 @@ a:hover{color:var(--ink)}
 
             <section aria-labelledby="prod-h" style="display:flex;flex-direction:column;gap:1rem">
               <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem">
-                <h2 id="prod-h" style="margin:0;font-size:1.25rem;font-weight:600">Products in this shipment</h2>
+                <h2 id="prod-h" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9"></path></svg></span>Products in this shipment</h2>
               </div>
               <sc-if value="{{ d.noItems }}" hint-placeholder-val="{{ false }}">
                 <p style="margin:0;padding:1.25rem;border:1px dashed var(--line-strong);border-radius:8px;color:var(--ink-2)">No products linked to this order yet. Use Edit on a product, or add the order again with its items.</p>
@@ -767,7 +673,7 @@ a:hover{color:var(--ink)}
                     <span style="flex:1 1 14rem;min-width:0;font-weight:500;overflow-wrap:anywhere">{{ it.name }}</span>
                     <span style="color:var(--ink-2);font-variant-numeric:tabular-nums">{{ it.qty }} × {{ it.unit }}</span>
                     <span style="font-weight:600;font-variant-numeric:tabular-nums">{{ it.php }}</span>
-                    <button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Edit</button>
+                    <button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3zM14 8l3 3"></path></svg>Edit</button>
                   </li>
                 </sc-for>
               </ul>
@@ -832,7 +738,7 @@ a:hover{color:var(--ink)}
                         <td style="padding:0.75rem 1rem;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap">{{ it.php }}</td>
                         <td style="padding:0.75rem 1rem"><sc-if value="{{ it.hasShip }}" hint-placeholder-val="{{ true }}"><a href="{{ it.href }}" style="font-family:'IBM Plex Mono',monospace;font-size:0.875rem">{{ it.tracking }}</a></sc-if><sc-if value="{{ it.noShip }}" hint-placeholder-val="{{ false }}"><span style="color:var(--ink-2)">None yet</span></sc-if></td>
                         <td style="padding:0.75rem 1rem"><span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ it.tone.bg }};color:{{ it.tone.fg }};font-size:0.875rem;font-weight:500;white-space:nowrap"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ it.tone.fg }}"></span>{{ it.status }}</span></td>
-                        <td style="padding:0.5rem 1rem;text-align:right"><button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Edit</button></td>
+                        <td style="padding:0.5rem 1rem;text-align:right"><button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3zM14 8l3 3"></path></svg>Edit</button></td>
                       </tr>
                     </sc-for>
                   </tbody>
@@ -857,7 +763,7 @@ a:hover{color:var(--ink)}
                     <span style="display:flex;flex-wrap:wrap;gap:0.25rem 1rem;font-size:0.9375rem;color:var(--ink-2);font-variant-numeric:tabular-nums"><span>{{ it.qty }} × {{ it.unit }}</span><span>{{ it.sub }}</span><span style="color:var(--ink);font-weight:600">{{ it.php }}</span></span>
                     <span style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;justify-content:space-between">
                       <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.625rem;border-radius:4px;border:1px solid var(--badge-border);background:{{ it.tone.bg }};color:{{ it.tone.fg }};font-size:0.875rem;font-weight:500"><span aria-hidden="true" style="width:0.5rem;height:0.5rem;transform:rotate(45deg);background:{{ it.tone.fg }}"></span>{{ it.status }}</span>
-                      <button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Edit</button>
+                      <button type="button" onClick="{{ it.edit }}" aria-label="{{ it.editLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3zM14 8l3 3"></path></svg>Edit</button>
                     </span>
                   </li>
                 </sc-for>
@@ -883,63 +789,57 @@ a:hover{color:var(--ink)}
               <div role="alert" style="padding:1rem 1.25rem;border:1px solid var(--bad);border-radius:6px;background:var(--bad-tint);color:var(--bad);font-weight:600">{{ addErrorSummary }}</div>
             </sc-if>
             <form onSubmit="{{ submitAdd }}" noValidate="{{ true }}" style="display:flex;flex-direction:column;gap:2rem">
-              <fieldset style="margin:0;padding:0;border:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.25rem">
-                <legend style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;padding:0">Shipment</legend>
-                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;grid-column:1 / -1">Tracking number
-                  <input name="tracking" value="{{ add.tracking }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.trackingInvalid }}" aria-describedby="trk-help" autoComplete="off" spellCheck="false" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ addErr.trackingBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:1rem">
+              <fieldset style="margin:0;padding:0;border:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1.25rem">
+                <legend style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;padding:0;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3 12V4h8l10 10-8 8zM7.5 8.5h.01"></path></svg></span>Order</legend>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0;grid-column:1 / -1">Tracking number
+                  <input name="tracking" value="{{ add.tracking }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.trackingInvalid }}" aria-describedby="trk-help" autoComplete="off" spellCheck="false" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;border-color:{{ addErr.trackingBorder }};font-family:'IBM Plex Mono',monospace">
                   <span id="trk-help" style="font-size:0.875rem;font-weight:400;color:{{ addErr.trackingColor }}">{{ addErr.trackingMsg }}</span>
                 </label>
-                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Carrier
-                  <select name="carrier" value="{{ add.carrier }}" onChange="{{ setAddField }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
-                    <sc-for list="{{ carriers }}" as="c" hint-placeholder-count="6"><option value="{{ c }}">{{ c }}</option></sc-for>
-                  </select>
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0">Order date
+                  <input type="date" name="orderDate" value="{{ add.orderDate }}" max="{{ todayIso }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.orderDateInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;border-color:{{ addErr.orderDateBorder }}">
+                  <span style="font-size:0.875rem;font-weight:400;color:{{ addErr.orderDateColor }}">{{ addErr.orderDateMsg }}</span>
                 </label>
-                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Current status
-                  <select name="stage" value="{{ add.stage }}" onChange="{{ setAddField }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0">Current status
+                  <select name="stage" value="{{ add.stage }}" onChange="{{ setAddField }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
                     <sc-for list="{{ stageOptions }}" as="o" hint-placeholder-count="8"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
                   </select>
-                </label>
-                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Origin
-                  <input name="origin" value="{{ add.origin }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.originInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ addErr.originBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
-                  <span style="font-size:0.875rem;font-weight:400;color:{{ addErr.originColor }}">{{ addErr.originMsg }}</span>
-                </label>
-                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Destination
-                  <input name="destination" value="{{ add.destination }}" onChange="{{ setAddField }}" aria-invalid="{{ addErr.destinationInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ addErr.destinationBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
-                  <span style="font-size:0.875rem;font-weight:400;color:{{ addErr.destinationColor }}">{{ addErr.destinationMsg }}</span>
-                </label>
-                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Order reference <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional</span>
-                  <input name="orderRef" value="{{ add.orderRef }}" onChange="{{ setAddField }}" placeholder="e.g. TB-4402917735" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
-                </label>
-                <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Estimated delivery <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional, if the carrier gave one</span>
-                  <input type="date" name="eta" value="{{ add.eta }}" onChange="{{ setAddField }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
+                  <span style="font-size:0.875rem;font-weight:400;color:var(--ink-2)">You can update it later on the order page.</span>
                 </label>
               </fieldset>
 
               <fieldset style="margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:1rem">
-                <legend style="font-size:1.25rem;font-weight:600;margin-bottom:0.25rem;padding:0">Products in this order</legend>
-                <p style="margin:0;color:var(--ink-2)">Add each item with its CNY price. PHP is worked out at 1 CNY = {{ rateLabel }} PHP.</p>
+                <legend style="font-size:1.25rem;font-weight:600;margin-bottom:0.25rem;padding:0;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9"></path></svg></span>Products in this order</legend>
+                <p style="margin:0;color:var(--ink-2)">Enter each price in PHP or CNY. The other currency shows as you type, at 1 CNY = {{ rateLabel }} PHP.</p>
                 <sc-for list="{{ addLines }}" as="ln" hint-placeholder-count="1">
-                  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:0.75rem;align-items:end;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
+                  <div style="display:grid;grid-template-columns:minmax(0,6.5rem) minmax(0,1fr);gap:0.75rem;align-items:start;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)">
                     <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;grid-column:1 / -1;min-width:0">Product
                       <input data-index="{{ ln.i }}" data-field="name" value="{{ ln.name }}" onChange="{{ setLine }}" aria-invalid="{{ ln.nameInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ ln.nameBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
                     </label>
                     <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Qty
                       <input type="number" min="1" step="1" inputMode="numeric" data-index="{{ ln.i }}" data-field="qty" value="{{ ln.qty }}" onChange="{{ setLine }}" aria-invalid="{{ ln.qtyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ ln.qtyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
                     </label>
-                    <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Unit price (CNY)
-                      <input type="number" min="0" step="0.01" inputMode="decimal" data-index="{{ ln.i }}" data-field="cny" value="{{ ln.cny }}" onChange="{{ setLine }}" aria-invalid="{{ ln.cnyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ ln.cnyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
-                    </label>
+                    <div style="display:flex;flex-direction:column;gap:0.375rem;min-width:0">
+                      <label for="{{ ln.priceId }}" style="font-weight:500">Unit price</label>
+                      <div style="display:flex;gap:0.5rem;min-width:0">
+                        <input id="{{ ln.priceId }}" type="number" min="0" step="0.01" inputMode="decimal" data-index="{{ ln.i }}" data-field="price" value="{{ ln.price }}" onChange="{{ setLine }}" aria-invalid="{{ ln.priceInvalid }}" aria-describedby="{{ ln.convId }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;flex:1;width:100%;border-color:{{ ln.priceBorder }};font-variant-numeric:tabular-nums">
+                        <select data-index="{{ ln.i }}" data-field="cur" value="{{ ln.cur }}" onChange="{{ setLine }}" aria-label="Currency of the unit price" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;flex-shrink:0;width:6.25rem;font-weight:600">
+                          <option value="PHP">PHP ₱</option>
+                          <option value="CNY">CNY ¥</option>
+                        </select>
+                      </div>
+                      <span id="{{ ln.convId }}" aria-live="polite" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:500;font-variant-numeric:tabular-nums;color:{{ ln.convColor }}"><span aria-hidden="true" style="width:0.4375rem;height:0.4375rem;transform:rotate(45deg);flex-shrink:0;background:{{ ln.convColor }}"></span>{{ ln.conv }}</span>
+                    </div>
                     <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;grid-column:1 / -1">
                       <span style="font-size:0.9375rem;color:{{ ln.msgColor }}">{{ ln.msg }}</span>
-                      <button type="button" onClick="{{ ln.remove }}" aria-label="{{ ln.removeLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer">Remove</button>
+                      <button type="button" onClick="{{ ln.remove }}" aria-label="{{ ln.removeLabel }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M6 6l12 12M18 6 6 18"></path></svg>Remove</button>
                     </div>
                   </div>
                 </sc-for>
-                <button type="button" onClick="{{ addLine }}" style="align-self:flex-start;min-height:2.75rem;padding:0 1rem;border:1px dashed var(--line-strong);border-radius:6px;background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Add another product</button>
+                <button type="button" onClick="{{ addLine }}" style="align-self:flex-start;min-height:2.75rem;padding:0 1rem;border:1px dashed var(--line-strong);border-radius:6px;background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M12 5v14M5 12h14"></path></svg>Add another product</button>
               </fieldset>
 
               <div style="display:flex;flex-wrap:wrap;gap:0.75rem;padding-top:1.5rem;border-top:1px solid var(--line)">
-                <button type="submit" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer">Save order</button>
+                <button type="submit" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Save order</button>
                 <a href="#/shipments" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1rem;font-weight:600">Cancel</a>
               </div>
             </form>
@@ -955,7 +855,7 @@ a:hover{color:var(--ink)}
             </div>
 
             <section aria-labelledby="set-display" style="display:flex;flex-direction:column;gap:1rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
-              <h2 id="set-display" style="margin:0;font-size:1.25rem;font-weight:600">Display</h2>
+              <h2 id="set-display" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M3 5h18v12H3zM8 21h8M12 17v4"></path></svg></span>Display</h2>
               <fieldset style="margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:0.5rem">
                 <legend style="font-weight:500;margin-bottom:0.5rem;padding:0">Theme</legend>
                 <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
@@ -975,7 +875,7 @@ a:hover{color:var(--ink)}
             </section>
 
             <section aria-labelledby="set-profile" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
-              <h2 id="set-profile" style="margin:0;font-size:1.25rem;font-weight:600;grid-column:1 / -1">Profile and region</h2>
+              <h2 id="set-profile" style="margin:0;font-size:1.25rem;font-weight:600;grid-column:1 / -1;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"></path></svg></span>Profile and region</h2>
               <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Name
                 <input name="name" value="{{ settings.name }}" onChange="{{ setSetting }}" autoComplete="name" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
               </label>
@@ -1000,7 +900,7 @@ a:hover{color:var(--ink)}
             </section>
 
             <section aria-labelledby="set-cur" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
-              <h2 id="set-cur" style="margin:0;font-size:1.25rem;font-weight:600;grid-column:1 / -1">Currency</h2>
+              <h2 id="set-cur" style="margin:0;font-size:1.25rem;font-weight:600;grid-column:1 / -1;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M7 4v16M3.5 16.5 7 20l3.5-3.5M17 20V4M13.5 7.5 17 4l3.5 3.5"></path></svg></span>Currency</h2>
               <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Show totals first in
                 <select name="primary" value="{{ settings.primary }}" onChange="{{ setSetting }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem">
                   <option value="PHP">Philippine peso (PHP)</option>
@@ -1014,7 +914,7 @@ a:hover{color:var(--ink)}
             </section>
 
             <section aria-labelledby="set-notify" style="display:flex;flex-direction:column;gap:0.25rem;padding-bottom:2rem;border-bottom:1px solid var(--line)">
-              <h2 id="set-notify" style="margin:0 0 0.75rem;font-size:1.25rem;font-weight:600">Notifications</h2>
+              <h2 id="set-notify" style="margin:0 0 0.75rem;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"></path></svg></span>Notifications</h2>
               <sc-for list="{{ notifyOpts }}" as="o" hint-placeholder-count="4">
                 <label style="display:flex;align-items:flex-start;gap:0.75rem;min-height:2.75rem;padding:0.5rem 0;cursor:pointer">
                   <input type="checkbox" checked="{{ o.on }}" onChange="{{ o.toggle }}" style="width:1.25rem;height:1.25rem;margin:0.125rem 0 0;accent-color:var(--brand);flex-shrink:0">
@@ -1024,9 +924,13 @@ a:hover{color:var(--ink)}
             </section>
 
             <section aria-labelledby="set-privacy" style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start">
-              <h2 id="set-privacy" style="margin:0;font-size:1.25rem;font-weight:600">Privacy and security</h2>
+              <h2 id="set-privacy" style="margin:0;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:0.625rem"><span aria-hidden="true" style="width:2rem;height:2rem;border-radius:6px;display:inline-grid;place-items:center;flex-shrink:0;background:var(--brand-tint);color:var(--brand-ink)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:1.125rem;height:1.125rem;flex-shrink:0"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"></path></svg></span>Privacy and security</h2>
               <p style="margin:0;color:var(--ink-2);text-wrap:pretty">In this release your shipments, prices and settings are stored only in this browser. Sign-in, session management and carrier credentials arrive with the account service in a later release.</p>
-              <button type="button" onClick="{{ askReset }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer">Delete data on this device</button>
+              <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+                <button type="button" onClick="{{ askClearShips }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete all shipments</button>
+                <button type="button" onClick="{{ askClear }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete all orders</button>
+                <button type="button" onClick="{{ askReset }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M20 11a8 8 0 0 0-14.9-4M4 4v4h4M4 13a8 8 0 0 0 14.9 4M20 20v-4h-4"></path></svg>Restore sample data</button>
+              </div>
             </section>
           </div>
         </sc-if>
@@ -1049,7 +953,7 @@ a:hover{color:var(--ink)}
     <footer style="border-top:1px solid var(--line);background:var(--surface);padding:1.25rem 5.5rem 1.25rem 1.5rem;display:flex;flex-wrap:wrap;gap:0.75rem 2rem;align-items:center;justify-content:space-between;font-size:0.875rem;color:var(--ink-2)">
       <div style="display:flex;align-items:center;gap:0.625rem">
         <sc-if value="{{ notDark }}" hint-placeholder-val="{{ true }}"><img src="assets/logo/orvanta-symbol.svg" alt="" style="width:1.25rem;height:1.25rem"></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}"><img src="assets/logo/orvanta-symbol-reversed.svg" alt="" style="width:1.25rem;height:1.25rem"></sc-if>
-        <span>Orvanta v1.3.0 · China to Philippines shipment tracking</span>
+        <span>Orvanta v1.4.0 · China to Philippines shipment tracking</span>
       </div>
       <span>Times in {{ tzLabel }} · 1 CNY = {{ rateLabel }} PHP, your rate</span>
       <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;align-items:center;gap:0 1.25rem">
@@ -1076,13 +980,19 @@ a:hover{color:var(--ink)}
             <textarea name="name" rows="2" autoFocus="{{ true }}" value="{{ draft.name }}" onChange="{{ setDraft }}" aria-invalid="{{ dErr.nameInvalid }}" style="padding:0.625rem 0.875rem;border:1px solid {{ dErr.nameBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;resize:vertical"></textarea>
             <span style="font-size:0.875rem;font-weight:400;color:var(--bad)">{{ dErr.name }}</span>
           </label>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:1rem">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem">
             <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Quantity
               <input type="number" name="qty" min="1" step="1" inputMode="numeric" value="{{ draft.qty }}" onChange="{{ setDraft }}" aria-invalid="{{ dErr.qtyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ dErr.qtyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
               <span style="font-size:0.875rem;font-weight:400;color:var(--bad)">{{ dErr.qty }}</span>
             </label>
-            <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Unit price (CNY)
-              <input type="number" name="cny" min="0" step="0.01" inputMode="decimal" value="{{ draft.cny }}" onChange="{{ setDraft }}" aria-invalid="{{ dErr.cnyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid {{ dErr.cnyBorder }};border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
+            <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;grid-column:span 2;min-width:0">Unit price
+              <span style="display:flex;gap:0.5rem;min-width:0">
+                <input type="number" name="cny" min="0" step="0.01" inputMode="decimal" value="{{ draft.cny }}" onChange="{{ setDraft }}" aria-invalid="{{ dErr.cnyInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;flex:1;width:100%;border-color:{{ dErr.cnyBorder }}">
+                <select name="cur" value="{{ draft.cur }}" onChange="{{ setDraft }}" aria-label="Currency of the unit price" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;flex-shrink:0;width:6.25rem;font-weight:600">
+                  <option value="PHP">PHP ₱</option>
+                  <option value="CNY">CNY ¥</option>
+                </select>
+              </span>
               <span style="font-size:0.875rem;font-weight:400;color:var(--bad)">{{ dErr.cny }}</span>
             </label>
             <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Rate, PHP per CNY
@@ -1091,32 +1001,72 @@ a:hover{color:var(--ink)}
             </label>
           </div>
           <p aria-live="polite" style="margin:0;padding:0.75rem 1rem;border-radius:6px;background:var(--sunk);display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.5rem"><span>{{ draftCalc.cny }}</span><strong style="font-weight:600">{{ draftCalc.php }}</strong></p>
-          <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Shipment
-            <select name="shipmentId" value="{{ draft.shipmentId }}" onChange="{{ setDraft }}" style="min-height:2.75rem;padding:0 2rem 0 0.75rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0">
-              <sc-for list="{{ shipOptions }}" as="o" hint-placeholder-count="4"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
-            </select>
-          </label>
-          <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Notes <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional, e.g. colour, size or seller</span>
+                    <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500">Notes <span style="font-weight:400;color:var(--ink-2);font-size:0.875rem">Optional, e.g. colour, size or seller</span>
             <textarea name="notes" rows="2" value="{{ draft.notes }}" onChange="{{ setDraft }}" style="padding:0.625rem 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;resize:vertical"></textarea>
           </label>
           <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:space-between;align-items:center">
             <sc-if value="{{ draftIsEdit }}" hint-placeholder-val="{{ false }}">
-              <button type="button" onClick="{{ deleteItem }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer">Delete product</button>
+              <button type="button" onClick="{{ deleteItem }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--bad);border-radius:6px;background:var(--surface);color:var(--bad);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete product</button>
             </sc-if>
             <div style="display:flex;gap:0.75rem;margin-left:auto">
               <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Cancel</button>
-              <button type="submit" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer">Save product</button>
+              <button type="submit" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Save product</button>
             </div>
           </div>
         </form>
       </sc-if>
 
+      <sc-if value="{{ dlg.clearShips }}" hint-placeholder-val="{{ false }}">
+        <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">Delete all shipments?</h2>
+        <p style="margin:0;text-wrap:pretty">This deletes {{ shipCountLabel }} with their tracking numbers, statuses and timelines. Your {{ itemCountLabel }} stay on the Products page as not shipped yet. It can't be undone.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:flex-end">
+          <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Keep shipments</button>
+          <button type="button" onClick="{{ doClearShips }}" style="min-height:2.75rem;padding:0 1.125rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer;background:var(--bad)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete all shipments</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ dlg.clear }}" hint-placeholder-val="{{ false }}">
+        <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">Delete all orders?</h2>
+        <p style="margin:0;text-wrap:pretty">This deletes {{ clearCount }}, their shipments and all {{ itemCountLabel }} from this device so you can start fresh. Your settings stay. It can't be undone.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:flex-end">
+          <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Keep my orders</button>
+          <button type="button" onClick="{{ doClear }}" style="min-height:2.75rem;padding:0 1.125rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer;background:var(--bad)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete all orders</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ dlg.delOrder }}" hint-placeholder-val="{{ false }}">
+        <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">Delete order {{ d.tracking }}?</h2>
+        <p style="margin:0;text-wrap:pretty">This deletes the order, its timeline and {{ d.itemCount }}. It can't be undone.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:flex-end">
+          <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Keep order</button>
+          <button type="button" onClick="{{ doDeleteOrder }}" style="min-height:2.75rem;padding:0 1.125rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer;background:var(--bad)"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete order</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ dlg.order }}" hint-placeholder-val="{{ false }}">
+        <form onSubmit="{{ saveOrder }}" noValidate="{{ true }}" style="display:flex;flex-direction:column;gap:1rem">
+          <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">Edit order</h2>
+          <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0">Tracking number
+            <input name="tracking" value="{{ od.tracking }}" onChange="{{ setOd }}" autoFocus="{{ true }}" autoComplete="off" spellCheck="false" aria-invalid="{{ od.trackingInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;border-color:{{ od.trackingBorder }};font-family:'IBM Plex Mono',monospace">
+            <span style="font-size:0.875rem;font-weight:400;color:var(--bad)">{{ od.trackingErr }}</span>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:0.375rem;font-weight:500;min-width:0">Order date
+            <input type="date" name="orderDate" value="{{ od.orderDate }}" max="{{ todayIso }}" onChange="{{ setOd }}" aria-invalid="{{ od.dateInvalid }}" style="min-height:2.75rem;padding:0 0.875rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;min-width:0;border-color:{{ od.dateBorder }}">
+            <span style="font-size:0.875rem;font-weight:400;color:{{ od.dateColor }}">{{ od.dateMsg }}</span>
+          </label>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:flex-end">
+            <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Cancel</button>
+            <button type="submit" style="min-height:2.75rem;padding:0 1.125rem;border:0;border-radius:6px;background:var(--brand);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Save order</button>
+          </div>
+        </form>
+      </sc-if>
+
       <sc-if value="{{ dlg.reset }}" hint-placeholder-val="{{ false }}">
-        <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">Delete everything on this device?</h2>
-        <p style="margin:0;text-wrap:pretty">This removes all shipments, products and settings stored in this browser, in both workspaces, and restores the sample data. It can't be undone.</p>
+        <h2 id="dlg-h" style="margin:0;font-size:1.375rem;font-weight:600">Restore the sample data?</h2>
+        <p style="margin:0;text-wrap:pretty">This replaces your orders and products with the sample data and resets your settings. It can't be undone.</p>
         <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:flex-end">
           <button type="button" onClick="{{ closeDialog }}" style="min-height:2.75rem;padding:0 1rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer">Keep my data</button>
-          <button type="button" onClick="{{ doReset }}" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--bad);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer">Delete and restore sample</button>
+          <button type="button" onClick="{{ doReset }}" style="min-height:2.75rem;padding:0 1.25rem;border:0;border-radius:6px;background:var(--bad);color:var(--on-brand);font:inherit;font-weight:600;cursor:pointer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1.0625rem;height:1.0625rem;margin-right:0.5rem;vertical-align:-0.2em"><path d="M20 11a8 8 0 0 0-14.9-4M4 4v4h4M4 13a8 8 0 0 0 14.9 4M20 20v-4h-4"></path></svg>Restore sample data</button>
         </div>
       </sc-if>
     </div>
@@ -1150,8 +1100,11 @@ const STAGES=[
 const PLACE=['Consolidation warehouse','Export customs office','At sea, South China Sea','Manila International Container Terminal','Bureau of Customs, Port of Manila','J&T Express hub, Pasig'];
 const CARRIERS=['YTO Express','SF Express','ZTO Express','Cainiao','J&T Express','Other'];
 const KEY='orvanta.v1';
+const SICON=['M3 10 12 4l9 6v10H3zM8 20v-6h8v6','M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h5','M3 17c2 2 4 2 6 0s4-2 6 0 4 2 6 0M5 14l-1-5h16l-1 5M8 9V5h8v4','M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM12 8v13M5 13a7 7 0 0 0 14 0M8 12H5M19 12h-3','M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6zM9 12l2 2 4-4','M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9','M3 7h11v9H3zM14 10h4l3 3v3h-7M7 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM17 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z','M3 11 12 4l9 7v9H3zM9 15l2 2 4-4'];
 const TONES={neutral:{bg:'var(--sunk)',fg:'var(--ink-2)'},brand:{bg:'var(--brand-tint)',fg:'var(--brand-ink)'},ok:{bg:'var(--ok-tint)',fg:'var(--ok)'},bad:{bg:'var(--bad-tint)',fg:'var(--bad)'}};
-const chain=(dates,notes)=>dates.map((at,i)=>({stage:i,at:at.length<11?at+'T10:00:00+08:00':at+':00+08:00',note:(notes&&notes[i])||'',source:'Carrier sync'}));
+const chain=(dates,notes)=>dates.map((at,i)=>({stage:i,at:at.length<11?at+'T10:00:00+08:00':at+':00+08:00',note:(notes&&notes[i])||'',source:'Sample data'}));
+const OD={s1:'2026-10-01',s2:'2026-09-19',s3:'2026-09-11',s4:'2026-10-12',s5:'2026-09-23',s6:'2026-09-08',s7:'2026-09-24'};
+function migrate(data){if(!data)return data;const out={};Object.keys(data).forEach(k=>{const w=data[k]||{shipments:[],items:[]};out[k]={...w,shipments:(w.shipments||[]).map(sh=>({...sh,orderDate:sh.orderDate||OD[sh.id]||'',events:(sh.events||[]).map(e=>e.source==='Carrier sync'?{...e,source:'Sample data'}:e)}))}});return out}
 function seed(){
   const shipments=[
     {id:'s1',tracking:'YT2426815530712',carrier:'YTO Express',origin:'Guangzhou, CN',destination:'Quezon City, PH',orderRef:'TB-4402917735',stage:2,delayed:false,delayNote:'',eta:'2026-10-24',
@@ -1168,6 +1121,7 @@ function seed(){
       events:chain(['2026-09-11T09:00','2026-09-13T10:30','2026-09-15T19:00','2026-09-23T07:10','2026-09-25T14:00','2026-09-28T11:20','2026-09-30T08:30','2026-09-30T16:40'],['','','','','Released by customs','','','Received by recipient'])},
     {id:'s7',tracking:'JT6100293850019',carrier:'J&T Express',origin:'Shenzhen, CN',destination:'Quezon City, PH',orderRef:'',stage:6,delayed:false,delayNote:'',eta:'2026-10-15',
       events:chain(['2026-09-28T13:00','2026-09-30T10:00','2026-10-02T20:00','2026-10-08T07:00','2026-10-10T15:30','2026-10-13T09:40','2026-10-15T07:50'],['','','','','Released by customs','','Rider assigned'])}];
+  shipments.forEach(x=>{x.orderDate=OD[x.id]});
   const I=(id,name,qty,cny,shipmentId,notes)=>({id,name,qty,cny,rate:null,shipmentId,notes:notes||''});
   const items=[
     I('i1','Stainless steel rice cooker inner pot, 5 L',2,68,'s1'),I('i2','Linen blackout curtains, 140 x 260 cm',2,89.5,'s1','Colour: oat'),I('i3','Bamboo drawer organisers, set of 6',1,39.9,'s1'),
@@ -1181,12 +1135,13 @@ function seed(){
   return {personal:{shipments,items},resale:{shipments:[],items:[]}};
 }
 const DEFAULT_SETTINGS={name:'',email:'',locale:'en-PH',tz:'Asia/Manila',primary:'PHP',rate:'7.95',theme:'light',sidebar:true,textSize:'m',notify:{milestones:true,customs:true,delays:true,email:false}};
-const blankAdd=()=>({tracking:'',carrier:'YTO Express',stage:'0',origin:'Guangzhou, CN',destination:'',orderRef:'',eta:'',lines:[{name:'',qty:'1',cny:''}]});
+const manilaIso=t=>new Date((t===undefined?Date.now():t)+8*36e5).toISOString().slice(0,10);
+const blankAdd=cur=>({tracking:'',orderDate:manilaIso(),stage:'0',lines:[{name:'',qty:'1',price:'',cur:cur||'PHP'}]});
 function parseHash(){
   const h=(typeof location!=='undefined'?location.hash:'').replace(/^#\/?/,'');
   const [a,b]=h.split('/');
   if(!a) return {route:'overview',param:null};
-  if(['overview','dashboard','shipments','items','add','convert','settings'].includes(a)) return {route:a,param:null};
+  if(['overview','dashboard','shipments','items','add','settings'].includes(a)) return {route:a,param:null};
   if(a==='shipment'&&b) return {route:'shipment',param:decodeURIComponent(b)};
   return {route:'notfound',param:h};
 }
@@ -1196,9 +1151,9 @@ class Component extends DCLogic {
   constructor(p){
     super(p);
     const saved=load();
-    this.state={ws:'personal',data:(saved&&saved.data)||seed(),settings:Object.assign({},DEFAULT_SETTINGS,(saved&&saved.settings)||{}),
+    this.state={ws:'personal',data:migrate(saved&&saved.data)||seed(),settings:Object.assign({},DEFAULT_SETTINGS,(saved&&saved.settings)||{}),
       ...parseHash(),q:'',statusFilter:'all',sort:'updated',page:1,itemStatus:'all',
-      add:blankAdd(),addErrors:null,dialog:null,draft:null,draftErrors:null,toast:'',override:null,drawer:false,anim:true,t:1,dashPeriod:'90',pipeSel:null,cv:{amount:'1000',dir:'PHP',rate:null,spin:0},scrollP:0,scrollY:0,launch:0,dashCur:null,dashWeek:null,dashStatus:null,
+      add:blankAdd((Object.assign({},DEFAULT_SETTINGS,(saved&&saved.settings)||{})).primary),addErrors:null,up:null,upErr:null,odraft:null,odErr:null,dialog:null,draft:null,draftErrors:null,toast:'',override:null,drawer:false,anim:true,t:1,dashPeriod:'90',pipeSel:null,scrollP:0,scrollY:0,launch:0,dashCur:null,dashWeek:null,dashStatus:null,
       w:typeof window!=='undefined'?window.innerWidth:1280};
     this.searchRef=React.createRef();
   }
@@ -1252,29 +1207,51 @@ class Component extends DCLogic {
     if(sh.stage===7) return {label:'Delivered',tone:TONES.ok,key:'delivered'};
     return {label:STAGES[sh.stage].label,tone:sh.stage<2?TONES.neutral:TONES.brand,key:'active'};
   }
+  orderDateOf(sh){return sh.orderDate||(sh.events[0]?manilaIso(new Date(sh.events[0].at).getTime()):manilaIso())}
+  bdays(a,b){const s=Date.parse(a+'T00:00:00Z'),e=Date.parse(b+'T00:00:00Z');let n=0;for(let t=s+864e5;t<=e;t+=864e5){const w=new Date(t).getUTCDay();if(w&&w!==6)n++}return n}
+  timing(sh){
+    const ev=sh.events.filter(e=>e.stage===sh.stage).pop();const since=ev?new Date(ev.at).getTime():Date.now();
+    const days=Math.max(0,Math.floor((Date.now()-since)/864e5));const done=sh.stage===7;
+    const bd=this.bdays(this.orderDateOf(sh),done&&ev?manilaIso(since):manilaIso());
+    return {days,bd,inStatus:days===0?'Today':days===1?'1 day':days+' days',bdLabel:bd===1?'1 business day':bd+' business days',
+      bdNote:done?'Order date to delivery, Mon to Fri':'Order date to today, Mon to Fri',since};
+  }
+  applyUpdate(id,k,at,note,delayed,delayNote){
+    this.setWsData(w=>({...w,shipments:w.shipments.map(sh=>{if(sh.id!==id)return sh;
+      let events=sh.events;
+      if(k!==sh.stage)events=sh.events.filter(e=>e.stage<k).concat([{stage:k,at,note,source:'Manual update'}]);
+      else if(note&&events.length)events=events.map((e,i)=>i===events.length-1?{...e,note}:e);
+      const dl=delayed&&k!==7;
+      return {...sh,stage:k,events,delayed:dl,delayNote:dl?(delayNote||'On hold'):''};})}));
+  }
   lastAt(sh){return sh.events.length?sh.events[sh.events.length-1].at:''}
   itemRate(it){return it.rate>0?it.rate:this.rate()}
   closeDialog=()=>this.setState({dialog:null,draft:null,draftErrors:null})
   openItem(it,shipmentId){
-    this.setState({dialog:'item',draftErrors:null,draft:it?{id:it.id,name:it.name,qty:String(it.qty),cny:String(it.cny),rate:it.rate?String(it.rate):'',shipmentId:it.shipmentId||'',notes:it.notes||''}
-      :{id:null,name:'',qty:'1',cny:'',rate:'',shipmentId:shipmentId||'',notes:''}});
+    const r2=x=>String(Math.round(x*100)/100);
+    this.setState({dialog:'item',draftErrors:null,draft:it?{id:it.id,name:it.name,qty:String(it.qty),cur:it.priceCur||'CNY',cny:it.priceCur==='PHP'?r2(it.price):r2(it.cny),rate:it.rate?String(it.rate):'',shipmentId:it.shipmentId||'',notes:it.notes||''}
+      :{id:null,name:'',qty:'1',cur:this.state.settings.primary,cny:'',rate:'',shipmentId:shipmentId||'',notes:''}});
   }
   validateDraft(d){
     const e={};
     if(!d.name.trim())e.name='Describe the product so you can recognise it later.';else if(d.name.length>160)e.name='Keep it under 160 characters.';
     if(!/^\d+$/.test(d.qty)||+d.qty<1)e.qty='Use a whole number, 1 or more.';
-    if(!(parseFloat(d.cny)>0))e.cny='Enter the price you paid, above 0.';
+    if(!(parseFloat(d.cny)>0))e.cny='Enter the unit price, above 0.';
     if(d.rate!==''&&!(parseFloat(d.rate)>0))e.rate='Leave empty for the default rate, or enter a number above 0.';
     return e;
   }
+  validTracking(t,existing,selfId){
+    if(!t)return 'Enter the tracking number from your seller or forwarder.';
+    if(!/^[A-Za-z0-9-]{8,30}$/.test(t))return 'Use 8 to 30 letters, numbers or dashes. Spaces are removed for you.';
+    if(existing.some(s=>s.id!==selfId&&s.tracking.toUpperCase()===t.toUpperCase()))return 'You already have an order with this tracking number.';
+    return '';
+  }
+  validDate(d){if(!d)return 'Choose the day you placed the order.';if(d>manilaIso())return 'The order date can\u2019t be in the future.';return ''}
   validateAdd(a,existing){
     const e={lines:{}};const t=a.tracking.replace(/\s+/g,'');
-    if(!t)e.tracking='Enter the tracking number from your seller or forwarder.';
-    else if(!/^[A-Za-z0-9-]{8,30}$/.test(t))e.tracking='Use 8 to 30 letters, numbers or dashes. Spaces are removed for you.';
-    else if(existing.some(s=>s.tracking.toUpperCase()===t.toUpperCase()))e.tracking='This tracking number is already in this workspace.';
-    if(!a.origin.trim())e.origin='Enter where the parcel ships from.';
-    if(!a.destination.trim())e.destination='Enter the delivery city.';
-    a.lines.forEach((l,i)=>{const le={};const any=l.name||l.cny;if(any||a.lines.length===1&&false){if(!l.name.trim())le.name=1;if(!/^\d+$/.test(l.qty)||+l.qty<1)le.qty=1;if(!(parseFloat(l.cny)>0))le.cny=1}if(Object.keys(le).length)e.lines[i]=le});
+    const te=this.validTracking(t,existing);if(te)e.tracking=te;
+    const de=this.validDate(a.orderDate);if(de)e.orderDate=de;
+    a.lines.forEach((l,i)=>{const le={};if(l.name||l.price){if(!l.name.trim())le.name=1;if(!/^\d+$/.test(l.qty)||+l.qty<1)le.qty=1;if(!(parseFloat(l.price)>0))le.price=1}if(Object.keys(le).length)e.lines[i]=le});
     if(!Object.keys(e.lines).length)delete e.lines;
     return e;
   }
@@ -1294,13 +1271,13 @@ class Component extends DCLogic {
     const IC={overview:'M4 4h7v7H4zM13 4h7v4h-7zM13 11h7v9h-7zM4 14h7v6H4z',dashboard:'M4 20h16M7 16v-5M12 16V6M17 16v-8',shipments:'M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9',items:'M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01',add:'M12 5v14M5 12h14',settings:'M4 7h9M17 7h3M4 17h3M11 17h9M15 5v4M9 15v4',money:'M3 7h18v10H3zM12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM6.5 10v4M17.5 10v4',check:'M5 12.5l4.5 4.5L19 7.5',alert:'M12 4 2.5 20h19zM12 10v4M12 17h.01',convert:'M7 4v16M3.5 16.5 7 20l3.5-3.5M17 20V4M13.5 7.5 17 4l3.5 3.5'};
     const navItem=(k,label,badge,badgeSr)=>{const on=k===activeKey;return {href:'#/'+k,label,icon:IC[k],aria:on?'page':undefined,bg:on?'var(--brand-tint)':'transparent',fg:on?'var(--brand-ink)':'var(--ink-2)',mark:on?'var(--accent)':'transparent',hasBadge:!!badge,badge:String(badge||''),badgeSr:badgeSr||'',badgeBg:on?'var(--brand)':'var(--sunk)',badgeFg:on?'var(--on-brand)':'var(--ink-2)'}};
     const activeShips=ships.filter(x=>x.stage<7).length;
-    const navGroups=[{label:'Track',items:[navItem('overview','Overview'),navItem('dashboard','Dashboard'),navItem('shipments','Shipments',activeShips,activeShips+' in progress'),navItem('items','Products',items.length,items.length+' products')]},{label:'Manage',items:[navItem('add','Add order'),navItem('convert','Converter'),navItem('settings','Settings')]}];
+    const navGroups=[{label:'Track',items:[navItem('overview','Overview'),navItem('dashboard','Dashboard'),navItem('shipments','Shipments',activeShips,activeShips+' in progress'),navItem('items','Products',items.length,items.length+' products')]},{label:'Manage',items:[navItem('add','Add order'),navItem('settings','Settings')]}];
 
-    const shipView=sh=>{const st=this.statusOf(sh);return {id:sh.id,href:'#/shipment/'+encodeURIComponent(sh.id),tracking:sh.tracking,carrier:sh.carrier,route:sh.origin.split(',')[0]+' to '+sh.destination.split(',')[0],status:st.label,tone:st.tone,updated:sh.events.length?f.dt(this.lastAt(sh)):'No scans yet',eta:sh.stage===7?'Delivered':f.d(sh.eta)}};
+    const shipView=sh=>{const st=this.statusOf(sh);const tm=this.timing(sh);const inS=sh.stage===7?'Delivered':tm.inStatus;return {id:sh.id,icon:SICON[sh.stage],href:'#/shipment/'+encodeURIComponent(sh.id),tracking:sh.tracking,status:st.label,tone:st.tone,updated:sh.events.length?f.dt(this.lastAt(sh)):'No updates yet',ordered:f.d(this.orderDateOf(sh)),inStatus:inS,bdays:tm.bdLabel,timing:(sh.stage===7?'Delivered after ':inS+' in this status · ')+tm.bdLabel}};
 
     const matchQ=sh=>!qq||sh.tracking.toLowerCase().includes(qq)||(sh.orderRef||'').toLowerCase().replace(/\s+/g,'').includes(qq)||items.some(it=>it.shipmentId===sh.id&&it.name.toLowerCase().replace(/\s+/g,'').includes(qq));
     let list=ships.filter(sh=>matchQ(sh)&&(s.statusFilter==='all'||this.statusOf(sh).key===s.statusFilter));
-    const sorters={updated:(a,b)=>this.lastAt(b).localeCompare(this.lastAt(a)),eta:(a,b)=>(a.stage===7)-(b.stage===7)||(a.eta||'9999').localeCompare(b.eta||'9999'),stage:(a,b)=>b.stage-a.stage};
+    const sorters={updated:(a,b)=>this.lastAt(b).localeCompare(this.lastAt(a)),eta:(a,b)=>this.orderDateOf(a).localeCompare(this.orderDateOf(b)),stage:(a,b)=>b.stage-a.stage};
     list=[...list].sort(sorters[s.sort]);
     const per=5,pageCount=Math.max(1,Math.ceil(list.length/per)),page=Math.min(s.page,pageCount);
     const pageShipments=list.slice((page-1)*per,page*per).map(shipView);
@@ -1314,10 +1291,10 @@ class Component extends DCLogic {
     if(s.settings.primary==='CNY')spend.reverse();
     const cnt=v=>String(Math.round(v*ease));
     const metrics=[...spend,{label:'Items bought',value:cnt(totals.qty),color:'var(--ink)'},{label:'Active shipments',value:cnt(activeShips),color:'var(--ink)'},{label:'Items delivered',value:cnt(deliveredItems),color:'var(--ink)'},{label:'Delayed shipments',value:cnt(delayedShips.length),color:delayedShips.length?'var(--bad)':'var(--ink)'}];
-    const recent=ships.flatMap(sh=>sh.events.map(e=>({sh,e}))).sort((a,b)=>b.e.at.localeCompare(a.e.at)).slice(0,6).map(({sh,e})=>({href:'#/shipment/'+sh.id,label:STAGES[e.stage].label,tracking:sh.tracking,note:e.note||sh.destination,when:f.dt(e.at)}));
+    const recent=ships.flatMap(sh=>sh.events.map(e=>({sh,e}))).sort((a,b)=>b.e.at.localeCompare(a.e.at)).slice(0,6).map(({sh,e})=>({href:'#/shipment/'+sh.id,icon:SICON[e.stage],label:STAGES[e.stage].label,tracking:sh.tracking,note:e.note||e.source,when:f.dt(e.at)}));
     const unshipped=items.filter(it=>!it.shipmentId);
 
-    let d={tracking:'',tone:TONES.neutral,timeline:[],costs:[],items:[]};let detailMissing=false;
+    let d={tracking:'',tone:TONES.neutral,timeline:[],costs:[],items:[]};let detailMissing=false;let curSh=null,upCur=null;const nowLocal=()=>new Date(Date.now()+8*36e5).toISOString().slice(0,16);
     if(s.route==='shipment'){
       const sh=byId[s.param];
       if(!sh)detailMissing=true;
@@ -1328,13 +1305,15 @@ class Component extends DCLogic {
         if(s.settings.primary==='CNY'){}else{const t=costs[1];costs[1]=costs[2];costs[2]=t}
         const timeline=STAGES.map((stg,i)=>{
           const ev=sh.events.find(e=>e.stage===i);const done=i<sh.stage||(i===sh.stage&&sh.stage===7);const cur=i===sh.stage&&sh.stage!==7;
-          const place=i===0?sh.origin.split(',')[0]+' '+PLACE[0].toLowerCase():i<6?PLACE[i]:i===6?'J&T Express, '+sh.destination.split(',')[0]:sh.destination;
           const curBad=cur&&sh.delayed;
-          return {label:stg.label,tag:cur?(curBad?'Held here':'Current'):'',meta:ev?f.dt(ev.at)+' · '+place+' · '+ev.source:'Pending',note:ev?ev.note:'',
+          return {icon:SICON[i],iconColor:cur?(curBad?'var(--bad)':'var(--accent)'):(ev?'var(--brand-ink)':'var(--line-strong)'),label:stg.label,tag:cur?(curBad?'Held here':'Current'):'',meta:ev?f.dt(ev.at)+' · '+ev.source:(i<sh.stage?'No update recorded':'Pending'),note:ev?ev.note:'',
             size:cur?'0.875rem':'0.625rem',fill:cur?(curBad?'var(--bad)':'var(--accent)'):done?'var(--ink)':'var(--surface)',border:cur?(curBad?'var(--bad)':'var(--accent)'):done?'var(--ink)':'var(--line-strong)',
             line:i===7?'transparent':(i<sh.stage?'var(--ink)':'var(--line)'),weight:cur?'700':'500',color:ev?'var(--ink)':'var(--ink-2)'};
         });
-        d={tracking:sh.tracking,carrier:sh.carrier,origin:sh.origin,destination:sh.destination,orderRef:sh.orderRef||'None',eta:sh.stage===7?'Delivered':f.d(sh.eta),status:st.label,tone:st.tone,
+        curSh=sh;const tm=this.timing(sh);const iq=its.reduce((a,b)=>a+b.qty,0);
+        upCur=s.up&&s.up.forId===sh.id?s.up:{forId:sh.id,stage:String(sh.stage),at:nowLocal(),note:'',delayed:!!sh.delayed,delayNote:sh.delayNote||''};
+        d={tracking:sh.tracking,orderDate:f.d(this.orderDateOf(sh)),inStatus:sh.stage===7?'Delivered':tm.inStatus,inStatusNote:sh.stage===7?f.dt(new Date(tm.since).toISOString()):'Since '+f.dt(new Date(tm.since).toISOString()),bdays:tm.bdLabel,bdNote:tm.bdNote,itemCount:iq===1?'1 item':iq+' items',
+          hasNext:sh.stage<7,nextLabel:sh.stage<7?STAGES[sh.stage+1].short:'',status:st.label,tone:st.tone,
           delayed:!!sh.delayed,delayNote:sh.delayNote,stageShort:STAGES[sh.stage].short,timeline,costs,firstScan:sh.events.length?f.dt(sh.events[0].at):'None',updated:sh.events.length?f.dt(this.lastAt(sh)):'None',
           noItems:!its.length,items:its.map(it=>({name:it.name,qty:it.qty,unit:f.cny(it.cny),php:f.php(it.qty*it.cny*this.itemRate(it)),edit:()=>this.openItem(it),editLabel:'Edit '+it.name}))};
       }
@@ -1351,15 +1330,17 @@ class Component extends DCLogic {
     const noItemsAtAll=!items.length;
 
     const ae=s.addErrors||{};const errF=(k,help)=>({[k+'Invalid']:ae[k]?'true':undefined,[k+'Border']:ae[k]?'var(--bad)':'var(--line-strong)',[k+'Color']:ae[k]?'var(--bad)':'var(--ink-2)',[k+'Msg']:ae[k]||help});
-    const addErr={...errF('tracking','Spaces are removed. We check it is not already in this workspace.'),...errF('origin',''),...errF('destination','')};
-    const addLines=s.add.lines.map((l,i)=>{const le=(ae.lines||{})[i]||{};const sub=(+l.qty||0)*(parseFloat(l.cny)||0);
-      return {i,name:l.name,qty:l.qty,cny:l.cny,nameInvalid:le.name?'true':undefined,qtyInvalid:le.qty?'true':undefined,cnyInvalid:le.cny?'true':undefined,
-        nameBorder:le.name?'var(--bad)':'var(--line-strong)',qtyBorder:le.qty?'var(--bad)':'var(--line-strong)',cnyBorder:le.cny?'var(--bad)':'var(--line-strong)',
-        msg:Object.keys(le).length?'Add a name, a whole-number quantity and a price above 0.':(sub?f.cny(sub)+' = '+f.php(sub*rate):'Leave empty to add products later.'),msgColor:Object.keys(le).length?'var(--bad)':'var(--ink-2)',
-        remove:()=>this.setState(st=>({add:{...st.add,lines:st.add.lines.length>1?st.add.lines.filter((_,j)=>j!==i):[{name:'',qty:'1',cny:''}]}})),removeLabel:'Remove product '+(i+1)}});
-    const errCount=['tracking','origin','destination'].filter(k=>ae[k]).length+Object.keys(ae.lines||{}).length;
+    const addErr={...errF('tracking','Spaces are removed. We check you don\u2019t already have it.'),...errF('orderDate','Business days are counted from this date.')};
+    const addLines=s.add.lines.map((l,i)=>{const le=(ae.lines||{})[i]||{};const p=parseFloat(l.price),q=+l.qty||0,okP=p>0,isP=l.cur==='PHP';
+      const fC=isP?f.php:f.cny,fO=isP?f.cny:f.php,cv=x=>isP?x/rate:x*rate;const bad=Object.keys(le).length;
+      return {i,name:l.name,qty:l.qty,price:l.price,cur:l.cur,priceId:'ln-price-'+i,convId:'ln-conv-'+i,nameInvalid:le.name?'true':undefined,qtyInvalid:le.qty?'true':undefined,priceInvalid:le.price?'true':undefined,
+        nameBorder:le.name?'var(--bad)':'var(--line-strong)',qtyBorder:le.qty?'var(--bad)':'var(--line-strong)',priceBorder:le.price?'var(--bad)':'var(--line-strong)',
+        conv:okP?fC(p)+' \u2248 '+fO(cv(p))+' per unit':'Shows the '+(isP?'CNY':'PHP')+' amount as you type',convColor:okP?'var(--brand-ink)':'var(--ink-2)',
+        msg:bad?'Add a name, a whole-number quantity and a price above 0.':(okP&&q?'Line total '+fC(p*q)+' \u2248 '+fO(cv(p*q)):'Leave empty to add products later.'),msgColor:bad?'var(--bad)':'var(--ink-2)',
+        remove:()=>this.setState(st=>({add:{...st.add,lines:st.add.lines.length>1?st.add.lines.filter((_,j)=>j!==i):[{name:'',qty:'1',price:'',cur:l.cur}]}})),removeLabel:'Remove product '+(i+1)}});
+    const errCount=['tracking','orderDate'].filter(k=>ae[k]).length+Object.keys(ae.lines||{}).length;
 
-    const dr=s.draft||{name:'',qty:'',cny:'',rate:'',shipmentId:'',notes:''};const de=s.draftErrors||{};
+    const dr=s.draft||{name:'',qty:'',cur:'CNY',cny:'',rate:'',shipmentId:'',notes:''};const de=s.draftErrors||{};
     const dErr={};['name','qty','cny','rate'].forEach(k=>{dErr[k]=de[k]||'';dErr[k+'Invalid']=de[k]?'true':undefined;dErr[k+'Border']=de[k]?'var(--bad)':'var(--line-strong)'});
     if(!de.rate)dErr.rate='Empty uses the default';
     const dSub=(+dr.qty||0)*(parseFloat(dr.cny)||0);const dRate=parseFloat(dr.rate)>0?parseFloat(dr.rate):rate;
@@ -1381,9 +1362,9 @@ class Component extends DCLogic {
     const phasesNarrow=PH.map(([label,a,b])=>({label,stages:pipe.slice(a,b)}));
     const whatOf=sh=>{const its=items.filter(it=>it.shipmentId===sh.id);return its.length?its[0].name+(its.length>1?' + '+(its.length-1)+' more':''):'No products linked yet'};
     const pSel=s.pipeSel;
-    const pRows=(pSel===null?ships.filter(x=>x.stage<7).sort((a,b)=>(a.eta||'9999').localeCompare(b.eta||'9999')):ships.filter(x=>x.stage===pSel)).slice(0,5);
-    const pipeList=pRows.map((sh,i)=>{const v=shipView(sh);return {...v,what:whatOf(sh),eta:sh.stage===7?'Delivered':(sh.eta?'Est. '+f.d(sh.eta):'No estimate yet'),delay:(i*50)+'ms'}});
-    const pipeTitle=pSel===null?'Arriving next':(pRows.length+(pRows.length===1?' shipment':' shipments')+' at '+STAGES[pSel].label.toLowerCase());
+    const pRows=(pSel===null?ships.filter(x=>x.stage<7).sort((a,b)=>b.stage-a.stage||this.orderDateOf(a).localeCompare(this.orderDateOf(b))):ships.filter(x=>x.stage===pSel)).slice(0,5);
+    const pipeList=pRows.map((sh,i)=>{const v=shipView(sh);return {...v,what:whatOf(sh),carrier:'Ordered '+v.ordered+' · '+v.bdays,eta:sh.stage===7?'Delivered':v.inStatus+' in status',delay:(i*50)+'ms'}});
+    const pipeTitle=pSel===null?'Arriving next':(pRows.length+(pRows.length===1?' shipment':' shipments')+' at: '+STAGES[pSel].label);
     const prim=s.settings.primary==='CNY';
     const notShippedQty=unshipped.reduce((a,it)=>a+it.qty,0);
     const sum={spendMain:prim?f.cny(totals.cny*ease):f.php(totals.php*ease),spendAlt:prim?f.php(totals.php):f.cny(totals.cny),
@@ -1438,7 +1419,7 @@ class Component extends DCLogic {
     const kpis=[
       kpi({eyebrow:'Total spend',badge:dcur,value:money(pSpend*ease),sub:pItems.length+' products in '+pShips.length+' shipments',delay:'60ms'},'brand','money'),
       kpi({eyebrow:'Delivered',badge:Math.round(delPct*ease)+'%',badgeTone:'ok',value:Math.round(pDel*ease)+' of '+pQty+' items',sub:'Items that reached your door',hasMeter:true,meter:(s.anim?delPct:0)+'%',delay:'120ms'},'ok','check'),
-      kpi({eyebrow:'In progress',badge:cars.length+(cars.length===1?' carrier':' carriers'),value:String(Math.round(pActive.length*ease)),sub:nextEta?'Next arrival est. '+f.d(nextEta):'No delivery estimates yet',delay:'180ms'},'neutral','shipments'),
+      kpi({eyebrow:'In progress',badge:'Open',value:String(Math.round(pActive.length*ease)),sub:pActive.length?'Average '+Math.round(pActive.reduce((a,x)=>a+this.timing(x).bd,0)/pActive.length)+' business days since order':'Nothing in progress',delay:'180ms'},'neutral','shipments'),
       kpi({eyebrow:'Needs attention',badge:pDelayed.length?'Action needed':'All clear',badgeTone:pDelayed.length?'bad':'ok',value:String(Math.round(pDelayed.length*ease)),sub:pDelayed.length?pDelayed.map(x=>'Held at '+STAGES[x.stage].short).join(', '):'No holds or delays in this period',delay:'240ms'},pDelayed.length?'bad':'ok','alert')];
     const popt=(cur,val,label,k)=>{const on=cur===val;return {label,on:on?'true':'false',bg:on?'var(--ink)':'transparent',fg:on?'var(--bg)':'var(--ink)',pick:()=>this.setState({[k]:val,dashWeek:k==='dashPeriod'?null:s.dashWeek})}};
     const chips=[];
@@ -1469,38 +1450,12 @@ class Component extends DCLogic {
       done:{count:String(Math.round(delivN*ease)),sub:deliveredItems+(deliveredItems===1?' item':' items')+' reached the door',on:dOn?'true':'false',empty:!delivN,ring:dOn?'var(--ok)':'transparent',
         aria:'Delivered: '+delivN+' shipments'+(dOn?'. Selected':''),pick:()=>this.setState(x=>({pipeSel:x.pipeSel===7?null:7}))},
       summary:[{label:onWay+' on the way',bg:'var(--brand-tint)',fg:'var(--brand-ink)'},...(delayedShips.length?[{label:delayedShips.length+' needs attention',bg:'var(--bad-tint)',fg:'var(--bad)'}]:[]),{label:delivN+' delivered',bg:'var(--ok-tint)',fg:'var(--ok)'}]};
-    const cvs=s.cv;const savedRate=s.settings.rate;const cvRateStr=cvs.rate===null?String(savedRate):cvs.rate;const cvRate=parseFloat(cvRateStr);const rateOk2=cvRate>0;
-    const amt=parseFloat(String(cvs.amount).replace(/,/g,''));const amtOk=cvs.amount===''||(amt>=0&&isFinite(amt));
-    const fromPHP=cvs.dir==='PHP';const useR=rateOk2?cvRate:rate;
-    const conv2=v=>fromPHP?v/useR:v*useR;
-    const fmtTo=fromPHP?f.cny:f.php,fmtFrom=fromPHP?f.php:f.cny;
-    const n4=new Intl.NumberFormat(s.settings.locale,{maximumFractionDigits:4});
-    const quickVals=fromPHP?[500,1000,5000,10000,50000]:[50,100,500,1000,5000];
-    const cv={from:fromPHP?'PHP':'CNY',to:fromPHP?'CNY':'PHP',fromSym:fromPHP?'₱':'¥',
-      fromBg:'var(--sunk)',fromFg:'var(--ink)',toBg:'var(--surface)',toFg:'var(--brand-ink)',
-      amount:cvs.amount,invalid:amtOk?undefined:'true',inBorder:amtOk?'var(--line)':'var(--bad)',
-      msg:amtOk?(fromPHP?'Philippine peso':'Chinese yuan'):'Enter a number, like 1500 or 1500.50',msgColor:amtOk?'var(--ink-2)':'var(--bad)',
-      setAmount:e=>{const v=e.target.value.replace(/[^0-9.,]/g,'');this.setState(st=>({cv:{...st.cv,amount:v}}))},
-      result:amtOk&&cvs.amount!==''?fmtTo(conv2(amt)):fmtTo(0),
-      rateLine:'1 CNY = '+n4.format(useR)+' PHP · 1 PHP = '+n4.format(1/useR)+' CNY',
-      swap:()=>this.setState(st=>{const a=parseFloat(String(st.cv.amount).replace(/,/g,''));const next=a>=0&&isFinite(a)?(Math.round(conv2(a)*100)/100).toString():st.cv.amount;return {cv:{...st.cv,dir:st.cv.dir==='PHP'?'CNY':'PHP',amount:next,spin:st.cv.spin+1}}}),
-      swapLabel:fromPHP?'Switch to yuan to peso':'Switch to peso to yuan',spin:'rotate('+(cvs.spin*180)+'deg)',
-      quick:quickVals.map(v=>{const on=amt===v;return {label:fmtFrom(v).replace(/\.00$/,''),on:on?'true':'false',bg:on?'var(--ink)':'var(--surface)',fg:on?'var(--bg)':'var(--ink)',border:on?'var(--ink)':'var(--line-strong)',pick:()=>this.setState(st=>({cv:{...st.cv,amount:String(v)}}))}}),
-      rate:cvRateStr,setRate:e=>{const v=e.target.value.replace(/[^0-9.]/g,'');this.setState(st=>({cv:{...st.cv,rate:v}}))},
-      rateInvalid:rateOk2?undefined:'true',rateBorder:rateOk2?'var(--line-strong)':'var(--bad)',rateMsgColor:rateOk2?'var(--ink-2)':'var(--bad)',
-      rateMsg:!rateOk2?'Enter a rate above 0. Using your saved rate until then.':(cvRateStr===String(savedRate)?'This is your saved rate, used across Orvanta.':'Trying a different rate. Only this page uses it until you save.'),
-      saveDisabled:!rateOk2||cvRateStr===String(savedRate),saveOpacity:(!rateOk2||cvRateStr===String(savedRate))?'0.45':'1',
-      saveRate:()=>{this.setState(st=>({settings:{...st.settings,rate:cvRateStr},cv:{...st.cv,rate:null}}));this.toast('Rate saved: 1 CNY = '+cvRateStr+' PHP')},
-      resetDisabled:cvs.rate===null||cvRateStr===String(savedRate),resetOpacity:(cvs.rate===null||cvRateStr===String(savedRate))?'0.45':'1',
-      resetRate:()=>this.setState(st=>({cv:{...st.cv,rate:null}})),
-      tableTitle:fromPHP?'Peso to yuan':'Yuan to peso',
-      table:(fromPHP?[100,250,500,1000,2500,5000,10000]:[10,25,50,100,250,500,1000]).map(v=>({a:fmtFrom(v),b:fmtTo(conv2(v))}))};
     const tzLabel={'Asia/Manila':'Manila (UTC+8)','Asia/Shanghai':'Shanghai (UTC+8)','UTC':'UTC'}[s.settings.tz];
     const showPage=ds!=='loading'&&ds!=='error';
     const routeKey=detailMissing?'notfound':s.route;
 
     return {
-      isWide,notWide:!isWide,navGroups,cv,journey,pipeWide:cRem>=60,pipeNarrow:cRem<60,showSync:cRem>=66,barsVertical:cRem>=34,barsHorizontal:cRem<34,mainPad:s.w<640?'1.5rem 1rem 3rem':'2rem 2rem 4rem',headPadX:s.w<640?'1rem':'1.5rem',pipe,phases,phasesNarrow,pipeList,pipeTitle,pipeHasSel:pSel!==null,pipeClear:()=>this.setState({pipeSel:null}),sum,dash:dashV,
+      isWide,notWide:!isWide,navGroups,journey,pipeWide:cRem>=60,pipeNarrow:cRem<60,showSync:cRem>=66,barsVertical:cRem>=34,barsHorizontal:cRem<34,mainPad:s.w<640?'1.5rem 1rem 3rem':'2rem 2rem 4rem',headPadX:s.w<640?'1rem':'1.5rem',pipe,phases,phasesNarrow,pipeList,pipeTitle,pipeHasSel:pSel!==null,pipeClear:()=>this.setState({pipeSel:null}),sum,dash:dashV,
       side:isWide?{pos:'fixed',tf:sideOn?'none':'translateX(-100%)',vis:sideOn?'visible':'hidden',shadow:'none'}:{pos:'fixed',tf:s.drawer?'none':'translateX(-100%)',vis:s.drawer?'visible':'hidden',shadow:s.drawer?'0 1rem 3rem rgba(20,22,21,0.25)':'none'},
       drawerOpen:!isWide&&s.drawer,drawerAria:s.drawer?'true':'false',
       openDrawer:()=>{if(isWide)sset('sidebar',true);else this.setState({drawer:true})},
@@ -1523,7 +1478,7 @@ class Component extends DCLogic {
       focusSearch:()=>{this.searchRef.current&&this.searchRef.current.focus()},
       offline:ds==='offline',lastSync:recent.length?recent[0].when:'earlier',isLoading:ds==='loading',isError:ds==='error',showPage,skeleton:[1,2,3,4],
       retry:()=>{this.setState({override:'loading'});setTimeout(()=>{this.setState({override:'live'});this.toast('Tracking data is up to date')},900)},
-      r:{convert:routeKey==='convert',dashboard:routeKey==='dashboard',overview:routeKey==='overview',shipments:routeKey==='shipments',shipment:routeKey==='shipment',items:routeKey==='items',add:routeKey==='add',settings:routeKey==='settings',notfound:routeKey==='notfound'},
+      r:{dashboard:routeKey==='dashboard',overview:routeKey==='overview',shipments:routeKey==='shipments',shipment:routeKey==='shipment',items:routeKey==='items',add:routeKey==='add',settings:routeKey==='settings',notfound:routeKey==='notfound'},
       todayLabel:new Intl.DateTimeFormat(s.settings.locale,{timeZone:s.settings.tz,weekday:'long',month:'long',day:'numeric'}).format(new Date()),
       isEmpty:!ships.length,hasData:!!ships.length,route,metrics,recent,
       delayed:delayedShips.map(x=>({href:'#/shipment/'+x.id,tracking:x.tracking,stage:STAGES[x.stage].short,note:x.delayNote})),hasDelayed:!!delayedShips.length,noDelayed:!delayedShips.length,
@@ -1543,19 +1498,48 @@ class Component extends DCLogic {
       itemsEmptyTitle:noItemsAtAll?'No products yet':'No products match these filters',
       itemsEmptyBody:noItemsAtAll?'Products come from your orders. Add an order with its items and Orvanta works out the PHP cost of each one.':'Try a shorter search or show all statuses.',
       itemsEmptyCta:noItemsAtAll?'Add order':'Clear filters',itemsEmptyAction:noItemsAtAll?()=>{location.hash='#/add'}:()=>this.setState({q:'',itemStatus:'all'}),
-      add:s.add,carriers:CARRIERS,stageOptions:STAGES.map((x,i)=>({value:String(i),label:x.label})),addErr,addLines,
+      todayIso:manilaIso(),
+      up:upCur?(()=>{const late=s.upErr;const k=+upCur.stage;const same=curSh&&k===curSh.stage;
+        return {...upCur,max:nowLocal(),atInvalid:late?'true':undefined,atBorder:late?'var(--bad)':'var(--line-strong)',atColor:late?'var(--bad)':'var(--ink-2)',atMsg:late||'Manila time. Defaults to now.',
+          summary:curSh?(same?(upCur.delayed!==!!curSh.delayed?(upCur.delayed?'Will mark this order as delayed.':'Will clear the delay.'):'Status stays: '+STAGES[k].label+'.'):(k<curSh.stage?'Moves back to: ':'Moves to: ')+STAGES[k].label+'. Days in status restart.'):''}})():{},
+      setUp:e=>{const t=e.target;const v=t.type==='checkbox'?t.checked:t.value;this.setState({up:{...upCur,[t.name]:v},upErr:null})},
+      saveStatus:e=>{e.preventDefault();if(!curSh||!upCur)return;const k=+upCur.stage;
+        const atMs=upCur.at?new Date(upCur.at+':00+08:00').getTime():Date.now();
+        if(!isFinite(atMs)){this.setState({upErr:'Enter a valid date and time.'});return}
+        if(atMs>Date.now()+6e4){this.setState({upErr:'The date can\u2019t be in the future.'});return}
+        if(atMs<Date.parse(this.orderDateOf(curSh)+'T00:00:00+08:00')){this.setState({upErr:'The date can\u2019t be before the order date.'});return}
+        this.applyUpdate(curSh.id,k,new Date(atMs).toISOString(),upCur.note.trim(),!!upCur.delayed,(upCur.delayNote||'').trim());
+        this.setState({up:null,upErr:null});this.toast(k===curSh.stage?'Order updated':'Status set to: '+STAGES[k].label);},
+      quickStage:curSh?String(curSh.stage):'0',
+      quickSet:e=>{if(!curSh)return;const k=+e.target.value;if(k===curSh.stage)return;this.applyUpdate(curSh.id,k,new Date().toISOString(),'',k===7?false:!!curSh.delayed,curSh.delayNote||'');this.setState({up:null,upErr:null});this.toast('Status set to: '+STAGES[k].label)},
+      quickNext:()=>{if(!curSh||curSh.stage>=7)return;const k=curSh.stage+1;this.applyUpdate(curSh.id,k,new Date().toISOString(),'',false,'');this.setState({up:null,upErr:null});this.toast('Moved to: '+STAGES[k].label)},
+      askDeleteOrder:()=>this.setState({dialog:'delOrder'}),
+      doDeleteOrder:()=>{if(!curSh)return;const id=curSh.id,t=curSh.tracking;this.setWsData(w=>({shipments:w.shipments.filter(x=>x.id!==id),items:w.items.filter(x=>x.shipmentId!==id)}));this.setState({dialog:null,up:null});location.hash='#/shipments';this.toast('Order '+t+' deleted')},
+      openOrderEdit:()=>{if(curSh)this.setState({dialog:'order',odraft:{tracking:curSh.tracking,orderDate:this.orderDateOf(curSh)},odErr:null})},
+      od:(()=>{const o=s.odraft||{tracking:'',orderDate:''},er=s.odErr||{};return {...o,trackingErr:er.tracking||'',trackingInvalid:er.tracking?'true':undefined,trackingBorder:er.tracking?'var(--bad)':'var(--line-strong)',
+        dateInvalid:er.date?'true':undefined,dateBorder:er.date?'var(--bad)':'var(--line-strong)',dateColor:er.date?'var(--bad)':'var(--ink-2)',dateMsg:er.date||'Business days are counted from this date.'}})(),
+      setOd:e=>{const {name,value}=e.target;this.setState(st=>({odraft:{...st.odraft,[name]:value}}))},
+      saveOrder:e=>{e.preventDefault();if(!curSh||!s.odraft)return;const t=s.odraft.tracking.replace(/\s+/g,'').toUpperCase();
+        const er={};const te=this.validTracking(t,ships,curSh.id);if(te)er.tracking=te;const de=this.validDate(s.odraft.orderDate);if(de)er.date=de;
+        if(Object.keys(er).length){this.setState({odErr:er});return}
+        const id=curSh.id,od=s.odraft.orderDate;this.setWsData(w=>({...w,shipments:w.shipments.map(x=>x.id===id?{...x,tracking:t,orderDate:od}:x)}));this.setState({dialog:null,odraft:null});this.toast('Order details saved')},
+      askClear:()=>this.setState({dialog:'clear'}),askClearShips:()=>this.setState({dialog:'clearShips'}),
+      shipCountLabel:ships.length===1?'1 shipment':ships.length+' shipments',itemCountLabel:items.length===1?'1 product':items.length+' products',
+      doClearShips:()=>{this.setState(st=>{const w=st.data[st.ws];return {data:{...st.data,[st.ws]:{shipments:[],items:w.items.map(it=>({...it,shipmentId:null}))}},dialog:null,up:null}});if(s.route==='shipment')location.hash='#/shipments';this.toast('All shipments deleted. Products kept.')},clearCount:ships.length===1?'1 order':ships.length+' orders',
+      doClear:()=>{this.setState(st=>({data:{...st.data,[st.ws]:{shipments:[],items:[]}},dialog:null,up:null}));location.hash='#/overview';this.toast('All orders deleted')},
+      add:s.add,stageOptions:STAGES.map((x,i)=>({value:String(i),label:x.label})),addErr,addLines,
       addHasErrors:errCount>0,addErrorSummary:errCount===1?'1 field needs fixing before you can save.':errCount+' fields need fixing before you can save.',
       setAddField:e=>{const {name,value}=e.target;this.setState(st=>({add:{...st.add,[name]:value}}))},
       setLine:e=>{const i=+e.target.dataset.index,k=e.target.dataset.field,v=e.target.value;this.setState(st=>({add:{...st.add,lines:st.add.lines.map((l,j)=>j===i?{...l,[k]:v}:l)}}))},
-      addLine:()=>this.setState(st=>({add:{...st.add,lines:[...st.add.lines,{name:'',qty:'1',cny:''}]}})),
+      addLine:()=>this.setState(st=>({add:{...st.add,lines:[...st.add.lines,{name:'',qty:'1',price:'',cur:st.add.lines[st.add.lines.length-1].cur}]}})),
       submitAdd:e=>{e.preventDefault();const a=s.add;const err=this.validateAdd(a,ships);
         if(Object.keys(err).length){this.setState({addErrors:err});window.scrollTo(0,0);return}
         const id='s'+Date.now().toString(36);const stage=+a.stage;const now=new Date().toISOString();
-        const sh={id,tracking:a.tracking.replace(/\s+/g,'').toUpperCase(),carrier:a.carrier,origin:a.origin.trim(),destination:a.destination.trim(),orderRef:a.orderRef.trim(),stage,delayed:false,delayNote:'',eta:a.eta,
-          events:Array.from({length:stage+1},(_,i)=>({stage:i,at:now,note:i===stage?'Added manually':'',source:'Manual entry'}))};
-        const newItems=a.lines.filter(l=>l.name.trim()).map((l,i)=>({id:id+'i'+i,name:l.name.trim(),qty:+l.qty,cny:parseFloat(l.cny),rate:null,shipmentId:id,notes:''}));
+        const sh={id,tracking:a.tracking.replace(/\s+/g,'').toUpperCase(),carrier:'',origin:'',destination:'',orderRef:'',orderDate:a.orderDate,stage,delayed:false,delayNote:'',eta:'',
+          events:[{stage,at:now,note:'Order added',source:'Manual update'}]};
+        const newItems=a.lines.filter(l=>l.name.trim()).map((l,i)=>{const p=parseFloat(l.price);return {id:id+'i'+i,name:l.name.trim(),qty:+l.qty,cny:l.cur==='PHP'?p/rate:p,rate:l.cur==='PHP'?rate:null,priceCur:l.cur,price:p,shipmentId:id,notes:''}});
         this.setWsData(w=>({shipments:[sh,...w.shipments],items:[...w.items,...newItems]}));
-        this.setState({add:blankAdd(),addErrors:null});location.hash='#/shipment/'+id;this.toast('Order '+sh.tracking+' saved');},
+        this.setState({add:blankAdd(s.settings.primary),addErrors:null});location.hash='#/shipment/'+id;this.toast('Order '+sh.tracking+' saved');},
       settings:s.settings,
       setSetting:e=>sset(e.target.name,e.target.value),
       rateInvalid:rateOk?undefined:'true',rateBorder:rateOk?'var(--line-strong)':'var(--bad)',rateMsgColor:rateOk?'var(--ink-2)':'var(--bad)',
@@ -1564,17 +1548,18 @@ class Component extends DCLogic {
       sizeOpts:[opt(s.settings.textSize,'s','Small','textSize'),opt(s.settings.textSize,'m','Default','textSize'),opt(s.settings.textSize,'l','Large','textSize')],
       notifyOpts:notifyDef.map(([k,label,hint])=>({label,hint,on:!!n[k],toggle:()=>this.setState(st=>({settings:{...st.settings,notify:{...st.settings.notify,[k]:!st.settings.notify[k]}}}))})),
       askReset:()=>this.setState({dialog:'reset'}),
-      doReset:()=>{try{localStorage.removeItem(KEY)}catch(e){}this.setState({data:seed(),settings:{...DEFAULT_SETTINGS},ws:'personal',dialog:null});this.toast('Device data deleted. Sample data restored.')},
+      doReset:()=>{try{localStorage.removeItem(KEY)}catch(e){}this.setState({data:seed(),settings:{...DEFAULT_SETTINGS},ws:'personal',dialog:null,up:null});this.toast('Device data deleted. Sample data restored.')},
       nfTitle:detailMissing?'We can\u2019t find that shipment':'This page doesn\u2019t exist',
-      nfBody:detailMissing?'It may have been deleted, or it belongs to the other workspace. Switch workspace or search for the tracking number.':'The link may be out of date. Your shipments and products are all still here.',
-      dialogOpen:!!s.dialog,dlg:{item:s.dialog==='item',reset:s.dialog==='reset'},closeDialog:this.closeDialog,
+      nfBody:detailMissing?'It may have been deleted. Search for the tracking number to check.':'The link may be out of date. Your shipments and products are all still here.',
+      dialogOpen:!!s.dialog,dlg:{item:s.dialog==='item',reset:s.dialog==='reset',clear:s.dialog==='clear',clearShips:s.dialog==='clearShips',delOrder:s.dialog==='delOrder',order:s.dialog==='order'},closeDialog:this.closeDialog,
       backdropClose:e=>{if(e.target===e.currentTarget)this.closeDialog()},
       draft:dr,dErr,draftIsEdit:!!dr.id,itemDlgTitle:dr.id?'Edit product':'Add product',
-      draftCalc:{cny:dSub?(dr.qty+' × '+f.cny(parseFloat(dr.cny)||0)+' = '+f.cny(dSub)):'Enter quantity and price',php:dSub?f.php(dSub*dRate):''},
+      draftCalc:(()=>{const isP=dr.cur==='PHP',fC=isP?f.php:f.cny,fO=isP?f.cny:f.php;return {cny:dSub?(dr.qty+' × '+fC(parseFloat(dr.cny)||0)+' = '+fC(dSub)):'Enter quantity and price',php:dSub?'\u2248 '+fO(isP?dSub/dRate:dSub*dRate):''}})(),
       shipOptions:[{value:'',label:'Not shipped yet'},...ships.map(x=>({value:x.id,label:x.tracking+' · '+x.destination.split(',')[0]}))],
       setDraft:e=>{const {name,value}=e.target;this.setState(st=>({draft:{...st.draft,[name]:value}}))},
       saveItem:e=>{e.preventDefault();const err=this.validateDraft(dr);if(Object.keys(err).length){this.setState({draftErrors:err});return}
-        const it={id:dr.id||'i'+Date.now().toString(36),name:dr.name.trim(),qty:+dr.qty,cny:parseFloat(dr.cny),rate:parseFloat(dr.rate)>0?parseFloat(dr.rate):null,shipmentId:dr.shipmentId||null,notes:dr.notes};
+        const amt=parseFloat(dr.cny),own=parseFloat(dr.rate)>0?parseFloat(dr.rate):null,useR=own||rate,isP=dr.cur==='PHP';
+        const it={id:dr.id||'i'+Date.now().toString(36),name:dr.name.trim(),qty:+dr.qty,cny:isP?amt/useR:amt,rate:isP?useR:own,priceCur:dr.cur,price:amt,shipmentId:dr.shipmentId||null,notes:dr.notes};
         this.setWsData(w=>({...w,items:dr.id?w.items.map(x=>x.id===dr.id?it:x):[...w.items,it]}));this.closeDialog();this.toast(dr.id?'Product updated':'Product added');},
       deleteItem:()=>{this.setWsData(w=>({...w,items:w.items.filter(x=>x.id!==dr.id)}));this.closeDialog();this.toast('Product deleted')},
       hasToast:!!s.toast,toast:s.toast

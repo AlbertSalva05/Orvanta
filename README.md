@@ -1,4 +1,4 @@
-# Orvanta v1.3.0: deploy package
+# Orvanta v1.4.0: deploy package
 
 Static site for Render. Upload this folder as the publish root (render.yaml sets `staticPublishPath: .`).
 
@@ -23,6 +23,17 @@ Static site for Render. Upload this folder as the publish root (render.yaml sets
 - After launch, run PageSpeed Insights on the live URL.
 
 ## Changelog
+
+## v1.4.0 (2026-10-15)
+- Add order: each unit price has a PHP or CNY selector and shows the other currency live as you type, plus a line total in both. Removed courier, origin, destination, order reference and estimated delivery; added order date.
+- Time tracking: days in the current status and business days (Mon to Fri) since the order date, on Shipments, the order page and Arriving next. Business days stop on the delivery date for delivered orders.
+- Manual status updates on each order page: move to the next step in one click, or set any status with date, time and note; mark or clear a delay with a reason. Each change is added to the timeline.
+- Edit order (tracking number, order date) and Delete order with confirmation. Settings has Delete all orders and Restore sample data.
+- Edit product: shipment field removed; unit price now takes PHP or CNY.
+- Converter page removed (conversion now happens inline on Add order and Edit product).
+- Bulk delete on Shipments and in Settings: Delete all shipments (keeps products as not shipped yet) and Delete all orders (removes shipments and products). Both ask first.
+- Icons throughout: section headings, overview and order cards, a stage icon for each of the 8 checkpoints (timeline, shipments list, Arriving next, recent activity), and action buttons.
+- Removed "Where your shipments are now" from the overview; Arriving next stays. Dashboard carriers card removed.
 
 ## v1.3.0 (2026-10-15)
 - New Converter page (Manage > Converter, #/convert): peso to yuan and back, swap button, quick amounts, quick-reference table, and a trial rate you can save as the rate for all prices.
